@@ -19,7 +19,7 @@ namespace Loginsystem
             EckenAbrundung.RundeEcken(this, 20);
             EckenAbrundung.RundeEcken(login_panel1, 20);
             EckenAbrundung.RundeEcken(login_panel2, 20);
-            EckenAbrundung.RundeEcken(login_panel3, 20);
+            EckenAbrundung.RundeEcken(login_panel3, 15);
             EckenAbrundung.RundeEcken(login_panel4, 10);
             EckenAbrundung.RundeEcken(login_panel5, 10);
             EckenAbrundung.RundeEcken(login_benutzername_textBox, 10);
