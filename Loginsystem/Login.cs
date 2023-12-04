@@ -17,6 +17,9 @@ namespace Loginsystem
         {
             InitializeComponent();
             EckenAbrundung.RundeEcken(this, 20);
+            EckenAbrundung.RundeEcken(login_panel1, 20);
+            EckenAbrundung.RundeEcken(login_panel2, 20);
+            EckenAbrundung.RundeEcken(login_panel3, 20);
         }
     }
 }
