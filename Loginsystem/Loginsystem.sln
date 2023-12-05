@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.5.33502.453
+VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loginsystem", "Loginsystem.csproj", "{75B8A432-5507-4ECB-8358-AC2FCCF32139}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loginsystem", "Loginsystem.csproj", "{1719C88A-605C-4761-A210-5C73DD73B31B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{75B8A432-5507-4ECB-8358-AC2FCCF32139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75B8A432-5507-4ECB-8358-AC2FCCF32139}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75B8A432-5507-4ECB-8358-AC2FCCF32139}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75B8A432-5507-4ECB-8358-AC2FCCF32139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1719C88A-605C-4761-A210-5C73DD73B31B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1719C88A-605C-4761-A210-5C73DD73B31B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1719C88A-605C-4761-A210-5C73DD73B31B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1719C88A-605C-4761-A210-5C73DD73B31B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8EE9F6DB-6C24-4A59-AB57-B134951E06E1}
+		SolutionGuid = {F982D06A-1AE9-4EB4-8ED5-D81475EEAD2B}
 	EndGlobalSection
 EndGlobal
