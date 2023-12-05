@@ -16,16 +16,11 @@ namespace Loginsystem
         public Login()
         {
             InitializeComponent();
-            EckenAbrundung.RundeEcken(this, 20);
-            EckenAbrundung.RundeEcken(login_panel1, 20);
-            EckenAbrundung.RundeEcken(login_panel2, 20);
-            EckenAbrundung.RundeEcken(login_panel3, 15);
-            EckenAbrundung.RundeEcken(login_panel4, 10);
-            EckenAbrundung.RundeEcken(login_panel5, 10);
-            EckenAbrundung.RundeEcken(login_benutzername_textBox, 10);
-            EckenAbrundung.RundeEcken(login_passwort_textBox, 10);
-            EckenAbrundung.RundeEcken(abbrechen_button, 15);
-            EckenAbrundung.RundeEcken(anmelden_button, 15);
+        }
+
+        private void login_beenden_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

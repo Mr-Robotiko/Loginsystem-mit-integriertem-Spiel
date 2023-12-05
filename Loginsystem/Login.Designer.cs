@@ -32,16 +32,17 @@
             login_panel1 = new Panel();
             login_panel2 = new Panel();
             login_panel3 = new Panel();
-            pictureBox1 = new PictureBox();
-            anmelden_button = new Button();
-            abbrechen_button = new Button();
+            login_nutzer_pictureBox = new PictureBox();
+            login_anmelden_button = new Button();
+            login_abbrechen_button = new Button();
             login_panel5 = new Panel();
             login_passwort_textBox = new TextBox();
             login_panel4 = new Panel();
             login_benutzername_textBox = new TextBox();
+            login_beenden_button = new Button();
             login_panel2.SuspendLayout();
             login_panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)login_nutzer_pictureBox).BeginInit();
             login_panel5.SuspendLayout();
             login_panel4.SuspendLayout();
             SuspendLayout();
@@ -65,9 +66,9 @@
             // login_panel3
             // 
             login_panel3.BackColor = Color.White;
-            login_panel3.Controls.Add(pictureBox1);
-            login_panel3.Controls.Add(anmelden_button);
-            login_panel3.Controls.Add(abbrechen_button);
+            login_panel3.Controls.Add(login_nutzer_pictureBox);
+            login_panel3.Controls.Add(login_anmelden_button);
+            login_panel3.Controls.Add(login_abbrechen_button);
             login_panel3.Controls.Add(login_panel5);
             login_panel3.Controls.Add(login_panel4);
             login_panel3.Location = new Point(5, 5);
@@ -75,40 +76,40 @@
             login_panel3.Size = new Size(480, 380);
             login_panel3.TabIndex = 0;
             // 
-            // pictureBox1
+            // login_nutzer_pictureBox
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(165, 10);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 150);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
+            login_nutzer_pictureBox.Image = (Image)resources.GetObject("login_nutzer_pictureBox.Image");
+            login_nutzer_pictureBox.Location = new Point(165, 10);
+            login_nutzer_pictureBox.Name = "login_nutzer_pictureBox";
+            login_nutzer_pictureBox.Size = new Size(150, 150);
+            login_nutzer_pictureBox.TabIndex = 4;
+            login_nutzer_pictureBox.TabStop = false;
             // 
-            // anmelden_button
+            // login_anmelden_button
             // 
-            anmelden_button.BackColor = Color.FromArgb(31, 82, 75);
-            anmelden_button.FlatStyle = FlatStyle.Flat;
-            anmelden_button.Font = new Font("Verdana", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            anmelden_button.ForeColor = Color.White;
-            anmelden_button.Location = new Point(270, 320);
-            anmelden_button.Name = "anmelden_button";
-            anmelden_button.Size = new Size(200, 45);
-            anmelden_button.TabIndex = 3;
-            anmelden_button.Text = "Anmelden";
-            anmelden_button.UseVisualStyleBackColor = false;
+            login_anmelden_button.BackColor = Color.FromArgb(31, 82, 75);
+            login_anmelden_button.FlatStyle = FlatStyle.Flat;
+            login_anmelden_button.Font = new Font("Tahoma", 16.2F);
+            login_anmelden_button.ForeColor = Color.White;
+            login_anmelden_button.Location = new Point(270, 320);
+            login_anmelden_button.Name = "login_anmelden_button";
+            login_anmelden_button.Size = new Size(200, 45);
+            login_anmelden_button.TabIndex = 3;
+            login_anmelden_button.Text = "Anmelden";
+            login_anmelden_button.UseVisualStyleBackColor = false;
             // 
-            // abbrechen_button
+            // login_abbrechen_button
             // 
-            abbrechen_button.BackColor = Color.FromArgb(31, 82, 75);
-            abbrechen_button.FlatStyle = FlatStyle.Flat;
-            abbrechen_button.Font = new Font("Verdana", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            abbrechen_button.ForeColor = Color.White;
-            abbrechen_button.Location = new Point(10, 320);
-            abbrechen_button.Name = "abbrechen_button";
-            abbrechen_button.Size = new Size(200, 45);
-            abbrechen_button.TabIndex = 2;
-            abbrechen_button.Text = "Abbrechen";
-            abbrechen_button.UseVisualStyleBackColor = false;
+            login_abbrechen_button.BackColor = Color.FromArgb(31, 82, 75);
+            login_abbrechen_button.FlatStyle = FlatStyle.Flat;
+            login_abbrechen_button.Font = new Font("Tahoma", 16.2F);
+            login_abbrechen_button.ForeColor = Color.White;
+            login_abbrechen_button.Location = new Point(10, 320);
+            login_abbrechen_button.Name = "login_abbrechen_button";
+            login_abbrechen_button.Size = new Size(200, 45);
+            login_abbrechen_button.TabIndex = 2;
+            login_abbrechen_button.Text = "Abbrechen";
+            login_abbrechen_button.UseVisualStyleBackColor = false;
             // 
             // login_panel5
             // 
@@ -123,10 +124,10 @@
             // 
             login_passwort_textBox.BackColor = Color.White;
             login_passwort_textBox.BorderStyle = BorderStyle.FixedSingle;
-            login_passwort_textBox.Font = new Font("Verdana", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            login_passwort_textBox.Font = new Font("Tahoma", 16.2F);
             login_passwort_textBox.Location = new Point(4, 4);
             login_passwort_textBox.Name = "login_passwort_textBox";
-            login_passwort_textBox.PlaceholderText = "Passwort";
+            login_passwort_textBox.PlaceholderText = "passwort";
             login_passwort_textBox.Size = new Size(452, 40);
             login_passwort_textBox.TabIndex = 1;
             // 
@@ -143,12 +144,24 @@
             // 
             login_benutzername_textBox.BackColor = Color.White;
             login_benutzername_textBox.BorderStyle = BorderStyle.FixedSingle;
-            login_benutzername_textBox.Font = new Font("Verdana", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
+            login_benutzername_textBox.Font = new Font("Tahoma", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             login_benutzername_textBox.Location = new Point(4, 4);
             login_benutzername_textBox.Name = "login_benutzername_textBox";
-            login_benutzername_textBox.PlaceholderText = "Benutzername";
+            login_benutzername_textBox.PlaceholderText = "benutzername";
             login_benutzername_textBox.Size = new Size(452, 40);
             login_benutzername_textBox.TabIndex = 0;
+            // 
+            // login_beenden_button
+            // 
+            login_beenden_button.BackColor = Color.White;
+            login_beenden_button.FlatStyle = FlatStyle.Flat;
+            login_beenden_button.Image = (Image)resources.GetObject("login_beenden_button.Image");
+            login_beenden_button.Location = new Point(1550, 0);
+            login_beenden_button.Name = "login_beenden_button";
+            login_beenden_button.Size = new Size(50, 50);
+            login_beenden_button.TabIndex = 3;
+            login_beenden_button.UseVisualStyleBackColor = false;
+            login_beenden_button.Click += login_beenden_button_Click;
             // 
             // Login
             // 
@@ -157,6 +170,7 @@
             BackColor = Color.FromArgb(31, 82, 75);
             ClientSize = new Size(1600, 900);
             ControlBox = false;
+            Controls.Add(login_beenden_button);
             Controls.Add(login_panel2);
             Controls.Add(login_panel1);
             DoubleBuffered = true;
@@ -168,7 +182,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             login_panel2.ResumeLayout(false);
             login_panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)login_nutzer_pictureBox).EndInit();
             login_panel5.ResumeLayout(false);
             login_panel5.PerformLayout();
             login_panel4.ResumeLayout(false);
@@ -185,8 +199,9 @@
         private TextBox login_benutzername_textBox;
         private Panel login_panel4;
         private Panel login_panel5;
-        private Button anmelden_button;
-        private Button abbrechen_button;
-        private PictureBox pictureBox1;
+        private Button login_anmelden_button;
+        private Button login_abbrechen_button;
+        private PictureBox login_nutzer_pictureBox;
+        private Button login_beenden_button;
     }
 }
