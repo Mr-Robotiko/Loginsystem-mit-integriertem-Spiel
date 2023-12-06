@@ -37,7 +37,7 @@
             registrieren_panel1 = new Panel();
             registrieren_panel2 = new Panel();
             registrieren_panel3 = new Panel();
-            login_nutzer_pictureBox = new PictureBox();
+            registrieren_pictureBox1 = new PictureBox();
             registrieren_panel10 = new Panel();
             registrieren_vorname_textBox = new TextBox();
             registrieren_panel9 = new Panel();
@@ -51,18 +51,28 @@
             registrieren_panel4 = new Panel();
             registrieren_benutzername_textBox = new TextBox();
             registrieren_beenden_button = new Button();
+            registrieren_panel11 = new Panel();
+            registrieren_panel12 = new Panel();
+            registrieren_pictureBox3 = new PictureBox();
+            registrieren_pictureBox2 = new PictureBox();
+            registrieren_label = new Label();
+            registrieren_panel13 = new Panel();
             ((System.ComponentModel.ISupportInitialize)registrieren_background_pictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)regestrieren_schneeflocken_pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)registrieren_schneeflocken_pictureBox2).BeginInit();
             registrieren_panel1.SuspendLayout();
             registrieren_panel2.SuspendLayout();
             registrieren_panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)login_nutzer_pictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)registrieren_pictureBox1).BeginInit();
             registrieren_panel10.SuspendLayout();
             registrieren_panel9.SuspendLayout();
             registrieren_panel8.SuspendLayout();
             registrieren_panel5.SuspendLayout();
             registrieren_panel4.SuspendLayout();
+            registrieren_panel11.SuspendLayout();
+            registrieren_panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)registrieren_pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)registrieren_pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // registrieren_background_pictureBox
@@ -132,7 +142,7 @@
             // registrieren_panel3
             // 
             registrieren_panel3.BackColor = Color.White;
-            registrieren_panel3.Controls.Add(login_nutzer_pictureBox);
+            registrieren_panel3.Controls.Add(registrieren_pictureBox1);
             registrieren_panel3.Controls.Add(registrieren_panel10);
             registrieren_panel3.Controls.Add(registrieren_panel9);
             registrieren_panel3.Controls.Add(registrieren_panel8);
@@ -145,14 +155,14 @@
             registrieren_panel3.Size = new Size(480, 590);
             registrieren_panel3.TabIndex = 0;
             // 
-            // login_nutzer_pictureBox
+            // registrieren_pictureBox1
             // 
-            login_nutzer_pictureBox.Image = (Image)resources.GetObject("login_nutzer_pictureBox.Image");
-            login_nutzer_pictureBox.Location = new Point(165, 10);
-            login_nutzer_pictureBox.Name = "login_nutzer_pictureBox";
-            login_nutzer_pictureBox.Size = new Size(150, 150);
-            login_nutzer_pictureBox.TabIndex = 7;
-            login_nutzer_pictureBox.TabStop = false;
+            registrieren_pictureBox1.Image = (Image)resources.GetObject("registrieren_pictureBox1.Image");
+            registrieren_pictureBox1.Location = new Point(165, 10);
+            registrieren_pictureBox1.Name = "registrieren_pictureBox1";
+            registrieren_pictureBox1.Size = new Size(150, 150);
+            registrieren_pictureBox1.TabIndex = 7;
+            registrieren_pictureBox1.TabStop = false;
             // 
             // registrieren_panel10
             // 
@@ -292,6 +302,67 @@
             registrieren_beenden_button.UseVisualStyleBackColor = false;
             registrieren_beenden_button.Click += registrieren_beenden_button_Click;
             // 
+            // registrieren_panel11
+            // 
+            registrieren_panel11.BackColor = Color.White;
+            registrieren_panel11.Controls.Add(registrieren_panel12);
+            registrieren_panel11.Location = new Point(550, 115);
+            registrieren_panel11.Name = "registrieren_panel11";
+            registrieren_panel11.Size = new Size(500, 80);
+            registrieren_panel11.TabIndex = 15;
+            // 
+            // registrieren_panel12
+            // 
+            registrieren_panel12.BackColor = Color.FromArgb(31, 82, 75);
+            registrieren_panel12.Controls.Add(registrieren_pictureBox3);
+            registrieren_panel12.Controls.Add(registrieren_pictureBox2);
+            registrieren_panel12.Controls.Add(registrieren_label);
+            registrieren_panel12.Controls.Add(registrieren_panel13);
+            registrieren_panel12.Location = new Point(5, 5);
+            registrieren_panel12.Name = "registrieren_panel12";
+            registrieren_panel12.Size = new Size(490, 70);
+            registrieren_panel12.TabIndex = 0;
+            // 
+            // registrieren_pictureBox3
+            // 
+            registrieren_pictureBox3.BackColor = Color.White;
+            registrieren_pictureBox3.Image = (Image)resources.GetObject("registrieren_pictureBox3.Image");
+            registrieren_pictureBox3.Location = new Point(425, 5);
+            registrieren_pictureBox3.Name = "registrieren_pictureBox3";
+            registrieren_pictureBox3.Size = new Size(60, 60);
+            registrieren_pictureBox3.TabIndex = 11;
+            registrieren_pictureBox3.TabStop = false;
+            // 
+            // registrieren_pictureBox2
+            // 
+            registrieren_pictureBox2.BackColor = Color.White;
+            registrieren_pictureBox2.Image = (Image)resources.GetObject("registrieren_pictureBox2.Image");
+            registrieren_pictureBox2.Location = new Point(5, 5);
+            registrieren_pictureBox2.Name = "registrieren_pictureBox2";
+            registrieren_pictureBox2.Size = new Size(60, 60);
+            registrieren_pictureBox2.TabIndex = 1;
+            registrieren_pictureBox2.TabStop = false;
+            // 
+            // registrieren_label
+            // 
+            registrieren_label.BackColor = Color.White;
+            registrieren_label.Font = new Font("Tahoma", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            registrieren_label.ForeColor = Color.FromArgb(31, 82, 75);
+            registrieren_label.Location = new Point(65, 7);
+            registrieren_label.Name = "registrieren_label";
+            registrieren_label.Size = new Size(360, 55);
+            registrieren_label.TabIndex = 0;
+            registrieren_label.Text = "Registrierung";
+            registrieren_label.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // registrieren_panel13
+            // 
+            registrieren_panel13.BackColor = Color.White;
+            registrieren_panel13.Location = new Point(5, 5);
+            registrieren_panel13.Name = "registrieren_panel13";
+            registrieren_panel13.Size = new Size(480, 60);
+            registrieren_panel13.TabIndex = 5;
+            // 
             // Registrieren
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -299,6 +370,7 @@
             BackColor = Color.FromArgb(31, 82, 75);
             ClientSize = new Size(1600, 900);
             ControlBox = false;
+            Controls.Add(registrieren_panel11);
             Controls.Add(registrieren_beenden_button);
             Controls.Add(registrieren_panel1);
             Controls.Add(registrieren_schneeflocken_pictureBox2);
@@ -319,7 +391,7 @@
             registrieren_panel1.ResumeLayout(false);
             registrieren_panel2.ResumeLayout(false);
             registrieren_panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)login_nutzer_pictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)registrieren_pictureBox1).EndInit();
             registrieren_panel10.ResumeLayout(false);
             registrieren_panel10.PerformLayout();
             registrieren_panel9.ResumeLayout(false);
@@ -330,6 +402,10 @@
             registrieren_panel5.PerformLayout();
             registrieren_panel4.ResumeLayout(false);
             registrieren_panel4.PerformLayout();
+            registrieren_panel11.ResumeLayout(false);
+            registrieren_panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)registrieren_pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)registrieren_pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -355,7 +431,13 @@
         private TextBox registrieren_vorname_textBox;
         private Panel registrieren_panel9;
         private TextBox registrieren_name_textBox;
-        private PictureBox login_nutzer_pictureBox;
+        private PictureBox registrieren_pictureBox1;
         private Button registrieren_beenden_button;
+        private Panel registrieren_panel11;
+        private Panel registrieren_panel12;
+        private PictureBox registrieren_pictureBox3;
+        private PictureBox registrieren_pictureBox2;
+        private Label registrieren_label;
+        private Panel registrieren_panel13;
     }
 }
