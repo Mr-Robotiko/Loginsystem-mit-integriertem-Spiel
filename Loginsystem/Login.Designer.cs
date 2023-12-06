@@ -40,21 +40,19 @@
             login_panel4 = new Panel();
             login_benutzername_textBox = new TextBox();
             login_beenden_button = new Button();
-            login_schneeflocken_pictureBox3 = new PictureBox();
-            login_schneeflocken_pictureBox4 = new PictureBox();
             login_schneeflocken_pictureBox2 = new PictureBox();
             login_schneeflocken_pictureBox1 = new PictureBox();
             login_panel6 = new Panel();
             login_panel7 = new Panel();
+            pictureBox1 = new PictureBox();
             login_panel2.SuspendLayout();
             login_panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)login_nutzer_pictureBox).BeginInit();
             login_panel5.SuspendLayout();
             login_panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)login_schneeflocken_pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)login_schneeflocken_pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)login_schneeflocken_pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)login_schneeflocken_pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // login_panel1
@@ -173,34 +171,14 @@
             login_beenden_button.UseVisualStyleBackColor = false;
             login_beenden_button.Click += login_beenden_button_Click;
             // 
-            // login_schneeflocken_pictureBox3
-            // 
-            login_schneeflocken_pictureBox3.BackColor = Color.White;
-            login_schneeflocken_pictureBox3.Image = (Image)resources.GetObject("login_schneeflocken_pictureBox3.Image");
-            login_schneeflocken_pictureBox3.Location = new Point(1350, 0);
-            login_schneeflocken_pictureBox3.Name = "login_schneeflocken_pictureBox3";
-            login_schneeflocken_pictureBox3.Size = new Size(71, 450);
-            login_schneeflocken_pictureBox3.TabIndex = 4;
-            login_schneeflocken_pictureBox3.TabStop = false;
-            // 
-            // login_schneeflocken_pictureBox4
-            // 
-            login_schneeflocken_pictureBox4.BackColor = Color.White;
-            login_schneeflocken_pictureBox4.Image = (Image)resources.GetObject("login_schneeflocken_pictureBox4.Image");
-            login_schneeflocken_pictureBox4.Location = new Point(1350, 450);
-            login_schneeflocken_pictureBox4.Name = "login_schneeflocken_pictureBox4";
-            login_schneeflocken_pictureBox4.Size = new Size(71, 450);
-            login_schneeflocken_pictureBox4.TabIndex = 5;
-            login_schneeflocken_pictureBox4.TabStop = false;
-            // 
             // login_schneeflocken_pictureBox2
             // 
             login_schneeflocken_pictureBox2.BackColor = Color.White;
             login_schneeflocken_pictureBox2.Image = (Image)resources.GetObject("login_schneeflocken_pictureBox2.Image");
-            login_schneeflocken_pictureBox2.Location = new Point(179, 450);
+            login_schneeflocken_pictureBox2.Location = new Point(1350, 0);
             login_schneeflocken_pictureBox2.Name = "login_schneeflocken_pictureBox2";
-            login_schneeflocken_pictureBox2.Size = new Size(71, 450);
-            login_schneeflocken_pictureBox2.TabIndex = 7;
+            login_schneeflocken_pictureBox2.Size = new Size(71, 900);
+            login_schneeflocken_pictureBox2.TabIndex = 4;
             login_schneeflocken_pictureBox2.TabStop = false;
             // 
             // login_schneeflocken_pictureBox1
@@ -210,7 +188,7 @@
             login_schneeflocken_pictureBox1.InitialImage = null;
             login_schneeflocken_pictureBox1.Location = new Point(179, 0);
             login_schneeflocken_pictureBox1.Name = "login_schneeflocken_pictureBox1";
-            login_schneeflocken_pictureBox1.Size = new Size(71, 450);
+            login_schneeflocken_pictureBox1.Size = new Size(71, 900);
             login_schneeflocken_pictureBox1.TabIndex = 6;
             login_schneeflocken_pictureBox1.TabStop = false;
             // 
@@ -230,6 +208,15 @@
             login_panel7.Size = new Size(81, 900);
             login_panel7.TabIndex = 9;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1600, 900);
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -237,15 +224,14 @@
             BackColor = Color.FromArgb(31, 82, 75);
             ClientSize = new Size(1600, 900);
             ControlBox = false;
-            Controls.Add(login_schneeflocken_pictureBox2);
             Controls.Add(login_schneeflocken_pictureBox1);
-            Controls.Add(login_schneeflocken_pictureBox4);
-            Controls.Add(login_schneeflocken_pictureBox3);
+            Controls.Add(login_schneeflocken_pictureBox2);
             Controls.Add(login_beenden_button);
             Controls.Add(login_panel2);
             Controls.Add(login_panel1);
             Controls.Add(login_panel6);
             Controls.Add(login_panel7);
+            Controls.Add(pictureBox1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             MaximumSize = new Size(1600, 900);
@@ -260,10 +246,9 @@
             login_panel5.PerformLayout();
             login_panel4.ResumeLayout(false);
             login_panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)login_schneeflocken_pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)login_schneeflocken_pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)login_schneeflocken_pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)login_schneeflocken_pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -280,11 +265,10 @@
         private Button login_abbrechen_button;
         private PictureBox login_nutzer_pictureBox;
         private Button login_beenden_button;
-        private PictureBox login_schneeflocken_pictureBox3;
-        private PictureBox login_schneeflocken_pictureBox4;
         private PictureBox login_schneeflocken_pictureBox2;
         private PictureBox login_schneeflocken_pictureBox1;
         private Panel login_panel6;
         private Panel login_panel7;
+        private PictureBox pictureBox1;
     }
 }
