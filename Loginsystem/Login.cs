@@ -22,5 +22,10 @@ namespace Loginsystem
         {
             Application.Exit();
         }
+
+        private void login_abbrechen_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

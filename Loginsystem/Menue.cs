@@ -25,14 +25,14 @@ namespace Loginsystem
 
         private void menue_anmelden_button_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
+            Login loginForm = new Login();
+            loginForm.Show();
         }
 
         private void menue_registrieren_button_Click(object sender, EventArgs e)
         {
-            Registrieren registrieren = new Registrieren();
-            registrieren.Show();
+            Registrieren registrierenForm = new Registrieren();
+            registrierenForm.Show();
         }
     }
 }

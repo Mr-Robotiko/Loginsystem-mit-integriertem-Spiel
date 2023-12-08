@@ -249,6 +249,7 @@
             registrieren_abbrechen_button.TabIndex = 2;
             registrieren_abbrechen_button.Text = "Abbrechen";
             registrieren_abbrechen_button.UseVisualStyleBackColor = false;
+            registrieren_abbrechen_button.Click += registrieren_abbrechen_button_Click;
             // 
             // registrieren_panel5
             // 

@@ -178,6 +178,7 @@
             login_abbrechen_button.TabIndex = 2;
             login_abbrechen_button.Text = "Abbrechen";
             login_abbrechen_button.UseVisualStyleBackColor = false;
+            login_abbrechen_button.Click += login_abbrechen_button_Click;
             // 
             // login_panel5
             // 
