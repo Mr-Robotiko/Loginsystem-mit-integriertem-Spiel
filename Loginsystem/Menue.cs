@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Loginsystem
 {
@@ -19,7 +20,23 @@ namespace Loginsystem
 
         private void menue_beenden_button_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void menue_anmelden_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Login login = new Login();
+            login.Show();
+        }
+
+        private void menue_registrieren_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Registrieren registrieren = new Registrieren();
+            registrieren.Show();
         }
     }
 }

@@ -168,6 +168,7 @@
             menue_anmelden_button.TabIndex = 3;
             menue_anmelden_button.Text = "Anmelden";
             menue_anmelden_button.UseVisualStyleBackColor = false;
+            menue_anmelden_button.Click += menue_anmelden_button_Click;
             // 
             // menue_registrieren_button
             // 
@@ -181,6 +182,7 @@
             menue_registrieren_button.TabIndex = 2;
             menue_registrieren_button.Text = "Registrieren";
             menue_registrieren_button.UseVisualStyleBackColor = false;
+            menue_registrieren_button.Click += menue_registrieren_button_Click;
             // 
             // menue_panel6
             // 

@@ -19,7 +19,7 @@ namespace Loginsystem
 
         private void registrieren_beenden_button_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
