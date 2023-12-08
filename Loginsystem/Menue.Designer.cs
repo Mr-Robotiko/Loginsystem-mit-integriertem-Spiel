@@ -122,9 +122,9 @@
             // 
             menue_panel3.BackColor = Color.White;
             menue_panel3.Controls.Add(menue_panel4);
-            menue_panel3.Location = new Point(550, 300);
+            menue_panel3.Location = new Point(550, 370);
             menue_panel3.Name = "menue_panel3";
-            menue_panel3.Size = new Size(500, 400);
+            menue_panel3.Size = new Size(500, 330);
             menue_panel3.TabIndex = 5;
             // 
             // menue_panel4
@@ -133,7 +133,7 @@
             menue_panel4.Controls.Add(menue_panel5);
             menue_panel4.Location = new Point(5, 5);
             menue_panel4.Name = "menue_panel4";
-            menue_panel4.Size = new Size(490, 390);
+            menue_panel4.Size = new Size(490, 320);
             menue_panel4.TabIndex = 2;
             // 
             // menue_panel5
@@ -144,7 +144,7 @@
             menue_panel5.Controls.Add(menue_registrieren_button);
             menue_panel5.Location = new Point(5, 5);
             menue_panel5.Name = "menue_panel5";
-            menue_panel5.Size = new Size(480, 380);
+            menue_panel5.Size = new Size(480, 310);
             menue_panel5.TabIndex = 0;
             // 
             // menue_pictureBox1
@@ -162,7 +162,7 @@
             menue_anmelden_button.FlatStyle = FlatStyle.Flat;
             menue_anmelden_button.Font = new Font("Tahoma", 16.2F);
             menue_anmelden_button.ForeColor = Color.White;
-            menue_anmelden_button.Location = new Point(10, 260);
+            menue_anmelden_button.Location = new Point(10, 190);
             menue_anmelden_button.Name = "menue_anmelden_button";
             menue_anmelden_button.Size = new Size(460, 45);
             menue_anmelden_button.TabIndex = 3;
@@ -175,7 +175,7 @@
             menue_registrieren_button.FlatStyle = FlatStyle.Flat;
             menue_registrieren_button.Font = new Font("Tahoma", 16.2F);
             menue_registrieren_button.ForeColor = Color.White;
-            menue_registrieren_button.Location = new Point(10, 320);
+            menue_registrieren_button.Location = new Point(10, 250);
             menue_registrieren_button.Name = "menue_registrieren_button";
             menue_registrieren_button.Size = new Size(460, 45);
             menue_registrieren_button.TabIndex = 2;
@@ -186,7 +186,7 @@
             // 
             menue_panel6.BackColor = Color.White;
             menue_panel6.Controls.Add(menue_panel7);
-            menue_panel6.Location = new Point(550, 225);
+            menue_panel6.Location = new Point(550, 295);
             menue_panel6.Name = "menue_panel6";
             menue_panel6.Size = new Size(500, 80);
             menue_panel6.TabIndex = 6;
