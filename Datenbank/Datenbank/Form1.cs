@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace Datenbank
 {
@@ -15,6 +16,12 @@ namespace Datenbank
         public Form1()
         {
             InitializeComponent();
+            string connectionString = ConfigurationManager.ConnectionStrings["Datenbank.Properties.Settings.DBConnectionString"].ConnectionString;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
