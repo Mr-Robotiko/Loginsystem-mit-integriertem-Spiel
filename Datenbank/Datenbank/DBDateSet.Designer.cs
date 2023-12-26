@@ -20,25 +20,21 @@ namespace Datenbank {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DBDateSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet : global::System.Data.DataSet {
+    public partial class DBDateSet : global::System.Data.DataSet {
         
         private StatisticDataTable tableStatistic;
         
         private User1DataTable tableUser1;
         
-        private WrapperDataTable tableWrapper;
-        
-        private global::System.Data.DataRelation relationStatistic_FK;
-        
-        private global::System.Data.DataRelation relationUser_FK;
+        private global::System.Data.DataRelation relationUser_ID_FK;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DataSet() {
+        public DBDateSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -49,7 +45,7 @@ namespace Datenbank {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DBDateSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -67,9 +63,6 @@ namespace Datenbank {
                 }
                 if ((ds.Tables["User1"] != null)) {
                     base.Tables.Add(new User1DataTable(ds.Tables["User1"]));
-                }
-                if ((ds.Tables["Wrapper"] != null)) {
-                    base.Tables.Add(new WrapperDataTable(ds.Tables["Wrapper"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -106,16 +99,6 @@ namespace Datenbank {
         public User1DataTable User1 {
             get {
                 return this.tableUser1;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public WrapperDataTable Wrapper {
-            get {
-                return this.tableWrapper;
             }
         }
         
@@ -161,7 +144,7 @@ namespace Datenbank {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet cln = ((DataSet)(base.Clone()));
+            DBDateSet cln = ((DBDateSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -191,9 +174,6 @@ namespace Datenbank {
                 }
                 if ((ds.Tables["User1"] != null)) {
                     base.Tables.Add(new User1DataTable(ds.Tables["User1"]));
-                }
-                if ((ds.Tables["Wrapper"] != null)) {
-                    base.Tables.Add(new WrapperDataTable(ds.Tables["Wrapper"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -240,38 +220,25 @@ namespace Datenbank {
                     this.tableUser1.InitVars();
                 }
             }
-            this.tableWrapper = ((WrapperDataTable)(base.Tables["Wrapper"]));
-            if ((initTable == true)) {
-                if ((this.tableWrapper != null)) {
-                    this.tableWrapper.InitVars();
-                }
-            }
-            this.relationStatistic_FK = this.Relations["Statistic_FK"];
-            this.relationUser_FK = this.Relations["User_FK"];
+            this.relationUser_ID_FK = this.Relations["User_ID_FK"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet";
+            this.DataSetName = "DBDateSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet.xsd";
+            this.Namespace = "http://tempuri.org/DBDateSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableStatistic = new StatisticDataTable();
             base.Tables.Add(this.tableStatistic);
             this.tableUser1 = new User1DataTable();
             base.Tables.Add(this.tableUser1);
-            this.tableWrapper = new WrapperDataTable();
-            base.Tables.Add(this.tableWrapper);
-            this.relationStatistic_FK = new global::System.Data.DataRelation("Statistic_FK", new global::System.Data.DataColumn[] {
-                        this.tableStatistic.Statistic_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableWrapper.FK_StatisticColumn}, false);
-            this.Relations.Add(this.relationStatistic_FK);
-            this.relationUser_FK = new global::System.Data.DataRelation("User_FK", new global::System.Data.DataColumn[] {
+            this.relationUser_ID_FK = new global::System.Data.DataRelation("User_ID_FK", new global::System.Data.DataColumn[] {
                         this.tableUser1.User_IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableWrapper.FK_UserColumn}, false);
-            this.Relations.Add(this.relationUser_FK);
+                        this.tableStatistic.FK_User_IDColumn}, false);
+            this.Relations.Add(this.relationUser_ID_FK);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -288,12 +255,6 @@ namespace Datenbank {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeWrapper() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -303,7 +264,7 @@ namespace Datenbank {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet ds = new DataSet();
+            DBDateSet ds = new DBDateSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -353,9 +314,6 @@ namespace Datenbank {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void User1RowChangeEventHandler(object sender, User1RowChangeEvent e);
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void WrapperRowChangeEventHandler(object sender, WrapperRowChangeEvent e);
-        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -370,6 +328,8 @@ namespace Datenbank {
             private global::System.Data.DataColumn columnTotal_time;
             
             private global::System.Data.DataColumn columnHighscore;
+            
+            private global::System.Data.DataColumn columnFK_User_ID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -438,6 +398,14 @@ namespace Datenbank {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn FK_User_IDColumn {
+                get {
+                    return this.columnFK_User_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -473,13 +441,17 @@ namespace Datenbank {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public StatisticRow AddStatisticRow(int Game_ID, int Total_time, int Highscore) {
+            public StatisticRow AddStatisticRow(int Game_ID, int Total_time, int Highscore, User1Row parentUser1RowByUser_ID_FK) {
                 StatisticRow rowStatisticRow = ((StatisticRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Game_ID,
                         Total_time,
-                        Highscore};
+                        Highscore,
+                        null};
+                if ((parentUser1RowByUser_ID_FK != null)) {
+                    columnValuesArray[4] = parentUser1RowByUser_ID_FK[0];
+                }
                 rowStatisticRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStatisticRow);
                 return rowStatisticRow;
@@ -513,6 +485,7 @@ namespace Datenbank {
                 this.columnGame_ID = base.Columns["Game_ID"];
                 this.columnTotal_time = base.Columns["Total_time"];
                 this.columnHighscore = base.Columns["Highscore"];
+                this.columnFK_User_ID = base.Columns["FK_User_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -526,6 +499,8 @@ namespace Datenbank {
                 base.Columns.Add(this.columnTotal_time);
                 this.columnHighscore = new global::System.Data.DataColumn("Highscore", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHighscore);
+                this.columnFK_User_ID = new global::System.Data.DataColumn("FK_User_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFK_User_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnStatistic_ID}, true));
                 this.columnStatistic_ID.AutoIncrement = true;
@@ -537,6 +512,7 @@ namespace Datenbank {
                 this.columnGame_ID.AllowDBNull = false;
                 this.columnTotal_time.AllowDBNull = false;
                 this.columnHighscore.AllowDBNull = false;
+                this.columnFK_User_ID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -604,7 +580,7 @@ namespace Datenbank {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet ds = new DataSet();
+                DBDateSet ds = new DBDateSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -945,7 +921,7 @@ namespace Datenbank {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet ds = new DataSet();
+                DBDateSet ds = new DBDateSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -964,334 +940,6 @@ namespace Datenbank {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "User1DataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class WrapperDataTable : global::System.Data.TypedTableBase<WrapperRow> {
-            
-            private global::System.Data.DataColumn columnWrapper_ID;
-            
-            private global::System.Data.DataColumn columnFK_User;
-            
-            private global::System.Data.DataColumn columnFK_Statistic;
-            
-            private global::System.Data.DataColumn columnDate;
-            
-            private global::System.Data.DataColumn columnTime;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WrapperDataTable() {
-                this.TableName = "Wrapper";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal WrapperDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected WrapperDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Wrapper_IDColumn {
-                get {
-                    return this.columnWrapper_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn FK_UserColumn {
-                get {
-                    return this.columnFK_User;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn FK_StatisticColumn {
-                get {
-                    return this.columnFK_Statistic;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn DateColumn {
-                get {
-                    return this.columnDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn TimeColumn {
-                get {
-                    return this.columnTime;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WrapperRow this[int index] {
-                get {
-                    return ((WrapperRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event WrapperRowChangeEventHandler WrapperRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event WrapperRowChangeEventHandler WrapperRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event WrapperRowChangeEventHandler WrapperRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event WrapperRowChangeEventHandler WrapperRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddWrapperRow(WrapperRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WrapperRow AddWrapperRow(User1Row parentUser1RowByUser_FK, StatisticRow parentStatisticRowByStatistic_FK, System.DateTime Date, int Time) {
-                WrapperRow rowWrapperRow = ((WrapperRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null,
-                        null,
-                        Date,
-                        Time};
-                if ((parentUser1RowByUser_FK != null)) {
-                    columnValuesArray[1] = parentUser1RowByUser_FK[0];
-                }
-                if ((parentStatisticRowByStatistic_FK != null)) {
-                    columnValuesArray[2] = parentStatisticRowByStatistic_FK[0];
-                }
-                rowWrapperRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowWrapperRow);
-                return rowWrapperRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WrapperRow FindByWrapper_ID(int Wrapper_ID) {
-                return ((WrapperRow)(this.Rows.Find(new object[] {
-                            Wrapper_ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                WrapperDataTable cln = ((WrapperDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new WrapperDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal void InitVars() {
-                this.columnWrapper_ID = base.Columns["Wrapper_ID"];
-                this.columnFK_User = base.Columns["FK_User"];
-                this.columnFK_Statistic = base.Columns["FK_Statistic"];
-                this.columnDate = base.Columns["Date"];
-                this.columnTime = base.Columns["Time"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            private void InitClass() {
-                this.columnWrapper_ID = new global::System.Data.DataColumn("Wrapper_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWrapper_ID);
-                this.columnFK_User = new global::System.Data.DataColumn("FK_User", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFK_User);
-                this.columnFK_Statistic = new global::System.Data.DataColumn("FK_Statistic", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFK_Statistic);
-                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate);
-                this.columnTime = new global::System.Data.DataColumn("Time", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTime);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnWrapper_ID}, true));
-                this.columnWrapper_ID.AutoIncrement = true;
-                this.columnWrapper_ID.AutoIncrementSeed = -1;
-                this.columnWrapper_ID.AutoIncrementStep = -1;
-                this.columnWrapper_ID.AllowDBNull = false;
-                this.columnWrapper_ID.ReadOnly = true;
-                this.columnWrapper_ID.Unique = true;
-                this.columnFK_User.AllowDBNull = false;
-                this.columnFK_Statistic.AllowDBNull = false;
-                this.columnDate.AllowDBNull = false;
-                this.columnTime.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WrapperRow NewWrapperRow() {
-                return ((WrapperRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new WrapperRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(WrapperRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.WrapperRowChanged != null)) {
-                    this.WrapperRowChanged(this, new WrapperRowChangeEvent(((WrapperRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.WrapperRowChanging != null)) {
-                    this.WrapperRowChanging(this, new WrapperRowChangeEvent(((WrapperRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.WrapperRowDeleted != null)) {
-                    this.WrapperRowDeleted(this, new WrapperRowChangeEvent(((WrapperRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.WrapperRowDeleting != null)) {
-                    this.WrapperRowDeleting(this, new WrapperRowChangeEvent(((WrapperRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveWrapperRow(WrapperRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet ds = new DataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "WrapperDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1392,12 +1040,23 @@ namespace Datenbank {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WrapperRow[] GetWrapperRows() {
-                if ((this.Table.ChildRelations["Statistic_FK"] == null)) {
-                    return new WrapperRow[0];
+            public int FK_User_ID {
+                get {
+                    return ((int)(this[this.tableStatistic.FK_User_IDColumn]));
                 }
-                else {
-                    return ((WrapperRow[])(base.GetChildRows(this.Table.ChildRelations["Statistic_FK"])));
+                set {
+                    this[this.tableStatistic.FK_User_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public User1Row User1Row {
+                get {
+                    return ((User1Row)(this.GetParentRow(this.Table.ParentRelations["User_ID_FK"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["User_ID_FK"]);
                 }
             }
         }
@@ -1484,104 +1143,12 @@ namespace Datenbank {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WrapperRow[] GetWrapperRows() {
-                if ((this.Table.ChildRelations["User_FK"] == null)) {
-                    return new WrapperRow[0];
+            public StatisticRow[] GetStatisticRows() {
+                if ((this.Table.ChildRelations["User_ID_FK"] == null)) {
+                    return new StatisticRow[0];
                 }
                 else {
-                    return ((WrapperRow[])(base.GetChildRows(this.Table.ChildRelations["User_FK"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class WrapperRow : global::System.Data.DataRow {
-            
-            private WrapperDataTable tableWrapper;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal WrapperRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableWrapper = ((WrapperDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Wrapper_ID {
-                get {
-                    return ((int)(this[this.tableWrapper.Wrapper_IDColumn]));
-                }
-                set {
-                    this[this.tableWrapper.Wrapper_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int FK_User {
-                get {
-                    return ((int)(this[this.tableWrapper.FK_UserColumn]));
-                }
-                set {
-                    this[this.tableWrapper.FK_UserColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int FK_Statistic {
-                get {
-                    return ((int)(this[this.tableWrapper.FK_StatisticColumn]));
-                }
-                set {
-                    this[this.tableWrapper.FK_StatisticColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Date {
-                get {
-                    return ((global::System.DateTime)(this[this.tableWrapper.DateColumn]));
-                }
-                set {
-                    this[this.tableWrapper.DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Time {
-                get {
-                    return ((int)(this[this.tableWrapper.TimeColumn]));
-                }
-                set {
-                    this[this.tableWrapper.TimeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public StatisticRow StatisticRow {
-                get {
-                    return ((StatisticRow)(this.GetParentRow(this.Table.ParentRelations["Statistic_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Statistic_FK"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public User1Row User1Row {
-                get {
-                    return ((User1Row)(this.GetParentRow(this.Table.ParentRelations["User_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["User_FK"]);
+                    return ((StatisticRow[])(base.GetChildRows(this.Table.ChildRelations["User_ID_FK"])));
                 }
             }
         }
@@ -1653,43 +1220,9 @@ namespace Datenbank {
                 }
             }
         }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class WrapperRowChangeEvent : global::System.EventArgs {
-            
-            private WrapperRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WrapperRowChangeEvent(WrapperRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WrapperRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
     }
 }
-namespace Datenbank.DataSetTableAdapters {
+namespace Datenbank.DBDateSetTableAdapters {
     
     
     /// <summary>
@@ -1817,38 +1350,42 @@ namespace Datenbank.DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Game_ID", "Game_ID");
             tableMapping.ColumnMappings.Add("Total_time", "Total_time");
             tableMapping.ColumnMappings.Add("Highscore", "Highscore");
+            tableMapping.ColumnMappings.Add("FK_User_ID", "FK_User_ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Statistic] WHERE (([Statistic_ID] = @Original_Statistic_ID) AN" +
                 "D ([Game_ID] = @Original_Game_ID) AND ([Total_time] = @Original_Total_time) AND " +
-                "([Highscore] = @Original_Highscore))";
+                "([Highscore] = @Original_Highscore) AND ([FK_User_ID] = @Original_FK_User_ID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Statistic_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Statistic_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Game_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Game_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Highscore", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Highscore", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FK_User_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_User_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Statistic] ([Game_ID], [Total_time], [Highscore]) VALUES (@Gam" +
-                "e_ID, @Total_time, @Highscore);\r\nSELECT Statistic_ID, Game_ID, Total_time, Highs" +
-                "core FROM Statistic WHERE (Statistic_ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Statistic] ([Game_ID], [Total_time], [Highscore], [FK_User_ID]) VALUES (@Game_ID, @Total_time, @Highscore, @FK_User_ID);
+SELECT Statistic_ID, Game_ID, Total_time, Highscore, FK_User_ID FROM Statistic WHERE (Statistic_ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Game_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Game_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Highscore", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Highscore", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FK_User_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_User_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Statistic] SET [Game_ID] = @Game_ID, [Total_time] = @Total_time, [Highscore] = @Highscore WHERE (([Statistic_ID] = @Original_Statistic_ID) AND ([Game_ID] = @Original_Game_ID) AND ([Total_time] = @Original_Total_time) AND ([Highscore] = @Original_Highscore));
-SELECT Statistic_ID, Game_ID, Total_time, Highscore FROM Statistic WHERE (Statistic_ID = @Statistic_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Statistic] SET [Game_ID] = @Game_ID, [Total_time] = @Total_time, [Highscore] = @Highscore, [FK_User_ID] = @FK_User_ID WHERE (([Statistic_ID] = @Original_Statistic_ID) AND ([Game_ID] = @Original_Game_ID) AND ([Total_time] = @Original_Total_time) AND ([Highscore] = @Original_Highscore) AND ([FK_User_ID] = @Original_FK_User_ID));
+SELECT Statistic_ID, Game_ID, Total_time, Highscore, FK_User_ID FROM Statistic WHERE (Statistic_ID = @Statistic_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Game_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Game_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Highscore", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Highscore", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FK_User_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_User_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Statistic_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Statistic_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Game_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Game_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total_time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Highscore", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Highscore", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FK_User_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_User_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Statistic_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Statistic_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1865,7 +1402,8 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore FROM Statistic WHERE (Statis
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Statistic_ID, Game_ID, Total_time, Highscore FROM dbo.Statistic";
+            this._commandCollection[0].CommandText = "SELECT Statistic_ID, Game_ID, Total_time, Highscore, FK_User_ID FROM dbo.Statisti" +
+                "c";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1873,7 +1411,7 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore FROM Statistic WHERE (Statis
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet.StatisticDataTable dataTable) {
+        public virtual int Fill(DBDateSet.StatisticDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1886,9 +1424,9 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore FROM Statistic WHERE (Statis
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet.StatisticDataTable GetData() {
+        public virtual DBDateSet.StatisticDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet.StatisticDataTable dataTable = new DataSet.StatisticDataTable();
+            DBDateSet.StatisticDataTable dataTable = new DBDateSet.StatisticDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1896,14 +1434,14 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore FROM Statistic WHERE (Statis
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet.StatisticDataTable dataTable) {
+        public virtual int Update(DBDateSet.StatisticDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet dataSet) {
+        public virtual int Update(DBDateSet dataSet) {
             return this.Adapter.Update(dataSet, "Statistic");
         }
         
@@ -1926,11 +1464,12 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore FROM Statistic WHERE (Statis
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Statistic_ID, int Original_Game_ID, int Original_Total_time, int Original_Highscore) {
+        public virtual int Delete(int Original_Statistic_ID, int Original_Game_ID, int Original_Total_time, int Original_Highscore, int Original_FK_User_ID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Statistic_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Game_ID));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Total_time));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Highscore));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_FK_User_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1951,10 +1490,11 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore FROM Statistic WHERE (Statis
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Game_ID, int Total_time, int Highscore) {
+        public virtual int Insert(int Game_ID, int Total_time, int Highscore, int FK_User_ID) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Game_ID));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Total_time));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Highscore));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(FK_User_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1975,15 +1515,17 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore FROM Statistic WHERE (Statis
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Game_ID, int Total_time, int Highscore, int Original_Statistic_ID, int Original_Game_ID, int Original_Total_time, int Original_Highscore, int Statistic_ID) {
+        public virtual int Update(int Game_ID, int Total_time, int Highscore, int FK_User_ID, int Original_Statistic_ID, int Original_Game_ID, int Original_Total_time, int Original_Highscore, int Original_FK_User_ID, int Statistic_ID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Game_ID));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Total_time));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Highscore));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Statistic_ID));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Game_ID));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Total_time));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Highscore));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Statistic_ID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(FK_User_ID));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Statistic_ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Game_ID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Total_time));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Highscore));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_FK_User_ID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Statistic_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2004,8 +1546,8 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore FROM Statistic WHERE (Statis
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Game_ID, int Total_time, int Highscore, int Original_Statistic_ID, int Original_Game_ID, int Original_Total_time, int Original_Highscore) {
-            return this.Update(Game_ID, Total_time, Highscore, Original_Statistic_ID, Original_Game_ID, Original_Total_time, Original_Highscore, Original_Statistic_ID);
+        public virtual int Update(int Game_ID, int Total_time, int Highscore, int FK_User_ID, int Original_Statistic_ID, int Original_Game_ID, int Original_Total_time, int Original_Highscore, int Original_FK_User_ID) {
+            return this.Update(Game_ID, Total_time, Highscore, FK_User_ID, Original_Statistic_ID, Original_Game_ID, Original_Total_time, Original_Highscore, Original_FK_User_ID, Original_Statistic_ID);
         }
     }
     
@@ -2197,7 +1739,7 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet.User1DataTable dataTable) {
+        public virtual int Fill(DBDateSet.User1DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2210,9 +1752,9 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet.User1DataTable GetData() {
+        public virtual DBDateSet.User1DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet.User1DataTable dataTable = new DataSet.User1DataTable();
+            DBDateSet.User1DataTable dataTable = new DBDateSet.User1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2220,14 +1762,14 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet.User1DataTable dataTable) {
+        public virtual int Update(DBDateSet.User1DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet dataSet) {
+        public virtual int Update(DBDateSet dataSet) {
             return this.Adapter.Update(dataSet, "User1");
         }
         
@@ -2410,332 +1952,6 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
     }
     
     /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class WrapperTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public WrapperTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Wrapper";
-            tableMapping.ColumnMappings.Add("Wrapper_ID", "Wrapper_ID");
-            tableMapping.ColumnMappings.Add("FK_User", "FK_User");
-            tableMapping.ColumnMappings.Add("FK_Statistic", "FK_Statistic");
-            tableMapping.ColumnMappings.Add("Date", "Date");
-            tableMapping.ColumnMappings.Add("Time", "Time");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Wrapper] WHERE (([Wrapper_ID] = @Original_Wrapper_ID) AND ([FK" +
-                "_User] = @Original_FK_User) AND ([FK_Statistic] = @Original_FK_Statistic) AND ([" +
-                "Date] = @Original_Date) AND ([Time] = @Original_Time))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Wrapper_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wrapper_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FK_User", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_User", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FK_Statistic", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_Statistic", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Wrapper] ([FK_User], [FK_Statistic], [Date], [Time]) VALUES (@" +
-                "FK_User, @FK_Statistic, @Date, @Time);\r\nSELECT Wrapper_ID, FK_User, FK_Statistic" +
-                ", Date, Time FROM Wrapper WHERE (Wrapper_ID = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FK_User", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_User", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FK_Statistic", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_Statistic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Wrapper] SET [FK_User] = @FK_User, [FK_Statistic] = @FK_Statistic, [Date] = @Date, [Time] = @Time WHERE (([Wrapper_ID] = @Original_Wrapper_ID) AND ([FK_User] = @Original_FK_User) AND ([FK_Statistic] = @Original_FK_Statistic) AND ([Date] = @Original_Date) AND ([Time] = @Original_Time));
-SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper_ID = @Wrapper_ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FK_User", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_User", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FK_Statistic", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_Statistic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Wrapper_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Wrapper_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FK_User", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_User", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FK_Statistic", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FK_Statistic", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Time", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Wrapper_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Wrapper_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Datenbank.Properties.Settings.Default.DBConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM dbo.Wrapper";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet.WrapperDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet.WrapperDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet.WrapperDataTable dataTable = new DataSet.WrapperDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet.WrapperDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Wrapper");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Wrapper_ID, int Original_FK_User, int Original_FK_Statistic, System.DateTime Original_Date, int Original_Time) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Wrapper_ID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_FK_User));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_FK_Statistic));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_Date));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Time));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int FK_User, int FK_Statistic, System.DateTime Date, int Time) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(FK_User));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(FK_Statistic));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Date));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Time));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int FK_User, int FK_Statistic, System.DateTime Date, int Time, int Original_Wrapper_ID, int Original_FK_User, int Original_FK_Statistic, System.DateTime Original_Date, int Original_Time, int Wrapper_ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(FK_User));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(FK_Statistic));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Date));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Time));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Wrapper_ID));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_FK_User));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_FK_Statistic));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_Date));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Time));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Wrapper_ID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int FK_User, int FK_Statistic, System.DateTime Date, int Time, int Original_Wrapper_ID, int Original_FK_User, int Original_FK_Statistic, System.DateTime Original_Date, int Original_Time) {
-            return this.Update(FK_User, FK_Statistic, Date, Time, Original_Wrapper_ID, Original_FK_User, Original_FK_Statistic, Original_Date, Original_Time, Original_Wrapper_ID);
-        }
-    }
-    
-    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2750,8 +1966,6 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
         private StatisticTableAdapter _statisticTableAdapter;
         
         private User1TableAdapter _user1TableAdapter;
-        
-        private WrapperTableAdapter _wrapperTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -2798,20 +2012,6 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public WrapperTableAdapter WrapperTableAdapter {
-            get {
-                return this._wrapperTableAdapter;
-            }
-            set {
-                this._wrapperTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -2837,10 +2037,6 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
                             && (this._user1TableAdapter.Connection != null))) {
                     return this._user1TableAdapter.Connection;
                 }
-                if (((this._wrapperTableAdapter != null) 
-                            && (this._wrapperTableAdapter.Connection != null))) {
-                    return this._wrapperTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -2860,9 +2056,6 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
                 if ((this._user1TableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._wrapperTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -2872,17 +2065,8 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DBDateSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._statisticTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Statistic.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._statisticTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._user1TableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.User1.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -2892,12 +2076,12 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._wrapperTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Wrapper.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._statisticTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Statistic.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._wrapperTableAdapter.Update(updatedRows));
+                    result = (result + this._statisticTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -2909,16 +2093,8 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DBDateSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._statisticTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Statistic.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._statisticTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._user1TableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.User1.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -2927,11 +2103,11 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._wrapperTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Wrapper.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._statisticTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Statistic.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._wrapperTableAdapter.Update(addedRows));
+                    result = (result + this._statisticTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -2943,13 +2119,13 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DBDateSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._wrapperTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Wrapper.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._statisticTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Statistic.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._wrapperTableAdapter.Update(deletedRows));
+                    result = (result + this._statisticTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -2958,14 +2134,6 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._user1TableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._statisticTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Statistic.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._statisticTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -3001,7 +2169,7 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(DataSet dataSet) {
+        public virtual int UpdateAll(DBDateSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
@@ -3015,11 +2183,6 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
             }
             if (((this._user1TableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._user1TableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Für alle von einem TableAdapterManager verwalteten Instanzen von TableAdapter mus" +
-                        "s die gleiche Verbindungszeichenfolge verwendet werden.");
-            }
-            if (((this._wrapperTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._wrapperTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Für alle von einem TableAdapterManager verwalteten Instanzen von TableAdapter mus" +
                         "s die gleiche Verbindungszeichenfolge verwendet werden.");
             }
@@ -3073,15 +2236,6 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
                     if (this._user1TableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._user1TableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._user1TableAdapter.Adapter);
-                    }
-                }
-                if ((this._wrapperTableAdapter != null)) {
-                    revertConnections.Add(this._wrapperTableAdapter, this._wrapperTableAdapter.Connection);
-                    this._wrapperTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._wrapperTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._wrapperTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._wrapperTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._wrapperTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -3149,10 +2303,6 @@ SELECT Wrapper_ID, FK_User, FK_Statistic, Date, Time FROM Wrapper WHERE (Wrapper
                 if ((this._user1TableAdapter != null)) {
                     this._user1TableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._user1TableAdapter]));
                     this._user1TableAdapter.Transaction = null;
-                }
-                if ((this._wrapperTableAdapter != null)) {
-                    this._wrapperTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._wrapperTableAdapter]));
-                    this._wrapperTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
