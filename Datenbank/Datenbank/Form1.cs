@@ -35,17 +35,34 @@ namespace Datenbank
 
         public void ShowUsers()
         {
-            string querry = "SELECT * FROM USER1";
-            SqlDataAdapter sqlAdapter = new SqlDataAdapter(querry, sqlConnection);
+            // Alle zusäzlichen SQL Anweisungen bitte im Try-Catch Format schreiben
+            // Sollten Daten abgefragt werden, die vielleicht verändert werden, kompiliert der Code trotzdem.
+            try
+            {
+                string querry = "SELECT * FROM USER1";
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(querry, sqlConnection);
 
-            // Um Daten auszugeben, müssen Objekte erzeugt werden. Bspw. DataTable --> ListBox
-            // Wie sollen die Daten ausgegeben werden...
+                // Um Daten auszugeben, müssen Objekte erzeugt werden. Bspw. DataTable --> ListBox
+                // Wie sollen die Daten ausgegeben werden...
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
 
         public void ShowStatistics()
         {
-            string querry = "SELECT * FROM STATISTIC";
-            SqlDataAdapter sqlAdapter = new SqlDataAdapter(querry, sqlConnection);
+            try
+            {
+                string querry = "SELECT * FROM STATISTIC";
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(querry, sqlConnection);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }          
         }
     }
 }
