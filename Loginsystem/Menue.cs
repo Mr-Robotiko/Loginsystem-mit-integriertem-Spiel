@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace Loginsystem
 {
-    public partial class Login : Form
+    public partial class Menue : Form
     {
-        public Login()
+        public Menue()
         {
             InitializeComponent();
-
-            // Placeholder Zuordnung
-            benutzername_textBox.AddPlaceholder("Benutzername");
-            passwort_textBox.AddPlaceholder("Passwort");
         }
 
         private void beenden_button_Click(object sender, EventArgs e)
@@ -26,9 +22,16 @@ namespace Loginsystem
             Application.Exit();
         }
 
-        private void zurueck_button_Click(object sender, EventArgs e)
+        private void anmelden_button_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Login loginForm = new Login();
+            loginForm.Show();
+        }
+
+        private void registrieren_button_Click(object sender, EventArgs e)
+        {
+            Registrieren registrierenForm = new Registrieren();
+            registrierenForm.Show();
         }
     }
 }

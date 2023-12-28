@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace Loginsystem
 {
-    public partial class Login : Form
+    public partial class Registrieren : Form
     {
-        public Login()
+        public Registrieren()
         {
             InitializeComponent();
 
             // Placeholder Zuordnung
+            vorname_textBox.AddPlaceholder("Vorname");
+            name_textBox.AddPlaceholder("Name");
+            gebDatum_textBox.AddPlaceholder("Geburtsdatum");
             benutzername_textBox.AddPlaceholder("Benutzername");
             passwort_textBox.AddPlaceholder("Passwort");
         }
