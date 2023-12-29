@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Datenbank {
+namespace Loginsystem {
     
     
     /// <summary>
@@ -20,9 +20,9 @@ namespace Datenbank {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DBDateSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DBDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DBDateSet : global::System.Data.DataSet {
+    public partial class DBDataSet : global::System.Data.DataSet {
         
         private StatisticDataTable tableStatistic;
         
@@ -34,7 +34,7 @@ namespace Datenbank {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public DBDateSet() {
+        public DBDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -45,7 +45,7 @@ namespace Datenbank {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected DBDateSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -144,7 +144,7 @@ namespace Datenbank {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DBDateSet cln = ((DBDateSet)(base.Clone()));
+            DBDataSet cln = ((DBDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -226,9 +226,9 @@ namespace Datenbank {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DBDateSet";
+            this.DataSetName = "DBDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DBDateSet.xsd";
+            this.Namespace = "http://tempuri.org/DBDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableStatistic = new StatisticDataTable();
@@ -264,7 +264,7 @@ namespace Datenbank {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DBDateSet ds = new DBDateSet();
+            DBDataSet ds = new DBDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -580,7 +580,7 @@ namespace Datenbank {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DBDateSet ds = new DBDateSet();
+                DBDataSet ds = new DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -921,7 +921,7 @@ namespace Datenbank {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DBDateSet ds = new DBDateSet();
+                DBDataSet ds = new DBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1222,7 +1222,7 @@ namespace Datenbank {
         }
     }
 }
-namespace Datenbank.DBDateSetTableAdapters {
+namespace Loginsystem.DBDataSetTableAdapters {
     
     
     /// <summary>
@@ -1393,7 +1393,7 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore, FK_User_ID FROM Statistic W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Datenbank.Properties.Settings.Default.DBConnectionString;
+            this._connection.ConnectionString = global::Loginsystem.Properties.Settings.Default.connectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1411,7 +1411,7 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore, FK_User_ID FROM Statistic W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DBDateSet.StatisticDataTable dataTable) {
+        public virtual int Fill(DBDataSet.StatisticDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1424,9 +1424,9 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore, FK_User_ID FROM Statistic W
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DBDateSet.StatisticDataTable GetData() {
+        public virtual DBDataSet.StatisticDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DBDateSet.StatisticDataTable dataTable = new DBDateSet.StatisticDataTable();
+            DBDataSet.StatisticDataTable dataTable = new DBDataSet.StatisticDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1434,14 +1434,14 @@ SELECT Statistic_ID, Game_ID, Total_time, Highscore, FK_User_ID FROM Statistic W
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DBDateSet.StatisticDataTable dataTable) {
+        public virtual int Update(DBDataSet.StatisticDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DBDateSet dataSet) {
+        public virtual int Update(DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Statistic");
         }
         
@@ -1722,7 +1722,7 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Datenbank.Properties.Settings.Default.DBConnectionString;
+            this._connection.ConnectionString = global::Loginsystem.Properties.Settings.Default.connectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1739,7 +1739,7 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DBDateSet.User1DataTable dataTable) {
+        public virtual int Fill(DBDataSet.User1DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1752,9 +1752,9 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DBDateSet.User1DataTable GetData() {
+        public virtual DBDataSet.User1DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DBDateSet.User1DataTable dataTable = new DBDateSet.User1DataTable();
+            DBDataSet.User1DataTable dataTable = new DBDataSet.User1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1762,14 +1762,14 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DBDateSet.User1DataTable dataTable) {
+        public virtual int Update(DBDataSet.User1DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DBDateSet dataSet) {
+        public virtual int Update(DBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "User1");
         }
         
@@ -2065,7 +2065,7 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(DBDateSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._user1TableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.User1.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -2093,7 +2093,7 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(DBDateSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._user1TableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.User1.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -2119,7 +2119,7 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(DBDateSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._statisticTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Statistic.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -2169,7 +2169,7 @@ SELECT User_ID, Prename, Name, Birthday, Rights_Status, Password FROM User1 WHER
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(DBDateSet dataSet) {
+        public virtual int UpdateAll(DBDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
