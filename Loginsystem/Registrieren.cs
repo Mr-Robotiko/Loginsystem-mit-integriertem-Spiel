@@ -30,10 +30,18 @@ namespace Loginsystem
             this.Close();
         }
 
+
+        // Nicht löschen ... Wichtig -> Verbindung zur DB
         static string connectionString = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=DB;Data Source=DESKTOP-G9GPCBT\SQLEXPRESS";
 
         static SqlConnection connection = new SqlConnection(connectionString);
 
+
+        /// <summary>
+        /// Regristrastion von User mit einer MS-SQL Server Abnbindung.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void registrieren_button_Click(object sender, EventArgs e)
         {
             try
@@ -54,7 +62,6 @@ namespace Loginsystem
                     command.Parameters.AddWithValue("@Password", passwort_textBox.Text);
                     command.Parameters.AddWithValue("@Rights_Status", 'U');
                    
-
                     command.ExecuteNonQuery();
                     connection.Close();
 
