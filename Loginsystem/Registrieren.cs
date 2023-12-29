@@ -33,9 +33,11 @@ namespace Loginsystem
 
 
         // Nicht löschen ... Wichtig -> Verbindung zur DB
-        static string connectionString = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=DB;Data Source=DESKTOP-G9GPCBT\SQLEXPRESS";
+        //static string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=DESKTOP-G9GPCBT\SQLEXPRESS";
 
-        static SqlConnection connection = new SqlConnection(connectionString);
+        static string connstring = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=DESKTOP-G9GPCBT\SQLEXPRESS";
+
+        static SqlConnection connection = new SqlConnection(connstring);
 
 
         /// <summary>
