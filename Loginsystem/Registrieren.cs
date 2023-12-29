@@ -27,7 +27,8 @@ namespace Loginsystem
 
         private void zurueck_button_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Menue MenueForm = new Menue();
+            MenueForm.Show();
         }
 
 
