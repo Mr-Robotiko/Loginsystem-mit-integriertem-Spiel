@@ -261,6 +261,7 @@
             this.anmelden_button.TabIndex = 9;
             this.anmelden_button.Text = "Anmelden";
             this.anmelden_button.UseVisualStyleBackColor = false;
+            this.anmelden_button.Click += new System.EventHandler(this.anmelden_button_Click);
             // 
             // zurueck_button
             // 

@@ -33,7 +33,7 @@ namespace Loginsystem
 
 
         // Nicht löschen ... Wichtig -> Verbindung zur DB
-        static string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=79.234.72.128,1433";
+        static string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=93.200.58.119,1433";
 
         static SqlConnection connection = new SqlConnection(connectionString);
 
@@ -45,33 +45,49 @@ namespace Loginsystem
         /// <param name="e"></param>
         private void registrieren_button_Click(object sender, EventArgs e)
         {
+            string checkUsername = "SELECT Username FROM User1 WHERE username ='" + benutzername_textBox.Text.ToString() + "'";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(checkUsername, connection);
+
+            DataTable dt = new DataTable();
+
+            adapter.Fill(dt);
+
             try
             {
-                if(connection.State == ConnectionState.Closed)
+                if (connection.State == ConnectionState.Closed)
                 {
                     connection.Open();
                 }
 
-                if(vorname_textBox.Text != "" && name_textBox.Text != "" && gebDatum_textBox.Text != "" && passwort_textBox.Text != "" 
+                if (vorname_textBox.Text != "" && name_textBox.Text != "" && gebDatum_textBox.Text != "" && passwort_textBox.Text != ""
                     && benutzername_textBox.Text != "")
                 {
-                    SqlCommand command = new SqlCommand("INSERT INTO User1 VALUES(@Prename, @Name, @Birthday,@Rights_Status, @Password)", connection);
 
-                    command.Parameters.AddWithValue("@Prename", vorname_textBox.Text);
-                    command.Parameters.AddWithValue("@Name", name_textBox.Text);
-                    command.Parameters.AddWithValue("@Birthday", Convert.ToDateTime(gebDatum_textBox.Text));
-                    command.Parameters.AddWithValue("@Password", passwort_textBox.Text);
-                    command.Parameters.AddWithValue("@Rights_Status", 'U');
-                   
-                    command.ExecuteNonQuery();
-                    connection.Close();
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Benutzername schon vergeben");
+                    }
+                    else
+                    {
+                        SqlCommand command = new SqlCommand("INSERT INTO User1 VALUES(@Prename, @Name, @Birthday,@Rights_Status, @Password, @Username)", connection);
 
-                    MessageBox.Show("Erfolgreich regrisitriert");
+                        command.Parameters.AddWithValue("@Prename", vorname_textBox.Text);
+                        command.Parameters.AddWithValue("@Name", name_textBox.Text);
+                        command.Parameters.AddWithValue("@Birthday", Convert.ToDateTime(gebDatum_textBox.Text));
+                        command.Parameters.AddWithValue("@Password", passwort_textBox.Text);
+                        command.Parameters.AddWithValue("@Rights_Status", 'U');
+                        command.Parameters.AddWithValue("@Username", benutzername_textBox.Text);
 
-                    ClearFieldds();
-                    AddPlaceholder();
+                        command.ExecuteNonQuery();
+                        connection.Close();
+
+                        MessageBox.Show("Erfolgreich regrisitriert");
+
+                        ClearFields();
+                        AddPlaceholder();
+                    }
                 }
-
                 else
                 {
                     MessageBox.Show("Du bist bereits regristriert");
@@ -82,9 +98,8 @@ namespace Loginsystem
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-        private void ClearFieldds()
+        private void ClearFields()
         {
             vorname_textBox.Text = "";
             name_textBox.Text = "";
