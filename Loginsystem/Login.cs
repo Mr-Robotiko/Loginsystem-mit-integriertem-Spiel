@@ -14,11 +14,6 @@ namespace Loginsystem
 {
     public partial class Login : Form
     {
-        // Nicht löschen --- Connection String zur DB
-        static string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=93.200.58.119,1433";
-
-        static SqlConnection connection = new SqlConnection(connectionString);
-
         public Login()
         {
             InitializeComponent();
@@ -37,8 +32,10 @@ namespace Loginsystem
 
         private void anmelden_button_Click(object sender, EventArgs e)
         {
+            // Nicht löschen --- Connection String zur DB
+             string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=93.200.58.119,1433";
 
-            AddPlaceholder();
+             SqlConnection connection = new SqlConnection(connectionString);
 
             try
             {
@@ -57,6 +54,7 @@ namespace Loginsystem
 
                     if (dataTable.Rows.Count == 1)
                     {
+                        MessageBox.Show("Herzlich Willkommen" +" "+ benutzername_textBox.Text);
                         this.Hide();
                         new Menue().Show();
                     }
