@@ -17,6 +17,9 @@ namespace Game_Spaceshooter
         int playerSpeed;
         Random rnd;
 
+        PictureBox[] bullets;
+        int bulletSpeed;
+
         public Form1()
         {
             InitializeComponent();
@@ -24,12 +27,29 @@ namespace Game_Spaceshooter
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //backgroundspeed ist die Geschwindigkeit der Sterne bzw.
-            //um wie viele Pixel sie sich nach unten bewegen
+            //...speed ist die Geschwindigkeit der PictureBox bzw.
+            //um wie viele Pixel sie sich beweget, wenn der Timer tickt
             backgroundspeed = 4;
             playerSpeed = 4;
             stars = new PictureBox[10];
             rnd = new Random();
+
+            bullets = new PictureBox[3];
+            bulletSpeed = 20;
+
+            //Lädt die Bilder für die Geschosse
+            Image bullet = Image.FromFile(@"asserts\munition.png");
+
+            //Erstellt die Geschosse und fügt sie dem Form hinzu
+            for (int i = 0; i < bullets.Length; i++)
+            {
+                bullets[i] = new PictureBox();
+                bullets[i].Size = new Size(8, 8);
+                bullets[i].Image = bullet;
+                bullets[i].SizeMode = PictureBoxSizeMode.Zoom;
+                bullets[i].BorderStyle = BorderStyle.None;
+                this.Controls.Add(bullets[i]);
+            }
 
             //Erstellt die Sterne und fügt sie dem Form hinzu
             //Es gibt 10 Sterne, 5 kleine und 5 große, damit nicht alle gleich aussehen
@@ -157,6 +177,24 @@ namespace Game_Spaceshooter
             if(e.KeyCode == Keys.W)
             {
                 moveUpTimer.Stop();
+            }
+        }
+
+        //Timer, der die Geschosse bewegt
+        private void moveBulletsTimer_Tick(object sender, EventArgs e)
+        {
+            for (int i = 0; i < bullets.Length; i++)
+            {
+                if (bullets[i].Top > 0)
+                {
+                    bullets[i].Visible = true;
+                    bullets[i].Top -= bulletSpeed;
+                }
+                else
+                {
+                    bullets[i].Visible = false;
+                    bullets[i].Location = new Point(Player.Location.X + 20, Player.Location.Y);
+                }
             }
         }
     }
