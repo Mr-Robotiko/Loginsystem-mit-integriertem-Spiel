@@ -14,6 +14,7 @@ namespace Game_Spaceshooter
     {
         PictureBox[] stars;
         int backgroundspeed;
+        int playerSpeed;
         Random rnd;
 
         public Form1()
@@ -26,6 +27,7 @@ namespace Game_Spaceshooter
             //backgroundspeed ist die Geschwindigkeit der Sterne bzw.
             //um wie viele Pixel sie sich nach unten bewegen
             backgroundspeed = 4;
+            playerSpeed = 4;
             stars = new PictureBox[10];
             rnd = new Random();
 
@@ -72,6 +74,89 @@ namespace Game_Spaceshooter
                 {
                     stars[i].Top = -stars[i].Height;
                 }
+            }
+        }
+
+        //Timer, der den Spieler nach links bewegt
+        private void moveLeftTimer_Tick(object sender, EventArgs e)
+        {
+            if(Player.Left > 10)
+            {
+                Player.Left -= playerSpeed;
+            }
+        }
+
+        //Timer, der den Spieler nach rechts bewegt
+        private void moveRightTimer_Tick(object sender, EventArgs e)
+        {
+            if(Player.Left < 460)
+            {
+                Player.Left += playerSpeed;
+            }
+        }
+
+        //Timer, der den Spieler nach unten bewegt
+        private void moveDownTimer_Tick(object sender, EventArgs e)
+        {
+            if(Player.Top < 360)
+            {
+                Player.Top += playerSpeed;
+            }
+        }
+
+        //Timer, der den Spieler nach oben bewegt
+        private void moveUpTimer_Tick(object sender, EventArgs e)
+        {
+            if(Player.Top > 10)
+            {
+                Player.Top -= playerSpeed;
+            }
+        }
+
+        //Wenn eine Taste gedrückt wird, wird der entsprechende Timer gestartet
+        //Der Spieler bewegt sich dann in die entsprechende Richtung
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.A)
+            {
+                moveLeftTimer.Start();
+            }
+
+            if(e.KeyCode == Keys.D)
+            {
+                moveRightTimer.Start();
+            }
+
+            if (e.KeyCode == Keys.S)
+            {
+                moveDownTimer.Start();
+            }
+
+            if (e.KeyCode == Keys.W)
+            {
+                moveUpTimer.Start();
+            }
+        }
+
+        //Wenn eine Taste losgelassen wird, wird der entsprechende Timer gestoppt
+        //Der Spieler bewegt sich dann nicht mehr in die entsprechende Richtung
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.A)
+            {
+                moveLeftTimer.Stop();
+            }
+            if(e.KeyCode == Keys.D)
+            {
+                moveRightTimer.Stop();
+            }
+            if(e.KeyCode == Keys.S)
+            {
+                moveDownTimer.Stop();
+            }
+            if(e.KeyCode == Keys.W)
+            {
+                moveUpTimer.Stop();
             }
         }
     }
