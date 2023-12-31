@@ -33,7 +33,7 @@ namespace Loginsystem
         private void anmelden_button_Click(object sender, EventArgs e)
         {
             // Nicht löschen --- Connection String zur DB
-             string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=79.234.68.27,1433";
+             string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=DESKTOP-G9GPCBT\SQLEXPRESS,1433";
 
              SqlConnection connection = new SqlConnection(connectionString);
 
