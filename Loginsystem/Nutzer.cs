@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Loginsystem
 {
-    public partial class Menue : Form
+    public partial class Nutzer : Form
     {
-        public Menue()
+        public Nutzer()
         {
             InitializeComponent();
         }
@@ -22,18 +22,10 @@ namespace Loginsystem
             Application.Exit();
         }
 
-        private void anmelden_button_Click(object sender, EventArgs e)
+        private void zurueck_button_Click(object sender, EventArgs e)
         {
-            Login loginForm = new Login();
-            loginForm.Show();
-
-            this.Hide();
-        }
-
-        private void registrieren_button_Click(object sender, EventArgs e)
-        {
-            Registrieren registrierenForm = new Registrieren();
-            registrierenForm.Show();
+            Menue menueForm = new Menue();
+            menueForm.Show();
 
             this.Hide();
         }
