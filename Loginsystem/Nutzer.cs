@@ -19,6 +19,9 @@ namespace Loginsystem
             //FügeBeispieldatenHinzu();
         }
 
+        /// <summary>
+        /// Der Username aus dem Loginform wird hier übergeben.
+        /// </summary>
         public string Username
         {
             get { return this.nutzer_label.Text; }

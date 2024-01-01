@@ -14,6 +14,8 @@ namespace Loginsystem
 {
     public partial class Registrieren : Form
     {
+        bool isregistered = false;
+
         public Registrieren()
         {
             InitializeComponent();
@@ -46,15 +48,6 @@ namespace Loginsystem
             string connectionToday = connectionClass.Connection_Today();
             SqlConnection connection = new SqlConnection(connectionToday);
 
-
-            string checkUsername = "SELECT Username FROM User1 WHERE username ='" + benutzername_textBox.Text.ToString() + "'";
-
-            SqlDataAdapter adapter = new SqlDataAdapter(checkUsername, connection);
-
-            DataTable dt = new DataTable();
-
-            adapter.Fill(dt);
-
             try
             {
                 if (connection.State == ConnectionState.Closed)
@@ -66,11 +59,9 @@ namespace Loginsystem
                     && benutzername_textBox.Text != "")
                 {
 
-                    if (dt.Rows.Count > 0)
-                    {
-                        MessageBox.Show("Benutzername schon vergeben");
-                    }
-                    else
+                    checkUser(connection);
+
+                    if (!isregistered)
                     {
                         SqlCommand command = new SqlCommand("INSERT INTO User1 VALUES(@Prename, @Name, @Birthday,@Rights_Status, @Password, @Username)", connection);
 
@@ -90,11 +81,6 @@ namespace Loginsystem
                         AddPlaceholder();
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Du bist bereits regristriert");
-                }
-
             }
             catch (Exception ex)
             {
@@ -118,6 +104,23 @@ namespace Loginsystem
             gebDatum_textBox.AddPlaceholder("Geburtsdatum");
             benutzername_textBox.AddPlaceholder("Benutzername");
             passwort_textBox.AddPlaceholder("Passwort");
+        }
+        /// <summary>
+        /// Prüft, ob ein User bereits registriert wurde.
+        /// </summary>
+        /// <param name="connection"></param>
+        private void checkUser(SqlConnection connection)
+        {
+            string checkUsername = "SELECT Username FROM User1 WHERE username ='" + benutzername_textBox.Text.ToString() + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(checkUsername, connection);
+            DataTable dt = new DataTable();
+
+            adapter.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                MessageBox.Show("Benutzername schon vergeben");
+                isregistered = true;
+            }
         }
     }
 }
