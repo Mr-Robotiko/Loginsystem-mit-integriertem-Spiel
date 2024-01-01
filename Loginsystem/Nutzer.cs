@@ -16,7 +16,6 @@ namespace Loginsystem
         public Nutzer()
         {
             InitializeComponent();
-            //FügeBeispieldatenHinzu();
         }
 
         /// <summary>
@@ -27,35 +26,21 @@ namespace Loginsystem
             get { return this.nutzer_label.Text; }
             set { this.nutzer_label.Text = value; }
         }
-
-        private void FügeBeispieldatenHinzu()
-        {
-            string beispieltext1 = "Hallo, Ozkanaft_83!";
-            nutzer_label.Text = beispieltext1;
-
-            string beispieltext2 = "Persönlicher Highscore: 02367";
-            persoenlicherHighscore_label.Text = beispieltext2;
-
-            for (int i = 1; i <= 30; i++)
-            {
-                if (i <= 9)
-                {         
-                    globalerHighscore_listBox.Items.Add(i + ".   02367 - Ozkanaft_83");
-                }
-
-                else 
-                {
-                    globalerHighscore_listBox.Items.Add(i + ". 02367 - Ozkanaft_83");
-                }
-                
-            }
-        }
-
+        /// <summary>
+        /// Application wird geschlossen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void zurueck_button_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Zurück zum Menü
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             Menue menueForm = new Menue();

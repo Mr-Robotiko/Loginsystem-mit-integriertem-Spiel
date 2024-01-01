@@ -22,11 +22,21 @@ namespace Loginsystem
             AddPlaceholder();
         }
 
+        /// <summary>
+        /// Applikation wird beendet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void beenden_button_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Zurück zum Menü
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void zurueck_button_Click(object sender, EventArgs e)
         {
             Menue menueForm = new Menue();
