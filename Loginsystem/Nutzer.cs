@@ -15,6 +15,8 @@ namespace Loginsystem
         public Nutzer()
         {
             InitializeComponent();
+
+            FügeBeispieldatenHinzu();
         }
 
         private void beenden_button_Click(object sender, EventArgs e)
@@ -28,6 +30,24 @@ namespace Loginsystem
             menueForm.Show();
 
             this.Hide();
+        }
+
+        private void FügeBeispieldatenHinzu()
+        {
+            // Zehn Beispieldaten erstellen und zur ListBox hinzufügen
+            for (int i = 1; i <= 30; i++)
+            {
+                if (i <= 9)
+                {         
+                    globalerHighscore_listBox.Items.Add(i + ".   02367 - Ozkanaft_83");
+                }
+
+                else 
+                {
+                    globalerHighscore_listBox.Items.Add(i + ". 02367 - Ozkanaft_83");
+                }
+                
+            }
         }
     }
 }
