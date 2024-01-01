@@ -12,11 +12,17 @@ namespace Loginsystem
 {
     public partial class Nutzer : Form
     {
+
         public Nutzer()
         {
             InitializeComponent();
+            //FügeBeispieldatenHinzu();
+        }
 
-            FügeBeispieldatenHinzu();
+        public string Username
+        {
+            get { return this.nutzer_label.Text; }
+            set { this.nutzer_label.Text = value; }
         }
 
         private void FügeBeispieldatenHinzu()

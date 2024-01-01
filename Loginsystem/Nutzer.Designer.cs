@@ -81,13 +81,13 @@
             this.globalerHighscore_listBox.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.globalerHighscore_listBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.globalerHighscore_listBox.FormattingEnabled = true;
-            this.globalerHighscore_listBox.ItemHeight = 33;
+            this.globalerHighscore_listBox.ItemHeight = 27;
             this.globalerHighscore_listBox.Location = new System.Drawing.Point(4, 4);
             this.globalerHighscore_listBox.Margin = new System.Windows.Forms.Padding(0);
             this.globalerHighscore_listBox.MaximumSize = new System.Drawing.Size(370, 495);
             this.globalerHighscore_listBox.MinimumSize = new System.Drawing.Size(370, 495);
             this.globalerHighscore_listBox.Name = "globalerHighscore_listBox";
-            this.globalerHighscore_listBox.Size = new System.Drawing.Size(370, 495);
+            this.globalerHighscore_listBox.Size = new System.Drawing.Size(370, 486);
             this.globalerHighscore_listBox.TabIndex = 9;
             // 
             // globlerHighscore_panel1

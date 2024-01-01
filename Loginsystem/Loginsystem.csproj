@@ -79,6 +79,7 @@
       <DependentUpon>Registrieren.cs</DependentUpon>
     </Compile>
     <Compile Include="TextBoxErweiterung.cs" />
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,7 +34,7 @@ namespace Loginsystem
             this.Hide();
         }
 
-        private void anmelden_button_Click(object sender, EventArgs e)
+        public void anmelden_button_Click(object sender, EventArgs e)
         {
             // Nicht löschen --- Connection String zur DB
             ConnectionString connectionClass = new ConnectionString();
@@ -63,6 +64,10 @@ namespace Loginsystem
                         nutzerForm.Show();
 
                         this.Hide();
+
+                        Nutzer nutzer = new Nutzer();
+                        nutzer.Username = this.benutzername_textBox.Text;
+                        nutzer.Show();
                     }
                     else
                     {
