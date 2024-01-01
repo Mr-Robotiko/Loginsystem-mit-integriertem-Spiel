@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nutzer));
             this.globalerHighscore_listBox = new System.Windows.Forms.ListBox();
-            this.background_pictureBox = new System.Windows.Forms.PictureBox();
             this.globlerHighscore_panel1 = new System.Windows.Forms.Panel();
             this.globlerHighscore_panel2 = new System.Windows.Forms.Panel();
             this.glocken_pictureBox = new System.Windows.Forms.PictureBox();
@@ -50,7 +49,12 @@
             this.persoenlicherHighscore_pictureBox = new System.Windows.Forms.PictureBox();
             this.persoenlicherHighscore_panel3 = new System.Windows.Forms.Panel();
             this.persoenlicherHighscore_label = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.background_pictureBox)).BeginInit();
+            this.background_pictureBox = new System.Windows.Forms.PictureBox();
+            this.spielen_button = new System.Windows.Forms.Button();
+            this.spiel_panel1 = new System.Windows.Forms.Panel();
+            this.spiel_panel2 = new System.Windows.Forms.Panel();
+            this.spiel_panel3 = new System.Windows.Forms.Panel();
+            this.spiel_richTextBox = new System.Windows.Forms.RichTextBox();
             this.globlerHighscore_panel1.SuspendLayout();
             this.globlerHighscore_panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glocken_pictureBox)).BeginInit();
@@ -65,6 +69,10 @@
             this.persoenlicherHighscore_panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.persoenlicherHighscore_pictureBox)).BeginInit();
             this.persoenlicherHighscore_panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.background_pictureBox)).BeginInit();
+            this.spiel_panel1.SuspendLayout();
+            this.spiel_panel2.SuspendLayout();
+            this.spiel_panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // globalerHighscore_listBox
@@ -76,26 +84,17 @@
             this.globalerHighscore_listBox.ItemHeight = 33;
             this.globalerHighscore_listBox.Location = new System.Drawing.Point(4, 4);
             this.globalerHighscore_listBox.Margin = new System.Windows.Forms.Padding(0);
+            this.globalerHighscore_listBox.MaximumSize = new System.Drawing.Size(370, 495);
+            this.globalerHighscore_listBox.MinimumSize = new System.Drawing.Size(370, 495);
             this.globalerHighscore_listBox.Name = "globalerHighscore_listBox";
             this.globalerHighscore_listBox.Size = new System.Drawing.Size(370, 495);
             this.globalerHighscore_listBox.TabIndex = 9;
-            // 
-            // background_pictureBox
-            // 
-            this.background_pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("background_pictureBox.Image")));
-            this.background_pictureBox.Location = new System.Drawing.Point(0, 0);
-            this.background_pictureBox.MaximumSize = new System.Drawing.Size(1280, 720);
-            this.background_pictureBox.MinimumSize = new System.Drawing.Size(1280, 720);
-            this.background_pictureBox.Name = "background_pictureBox";
-            this.background_pictureBox.Size = new System.Drawing.Size(1280, 720);
-            this.background_pictureBox.TabIndex = 10;
-            this.background_pictureBox.TabStop = false;
             // 
             // globlerHighscore_panel1
             // 
             this.globlerHighscore_panel1.BackColor = System.Drawing.Color.White;
             this.globlerHighscore_panel1.Controls.Add(this.globlerHighscore_panel2);
-            this.globlerHighscore_panel1.Location = new System.Drawing.Point(856, 132);
+            this.globlerHighscore_panel1.Location = new System.Drawing.Point(864, 132);
             this.globlerHighscore_panel1.MaximumSize = new System.Drawing.Size(386, 54);
             this.globlerHighscore_panel1.MinimumSize = new System.Drawing.Size(386, 54);
             this.globlerHighscore_panel1.Name = "globlerHighscore_panel1";
@@ -156,7 +155,7 @@
             // 
             this.globalerHighscore_panel4.BackColor = System.Drawing.Color.White;
             this.globalerHighscore_panel4.Controls.Add(this.globalerHighscore_panel5);
-            this.globalerHighscore_panel4.Location = new System.Drawing.Point(856, 181);
+            this.globalerHighscore_panel4.Location = new System.Drawing.Point(864, 181);
             this.globalerHighscore_panel4.Margin = new System.Windows.Forms.Padding(0);
             this.globalerHighscore_panel4.MaximumSize = new System.Drawing.Size(386, 502);
             this.globalerHighscore_panel4.MinimumSize = new System.Drawing.Size(386, 502);
@@ -218,7 +217,7 @@
             this.abmelden_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.abmelden_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.abmelden_button.ForeColor = System.Drawing.Color.White;
-            this.abmelden_button.Location = new System.Drawing.Point(818, 0);
+            this.abmelden_button.Location = new System.Drawing.Point(826, 0);
             this.abmelden_button.Margin = new System.Windows.Forms.Padding(0);
             this.abmelden_button.Name = "abmelden_button";
             this.abmelden_button.Size = new System.Drawing.Size(190, 48);
@@ -263,8 +262,10 @@
             this.nutzer_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.nutzer_label.Location = new System.Drawing.Point(55, 1);
             this.nutzer_label.Margin = new System.Windows.Forms.Padding(0);
+            this.nutzer_label.MaximumSize = new System.Drawing.Size(746, 44);
+            this.nutzer_label.MinimumSize = new System.Drawing.Size(746, 44);
             this.nutzer_label.Name = "nutzer_label";
-            this.nutzer_label.Size = new System.Drawing.Size(588, 44);
+            this.nutzer_label.Size = new System.Drawing.Size(746, 44);
             this.nutzer_label.TabIndex = 7;
             this.nutzer_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -317,10 +318,79 @@
             this.persoenlicherHighscore_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.persoenlicherHighscore_label.Location = new System.Drawing.Point(38, 1);
             this.persoenlicherHighscore_label.Margin = new System.Windows.Forms.Padding(0);
+            this.persoenlicherHighscore_label.MaximumSize = new System.Drawing.Size(639, 38);
+            this.persoenlicherHighscore_label.MinimumSize = new System.Drawing.Size(639, 38);
             this.persoenlicherHighscore_label.Name = "persoenlicherHighscore_label";
             this.persoenlicherHighscore_label.Size = new System.Drawing.Size(639, 38);
             this.persoenlicherHighscore_label.TabIndex = 7;
             this.persoenlicherHighscore_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // background_pictureBox
+            // 
+            this.background_pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("background_pictureBox.Image")));
+            this.background_pictureBox.Location = new System.Drawing.Point(0, 0);
+            this.background_pictureBox.MaximumSize = new System.Drawing.Size(1280, 720);
+            this.background_pictureBox.MinimumSize = new System.Drawing.Size(1280, 720);
+            this.background_pictureBox.Name = "background_pictureBox";
+            this.background_pictureBox.Size = new System.Drawing.Size(1280, 720);
+            this.background_pictureBox.TabIndex = 10;
+            this.background_pictureBox.TabStop = false;
+            // 
+            // spielen_button
+            // 
+            this.spielen_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.spielen_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.spielen_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spielen_button.ForeColor = System.Drawing.Color.White;
+            this.spielen_button.Location = new System.Drawing.Point(15, 424);
+            this.spielen_button.Margin = new System.Windows.Forms.Padding(0);
+            this.spielen_button.Name = "spielen_button";
+            this.spielen_button.Size = new System.Drawing.Size(647, 48);
+            this.spielen_button.TabIndex = 17;
+            this.spielen_button.Text = "Spielen";
+            this.spielen_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.spielen_button.UseVisualStyleBackColor = false;
+            // 
+            // spiel_panel1
+            // 
+            this.spiel_panel1.BackColor = System.Drawing.Color.White;
+            this.spiel_panel1.Controls.Add(this.spiel_panel2);
+            this.spiel_panel1.Location = new System.Drawing.Point(30, 181);
+            this.spiel_panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.spiel_panel1.Name = "spiel_panel1";
+            this.spiel_panel1.Size = new System.Drawing.Size(693, 502);
+            this.spiel_panel1.TabIndex = 13;
+            // 
+            // spiel_panel2
+            // 
+            this.spiel_panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.spiel_panel2.Controls.Add(this.spiel_panel3);
+            this.spiel_panel2.Location = new System.Drawing.Point(4, 4);
+            this.spiel_panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.spiel_panel2.Name = "spiel_panel2";
+            this.spiel_panel2.Size = new System.Drawing.Size(685, 494);
+            this.spiel_panel2.TabIndex = 7;
+            // 
+            // spiel_panel3
+            // 
+            this.spiel_panel3.BackColor = System.Drawing.Color.White;
+            this.spiel_panel3.Controls.Add(this.spiel_richTextBox);
+            this.spiel_panel3.Controls.Add(this.spielen_button);
+            this.spiel_panel3.Location = new System.Drawing.Point(4, 4);
+            this.spiel_panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.spiel_panel3.Name = "spiel_panel3";
+            this.spiel_panel3.Size = new System.Drawing.Size(677, 486);
+            this.spiel_panel3.TabIndex = 7;
+            // 
+            // spiel_richTextBox
+            // 
+            this.spiel_richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.spiel_richTextBox.Font = new System.Drawing.Font("Tahoma", 16.2F);
+            this.spiel_richTextBox.Location = new System.Drawing.Point(8, 8);
+            this.spiel_richTextBox.Name = "spiel_richTextBox";
+            this.spiel_richTextBox.Size = new System.Drawing.Size(661, 400);
+            this.spiel_richTextBox.TabIndex = 18;
+            this.spiel_richTextBox.Text = "<SPIELBESCHREIBUNG>";
             // 
             // Nutzer
             // 
@@ -328,6 +398,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.spiel_panel1);
             this.Controls.Add(this.persoenlicherHighscore_panel1);
             this.Controls.Add(this.nutzer_panel1);
             this.Controls.Add(this.globalerHighscore_panel4);
@@ -342,7 +413,6 @@
             this.Name = "Nutzer";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.background_pictureBox)).EndInit();
             this.globlerHighscore_panel1.ResumeLayout(false);
             this.globlerHighscore_panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.glocken_pictureBox)).EndInit();
@@ -357,13 +427,16 @@
             this.persoenlicherHighscore_panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.persoenlicherHighscore_pictureBox)).EndInit();
             this.persoenlicherHighscore_panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.background_pictureBox)).EndInit();
+            this.spiel_panel1.ResumeLayout(false);
+            this.spiel_panel2.ResumeLayout(false);
+            this.spiel_panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.ListBox globalerHighscore_listBox;
-        private System.Windows.Forms.PictureBox background_pictureBox;
         private System.Windows.Forms.Panel globlerHighscore_panel1;
         private System.Windows.Forms.Panel globlerHighscore_panel2;
         private System.Windows.Forms.PictureBox glocken_pictureBox;
@@ -383,5 +456,11 @@
         private System.Windows.Forms.Label persoenlicherHighscore_label;
         private System.Windows.Forms.Button abmelden_button;
         private System.Windows.Forms.Button zurueck_button;
+        private System.Windows.Forms.PictureBox background_pictureBox;
+        private System.Windows.Forms.Button spielen_button;
+        private System.Windows.Forms.Panel spiel_panel1;
+        private System.Windows.Forms.Panel spiel_panel2;
+        private System.Windows.Forms.Panel spiel_panel3;
+        private System.Windows.Forms.RichTextBox spiel_richTextBox;
     }
 }
