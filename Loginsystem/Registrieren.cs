@@ -35,7 +35,7 @@ namespace Loginsystem
 
 
         // Nicht löschen ... Wichtig -> Verbindung zur DB
-        static string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=93.200.58.119,1433";
+        static string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=79.234.68.27,1433";
 
         static SqlConnection connection = new SqlConnection(connectionString);
 

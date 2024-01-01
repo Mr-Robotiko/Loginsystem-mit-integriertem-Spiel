@@ -6,3 +6,6 @@ Das Loginsystem ist an einer Datenbank von Microsoft SQL Server angebunden und m
 ## Wenn die lokale Datenbank nicht funktioniert, dann sind die Skripte unter "DB-Skripte zu finden"
 ## Der Connection String sollte sich mit der DB verbinden
 ## Die Datenquellen wurden bereits implementiert und es kann darauf zugegriffen werden
+
+# Wichtig - Frau Lewin: 
+## Der Server muss online sein. Stellen Sie bitte eine Anfrage an den Serveradmin (Raphael) um den Server online zu schalten.
