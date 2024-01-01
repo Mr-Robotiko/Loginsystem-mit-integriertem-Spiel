@@ -26,12 +26,16 @@ namespace Loginsystem
         {
             Login loginForm = new Login();
             loginForm.Show();
+
+            this.Hide();
         }
 
         private void registrieren_button_Click(object sender, EventArgs e)
         {
             Registrieren registrierenForm = new Registrieren();
             registrierenForm.Show();
+
+            this.Hide();
         }
     }
 }
