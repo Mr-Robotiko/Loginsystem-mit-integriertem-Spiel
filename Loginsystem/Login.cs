@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,11 +21,21 @@ namespace Loginsystem
             AddPlaceholder();
         }
 
+        /// <summary>
+        /// Applikation wird geschlossen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void beenden_button_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Zurück zum Menü
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void zurueck_button_Click(object sender, EventArgs e)
         {
             Menue menueForm = new Menue();
@@ -33,46 +44,23 @@ namespace Loginsystem
             this.Hide();
         }
 
-        private void anmelden_button_Click(object sender, EventArgs e)
+        public void anmelden_button_Click(object sender, EventArgs e)
         {
             // Nicht löschen --- Connection String zur DB
-             string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=79.234.68.27,1433";
-
-             SqlConnection connection = new SqlConnection(connectionString);
+            ConnectionString connectionClass = new ConnectionString();
+            string connectionToday = connectionClass.Connection_Today();
+            SqlConnection connection = new SqlConnection(connectionToday);
 
             try
             {
-                if (connection.State == ConnectionState.Closed)
-                {
-                    connection.Open();
-                }
+                CheckConnection(connection);
 
                 if (benutzername_textBox.Text != "" && passwort_textBox.Text != "")
                 {
-
-                    SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT Username, Password FROM User1 WHERE username='" + benutzername_textBox.Text.ToString() + "' AND password= '" + passwort_textBox.Text.ToString() + "'", connection);;
-                    DataTable dataTable = new DataTable();
-
-                    dataAdapter.Fill(dataTable);
-
-                    if (dataTable.Rows.Count == 1)
-                    {
-                        MessageBox.Show("Herzlich Willkommen" +" "+ benutzername_textBox.Text);
-
-                        Nutzer nutzerForm = new Nutzer();
-                        nutzerForm.Show();
-
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Falsches Passwort oder Username");
-                    }
-
+                    CheckLogin(connection);
                     ClearFields();
                     AddPlaceholder();
                 }
-
             }
             catch (Exception ex)
             {
@@ -80,6 +68,9 @@ namespace Loginsystem
             }
         }
 
+        /// <summary>
+        /// Platzhalter werden den Textboxen hinzugefügt
+        /// </summary>
         public void AddPlaceholder()
         {
             // Placeholder Zuordnung
@@ -87,10 +78,55 @@ namespace Loginsystem
             passwort_textBox.AddPlaceholder("Passwort");
         }
 
-        public void ClearFields()
+        /// <summary>
+        /// Die Felder der Tectboxen werden nach Eingabe gesäubert
+        /// </summary>
+        private void ClearFields()
         {
             benutzername_textBox.Text = "";
             passwort_textBox.Text = "";
+        }
+
+        /// <summary>
+        /// Die Verbindung wird geprüft
+        /// </summary>
+        /// <param name="connection"></param>
+        private void CheckConnection(SqlConnection connection)
+        {
+            if (connection.State == ConnectionState.Closed)
+            {
+                connection.Open();
+            }
+        }
+
+        /// <summary>
+        /// Der Login wird überprüft
+        /// </summary>
+        /// <param name="connection"></param>
+        private void CheckLogin(SqlConnection connection)
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT Username, Password FROM User1 WHERE username='" + benutzername_textBox.Text.ToString() + "' AND password= '" + passwort_textBox.Text.ToString() + "'", connection); ;
+            DataTable dataTable = new DataTable();
+
+            dataAdapter.Fill(dataTable);
+
+            if (dataTable.Rows.Count == 1)
+            {
+                MessageBox.Show("Herzlich Willkommen" + " " + benutzername_textBox.Text);
+
+                Nutzer nutzerForm = new Nutzer();
+                nutzerForm.Show();
+
+                this.Hide();
+
+                Nutzer nutzer = new Nutzer();
+                nutzer.Username = this.benutzername_textBox.Text;
+                nutzer.Show();
+            }
+            else
+            {
+                MessageBox.Show("Falsches Passwort oder Username");
+            }
         }
     }
 }

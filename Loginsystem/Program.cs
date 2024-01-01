@@ -16,7 +16,7 @@ namespace Loginsystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Nutzer());
+            Application.Run(new Menue());
         }
     }
 }
