@@ -33,13 +33,6 @@ namespace Loginsystem
             this.Hide();
         }
 
-
-        // Nicht löschen ... Wichtig -> Verbindung zur DB
-        static string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=79.234.68.27,1433";
-
-        static SqlConnection connection = new SqlConnection(connectionString);
-
-
         /// <summary>
         /// Regristrastion von User mit einer MS-SQL Server Abnbindung.
         /// </summary>
@@ -47,6 +40,13 @@ namespace Loginsystem
         /// <param name="e"></param>
         private void registrieren_button_Click(object sender, EventArgs e)
         {
+
+            // Nicht löschen ... Wichtig -> Verbindung zur DB
+            ConnectionString connectionClass = new ConnectionString();
+            string connectionToday = connectionClass.Connection_Today();
+            SqlConnection connection = new SqlConnection(connectionToday);
+
+
             string checkUsername = "SELECT Username FROM User1 WHERE username ='" + benutzername_textBox.Text.ToString() + "'";
 
             SqlDataAdapter adapter = new SqlDataAdapter(checkUsername, connection);
