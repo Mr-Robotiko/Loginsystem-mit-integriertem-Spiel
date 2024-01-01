@@ -44,7 +44,6 @@ namespace Loginsystem
 
             this.Hide();
         }
-
         /// <summary>
         /// Regristrastion von User mit einer MS-SQL Server Abnbindung.
         /// </summary>
