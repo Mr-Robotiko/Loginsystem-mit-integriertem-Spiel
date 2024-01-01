@@ -19,22 +19,14 @@ namespace Loginsystem
             FügeBeispieldatenHinzu();
         }
 
-        private void beenden_button_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void zurueck_button_Click(object sender, EventArgs e)
-        {
-            Menue menueForm = new Menue();
-            menueForm.Show();
-
-            this.Hide();
-        }
-
         private void FügeBeispieldatenHinzu()
         {
-            // Zehn Beispieldaten erstellen und zur ListBox hinzufügen
+            string beispieltext1 = "Hallo, Ozkanaft_83!";
+            nutzer_label.Text = beispieltext1;
+
+            string beispieltext2 = "Persönlicher Highscore: 02367";
+            persoenlicherHighscore_label.Text = beispieltext2;
+
             for (int i = 1; i <= 30; i++)
             {
                 if (i <= 9)
@@ -48,6 +40,19 @@ namespace Loginsystem
                 }
                 
             }
+        }
+
+        private void zurueck_button_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Menue menueForm = new Menue();
+            menueForm.Show();
+
+            this.Hide();
         }
     }
 }
