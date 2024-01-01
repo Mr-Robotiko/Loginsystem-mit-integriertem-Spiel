@@ -27,7 +27,10 @@ namespace Loginsystem
 
         private void zurueck_button_Click(object sender, EventArgs e)
         {
-            new Menue().Show();
+            Menue menueForm = new Menue();
+            menueForm.Show();
+
+            this.Hide();
         }
 
         private void anmelden_button_Click(object sender, EventArgs e)
@@ -55,8 +58,11 @@ namespace Loginsystem
                     if (dataTable.Rows.Count == 1)
                     {
                         MessageBox.Show("Herzlich Willkommen" +" "+ benutzername_textBox.Text);
+
+                        Nutzer nutzerForm = new Nutzer();
+                        nutzerForm.Show();
+
                         this.Hide();
-                        new Menue().Show();
                     }
                     else
                     {
