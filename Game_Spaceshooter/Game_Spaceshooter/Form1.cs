@@ -20,6 +20,9 @@ namespace Game_Spaceshooter
         PictureBox[] bullets;
         int bulletSpeed;
 
+        PictureBox[] enemies;
+        int enemySpeed;
+
         public Form1()
         {
             InitializeComponent();
@@ -37,8 +40,40 @@ namespace Game_Spaceshooter
             bullets = new PictureBox[3];
             bulletSpeed = 20;
 
-            //Lädt die Bilder für die Geschosse
+            enemySpeed = 4;
+
+            //Lädt die Bilder
             Image bullet = Image.FromFile(@"asserts\munition.png");
+            Image enemy1 = Image.FromFile(@"asserts\\E1.png");
+            Image enemy2 = Image.FromFile(@"asserts\\E2.png");
+            Image enemy3 = Image.FromFile(@"asserts\\E3.png");
+            Image boss1 = Image.FromFile(@"asserts\\Boss1.png");
+            Image boss2 = Image.FromFile(@"asserts\\Boss2.png");
+
+            enemies = new PictureBox[10];
+
+            //Erstellt die Gegner und fügt sie dem Form hinzu
+            for(int i = 0; i < enemies.Length; i++)
+            {
+                enemies[i] = new PictureBox();
+                enemies[i].Size = new Size(40, 40);
+                enemies[i].SizeMode = PictureBoxSizeMode.Zoom;
+                enemies[i].BorderStyle = BorderStyle.None;
+                enemies[i].Visible = false;
+                this.Controls.Add(enemies[i]);
+                enemies[i].Location = new Point(rnd.Next(10, this.Width - enemies[i].Width), rnd.Next(-500, -50));
+            }
+
+            enemies[0].Image = boss1;
+            enemies[1].Image = enemy2;
+            enemies[2].Image = enemy3;
+            enemies[3].Image = enemy3;
+            enemies[4].Image = enemy1;
+            enemies[5].Image = enemy3;
+            enemies[6].Image = enemy2;
+            enemies[7].Image = enemy3;
+            enemies[8].Image = enemy2;
+            enemies[9].Image = boss2;
 
             //Erstellt die Geschosse und fügt sie dem Form hinzu
             for (int i = 0; i < bullets.Length; i++)
@@ -194,6 +229,28 @@ namespace Game_Spaceshooter
                 {
                     bullets[i].Visible = false;
                     bullets[i].Location = new Point(Player.Location.X + 20, Player.Location.Y);
+                }
+            }
+        }
+
+        //Timer, der die Methode aufruft, die die Gegner bewegt
+        private void moveEnemiesTimer_Tick(object sender, EventArgs e)
+        {
+            MoveEnemies(enemies, enemySpeed);
+        }
+
+        //Methode, die die Gegner bewegt und dafür sorgt, dass sie wieder nach oben kommen
+        private void MoveEnemies(PictureBox[] enemiesA, int speed)
+        {
+
+            for (int i = 0; i < enemiesA.Length; i++)
+            {
+                enemiesA[i].Visible = true;
+                enemiesA[i].Top += speed;
+
+                if (enemiesA[i].Top > this.Height)
+                {
+                    enemies[i].Location = new Point(rnd.Next(10, this.Width - enemies[i].Width), rnd.Next(-500, -50));
                 }
             }
         }
