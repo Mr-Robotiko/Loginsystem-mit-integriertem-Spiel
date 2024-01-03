@@ -26,9 +26,16 @@ namespace Game_Spaceshooter
         PictureBox[] enemyBullets;
         int enemyBulletSpeed;
 
+        int score;
+        int level;
+        int difficulty;
+        bool pause;
+        bool gameIsOver;
+
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,6 +52,12 @@ namespace Game_Spaceshooter
 
             enemySpeed = 4;
             enemyBulletSpeed = 4;
+
+            score = 0;
+            level = 0;
+            difficulty = 9;
+            pause = false;
+            gameIsOver = false;
 
             //Lädt die Bilder
             Image bullet = Image.FromFile(@"asserts\munition.png");
@@ -190,25 +203,29 @@ namespace Game_Spaceshooter
         //Der Spieler bewegt sich dann in die entsprechende Richtung
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.A)
+            if (!pause)
             {
-                moveLeftTimer.Start();
+                if (e.KeyCode == Keys.A)
+                {
+                    moveLeftTimer.Start();
+                }
+
+                if (e.KeyCode == Keys.D)
+                {
+                    moveRightTimer.Start();
+                }
+
+                if (e.KeyCode == Keys.S)
+                {
+                    moveDownTimer.Start();
+                }
+
+                if (e.KeyCode == Keys.W)
+                {
+                    moveUpTimer.Start();
+                }
             }
 
-            if (e.KeyCode == Keys.D)
-            {
-                moveRightTimer.Start();
-            }
-
-            if (e.KeyCode == Keys.S)
-            {
-                moveDownTimer.Start();
-            }
-
-            if (e.KeyCode == Keys.W)
-            {
-                moveUpTimer.Start();
-            }
         }
 
         //Wenn eine Taste losgelassen wird, wird der entsprechende Timer gestoppt
@@ -230,6 +247,26 @@ namespace Game_Spaceshooter
             if (e.KeyCode == Keys.W)
             {
                 moveUpTimer.Stop();
+            }
+            if(e.KeyCode == Keys.Escape)
+            {
+                if (!gameIsOver)
+                {
+                    if(!pause)
+                    {
+                        StopTimer();
+                        pause = true;
+                        label.Location = new Point(this.Width / 2 - label.Width / 2, this.Height / 2 - label.Height);
+                        label.Text = "PAUSED";
+                        label.Visible = true;
+                    }
+                    else
+                    {
+                        StartTimer();
+                        pause = false;
+                        label.Visible = false;
+                    }
+                }
             }
         }
 
@@ -282,11 +319,25 @@ namespace Game_Spaceshooter
                 if (bullets[0].Bounds.IntersectsWith(enemies[i].Bounds))
                 {
                     enemies[i].Location = new Point(rnd.Next(10, this.Width - (enemies[i].Width * 2)), rnd.Next(-500, -50));
+                    score += 10;
+                    scoreLabel.Text = "SCORE: " + score.ToString();
+                    if(score % 500 == 0)
+                    {
+                        level += 1;
+                        lvlLabel.Text = (level < 10) ? "LEVEL: 0" + level.ToString() : "LEVEL: " + level.ToString();
+
+                        if(enemySpeed <= 10 && enemyBulletSpeed <=10 && difficulty >= 0)
+                        {
+                            difficulty --;
+                            enemySpeed ++;
+                            enemyBulletSpeed ++;
+                        }
+                    }   
                 }
                 if (Player.Bounds.IntersectsWith(enemies[i].Bounds))
                 {
                     Player.Visible = false;
-                    GameOver();
+                    GameOver("GAME OVER");
                 }
             }
             for(int i = 0; i < enemyBullets.Length; i++)
@@ -295,14 +346,23 @@ namespace Game_Spaceshooter
                 {
                     Player.Visible = false;
                     enemyBullets[i].Visible = false;
-                    GameOver();
+                    GameOver("GAME OVER");
                 }
             }
         }
 
         //Methode, die das Spiel beendet
-        private void GameOver()
+        private void GameOver(String str)
         {
+            gameIsOver = true;
+            pause = true;
+            label.Text = str;
+            label.Visible = true;
+            label.Location = new Point(this.Width / 2 - label.Width / 2, this.Height / 2 - label.Height * 2 + 20);
+            repButton.Visible = true;
+            repButton.Location = new Point(this.Width / 2 - repButton.Width / 2, this.Height / 2 - label.Height + 20);
+            extButton.Visible = true;
+            extButton.Location = new Point(this.Width / 2 - extButton.Width / 2, this.Height / 2);
             StopTimer();
         }
 
@@ -315,10 +375,19 @@ namespace Game_Spaceshooter
             moveEnemiesBulletsTimer.Stop();
         }
 
+        //Methode, die die Timer startet
+        private void StartTimer()
+        {
+            moveBgTimer.Start();
+            moveEnemiesTimer.Start();
+            moveBulletsTimer.Start();
+            moveEnemiesBulletsTimer.Start();
+        }
+
         //Timer, der die Geschosse der Gegner bewegt
         private void moveEnemiesBulletsTimer_Tick(object sender, EventArgs e)
         {
-            for (int i = 0; i < enemyBullets.Length; i++)
+            for(int i = 0; i < (enemyBullets.Length - difficulty); i++)
             {
                 if (enemyBullets[i].Top < this.Height)
                 {
@@ -333,6 +402,22 @@ namespace Game_Spaceshooter
                     enemyBullets[i].Location = new Point(enemies[i].Location.X + 20, enemies[i].Location.Y - 30);
                 }
             }
+        }
+
+        //Methode um das Spiel neu zu starten
+        private void repButton_Click(object sender, EventArgs e)
+        {
+            pause = false;
+            gameIsOver = false;
+            this.Controls.Clear();
+            InitializeComponent();
+            Form1_Load(e, e);
+        }
+
+        //Methode um das Spiel zu beenden
+        private void extButton_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(1);
         }
     }
 }
