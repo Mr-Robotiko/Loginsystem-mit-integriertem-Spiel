@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Game_Spaceshooter
 {
     public partial class Form1 : Form
     {
+        WindowsMediaPlayer bgMedia;
+        WindowsMediaPlayer shootMedia;
+        WindowsMediaPlayer explosionMedia;
+
         PictureBox[] stars;
         int backgroundspeed;
         int playerSpeed;
@@ -67,7 +72,22 @@ namespace Game_Spaceshooter
             Image boss1 = Image.FromFile(@"asserts\\Boss1.png");
             Image boss2 = Image.FromFile(@"asserts\\Boss2.png");
 
-            enemies = new PictureBox[10];
+            bgMedia = new WindowsMediaPlayer();
+            shootMedia = new WindowsMediaPlayer();
+            explosionMedia = new WindowsMediaPlayer();
+
+            //Lädt die Musik
+            bgMedia.URL = "songs\\GameSong.mp3";
+            shootMedia.URL = "songs\\shoot.mp3";
+            explosionMedia.URL = "songs\\boom.mp3";
+
+            //Stellt die Musik ein
+            bgMedia.settings.setMode("loop", true);
+            bgMedia.settings.volume = 5;
+            shootMedia.settings.volume = 2;
+            explosionMedia.settings.volume = 6;
+
+            enemies = new PictureBox[15];
 
             //Erstellt die Gegner und fügt sie dem Form hinzu
             for (int i = 0; i < enemies.Length; i++)
@@ -136,6 +156,8 @@ namespace Game_Spaceshooter
                 enemyBullets[i].Location = new Point(enemies[x].Location.X, enemies[x].Location.Y - 20);
                 this.Controls.Add(enemyBullets[i]);
             }
+
+            bgMedia.controls.play();
         }
 
         //Timer, der die Sterne bewegt und dafür sorgt, dass sie wieder nach oben kommen
@@ -273,6 +295,7 @@ namespace Game_Spaceshooter
         //Timer, der die Geschosse bewegt
         private void moveBulletsTimer_Tick(object sender, EventArgs e)
         {
+            shootMedia.controls.play();
             for (int i = 0; i < bullets.Length; i++)
             {
                 if (bullets[i].Top > 0)
@@ -318,6 +341,7 @@ namespace Game_Spaceshooter
             {
                 if (bullets[0].Bounds.IntersectsWith(enemies[i].Bounds))
                 {
+                    explosionMedia.controls.play();
                     enemies[i].Location = new Point(rnd.Next(10, this.Width - (enemies[i].Width * 2)), rnd.Next(-500, -50));
                     score += 10;
                     scoreLabel.Text = "SCORE: " + score.ToString();
@@ -354,6 +378,7 @@ namespace Game_Spaceshooter
         //Methode, die das Spiel beendet
         private void GameOver(String str)
         {
+            bgMedia.controls.stop();
             gameIsOver = true;
             pause = true;
             label.Text = str;
