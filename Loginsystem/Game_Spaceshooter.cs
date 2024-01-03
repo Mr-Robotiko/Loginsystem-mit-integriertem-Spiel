@@ -66,21 +66,21 @@ namespace Loginsystem
             gameIsOver = false;
 
             //Lädt die Bilder
-            Image bullet = Image.FromFile(@"asserts\\munition.png");
-            Image enemy1 = Image.FromFile(@"asserts\\E1.png");
-            Image enemy2 = Image.FromFile(@"asserts\\E2.png");
-            Image enemy3 = Image.FromFile(@"asserts\\E3.png");
-            Image boss1 = Image.FromFile(@"asserts\\Boss1.png");
-            Image boss2 = Image.FromFile(@"asserts\\Boss2.png");
+            Image bullet = Image.FromFile(@"..\..\..\Pictures\\asserts\\munition.png");
+            Image enemy1 = Image.FromFile(@"..\..\..\Pictures\\asserts\\E1.png");
+            Image enemy2 = Image.FromFile(@"..\..\..\Pictures\\asserts\\E2.png");
+            Image enemy3 = Image.FromFile(@"..\..\..\Pictures\\asserts\\E3.png");
+            Image boss1 = Image.FromFile(@"..\..\..\Pictures\\asserts\\Boss1.png");
+            Image boss2 = Image.FromFile(@"..\..\..\Pictures\\asserts\\Boss2.png");
 
             bgMedia = new WindowsMediaPlayer();
             shootMedia = new WindowsMediaPlayer();
             explosionMedia = new WindowsMediaPlayer();
 
             //Lädt die Musik
-            bgMedia.URL = "songs\\GameSong.mp3";
-            shootMedia.URL = "songs\\shoot.mp3";
-            explosionMedia.URL = "songs\\boom.mp3";
+            /*bgMedia.URL = "..\\..\\..\\Pictures\\GameSong.mp3";
+            shootMedia.URL = "..\\..\\..\\Pictures\\shoot.mp3";
+            explosionMedia.URL = "..\\..\\..\\Pictures\\boom.mp3";*/
 
             //Stellt die Musik ein
             bgMedia.settings.setMode("loop", true);

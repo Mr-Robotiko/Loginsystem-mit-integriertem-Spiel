@@ -44,9 +44,7 @@
             this.extButton = new System.Windows.Forms.Button();
             this.lvlLabel = new System.Windows.Forms.Label();
             this.scoreLabel = new System.Windows.Forms.Label();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.Player)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // moveBgTimer
@@ -168,29 +166,19 @@
             this.scoreLabel.TabIndex = 5;
             this.scoreLabel.Text = "SCORE: 0";
             // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(61, 511);
-            this.axWindowsMediaPlayer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
-            this.axWindowsMediaPlayer1.TabIndex = 6;
-            // 
             // Game_Spaceshooter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.ClientSize = new System.Drawing.Size(776, 635);
-            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.lvlLabel);
             this.Controls.Add(this.extButton);
             this.Controls.Add(this.repButton);
             this.Controls.Add(this.label);
             this.Controls.Add(this.Player);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(798, 691);
             this.MinimumSize = new System.Drawing.Size(798, 691);
             this.Name = "Game_Spaceshooter";
@@ -200,7 +188,6 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Player)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +209,6 @@
         private System.Windows.Forms.Button extButton;
         private System.Windows.Forms.Label lvlLabel;
         private System.Windows.Forms.Label scoreLabel;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
 
