@@ -65,12 +65,12 @@ namespace Game_Spaceshooter
             gameIsOver = false;
 
             //Lädt die Bilder
-            //Image bullet = Image.FromFile(@"asserts\munition.png");
-            //Image enemy1 = Image.FromFile(@"asserts\\E1.png");
-            //Image enemy2 = Image.FromFile(@"asserts\\E2.png");
-            //Image enemy3 = Image.FromFile(@"asserts\\E3.png");
-            //Image boss1 = Image.FromFile(@"asserts\\Boss1.png");
-            //Image boss2 = Image.FromFile(@"asserts\\Boss2.png");
+            Image bullet = Image.FromFile(@"asserts\\munition.png");
+            Image enemy1 = Image.FromFile(@"asserts\\E1.png");
+            Image enemy2 = Image.FromFile(@"asserts\\E2.png");
+            Image enemy3 = Image.FromFile(@"asserts\\E3.png");
+            Image boss1 = Image.FromFile(@"asserts\\Boss1.png");
+            Image boss2 = Image.FromFile(@"asserts\\Boss2.png");
 
             bgMedia = new WindowsMediaPlayer();
             shootMedia = new WindowsMediaPlayer();
@@ -87,7 +87,7 @@ namespace Game_Spaceshooter
             shootMedia.settings.volume = 2;
             explosionMedia.settings.volume = 6;
 
-            enemies = new PictureBox[15];
+            enemies = new PictureBox[10];
 
             //Erstellt die Gegner und fügt sie dem Form hinzu
             for (int i = 0; i < enemies.Length; i++)
@@ -101,16 +101,16 @@ namespace Game_Spaceshooter
                 enemies[i].Location = new Point(rnd.Next(10, this.Width - (enemies[i].Width * 2)), rnd.Next(-500, -50));
             }
 
-            //enemies[0].Image = boss1;
-            //enemies[1].Image = enemy2;
-            //enemies[2].Image = enemy3;
-            //enemies[3].Image = enemy3;
-            //enemies[4].Image = enemy1;
-            //enemies[5].Image = enemy3;
-            //enemies[6].Image = enemy2;
-            //enemies[7].Image = enemy3;
-            //enemies[8].Image = enemy2;
-            //enemies[9].Image = boss2;
+            enemies[0].Image = boss1;
+            enemies[1].Image = enemy2;
+            enemies[2].Image = enemy3;
+            enemies[3].Image = enemy3;
+            enemies[4].Image = enemy1;
+            enemies[5].Image = enemy3;
+            enemies[6].Image = enemy2;
+            enemies[7].Image = enemy3;
+            enemies[8].Image = enemy2;
+            enemies[9].Image = boss2;
 
             //Erstellt die Geschosse und fügt sie dem Form hinzu
             for (int i = 0; i < bullets.Length; i++)

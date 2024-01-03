@@ -42,7 +42,6 @@ namespace Loginsystem
         public Game_Spaceshooter()
         {
             InitializeComponent();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -67,7 +66,7 @@ namespace Loginsystem
             gameIsOver = false;
 
             //Lädt die Bilder
-            Image bullet = Image.FromFile(@"asserts\munition.png");
+            Image bullet = Image.FromFile(@"asserts\\munition.png");
             Image enemy1 = Image.FromFile(@"asserts\\E1.png");
             Image enemy2 = Image.FromFile(@"asserts\\E2.png");
             Image enemy3 = Image.FromFile(@"asserts\\E3.png");
@@ -89,7 +88,7 @@ namespace Loginsystem
             shootMedia.settings.volume = 2;
             explosionMedia.settings.volume = 6;
 
-            enemies = new PictureBox[15];
+            enemies = new PictureBox[10];
 
             //Erstellt die Gegner und fügt sie dem Form hinzu
             for (int i = 0; i < enemies.Length; i++)
@@ -444,7 +443,7 @@ namespace Loginsystem
         //Methode um das Spiel zu beenden
         private void extButton_Click(object sender, EventArgs e)
         {
-            Environment.Exit(1);
+            Game_Spaceshooter.ActiveForm.Close();
         }
     }
 }
