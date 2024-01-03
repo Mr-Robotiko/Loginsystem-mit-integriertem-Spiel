@@ -4,14 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
-namespace Game_Spaceshooter
+namespace Loginsystem
 {
-    public partial class Form1 : Form
+    public partial class Game_Spaceshooter : Form
     {
         WindowsMediaPlayer bgMedia;
         WindowsMediaPlayer shootMedia;
@@ -37,10 +39,10 @@ namespace Game_Spaceshooter
         bool pause;
         bool gameIsOver;
 
-        public Form1()
+        public Game_Spaceshooter()
         {
             InitializeComponent();
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -65,12 +67,12 @@ namespace Game_Spaceshooter
             gameIsOver = false;
 
             //Lädt die Bilder
-            //Image bullet = Image.FromFile(@"asserts\munition.png");
-            //Image enemy1 = Image.FromFile(@"asserts\\E1.png");
-            //Image enemy2 = Image.FromFile(@"asserts\\E2.png");
-            //Image enemy3 = Image.FromFile(@"asserts\\E3.png");
-            //Image boss1 = Image.FromFile(@"asserts\\Boss1.png");
-            //Image boss2 = Image.FromFile(@"asserts\\Boss2.png");
+            Image bullet = Image.FromFile(@"asserts\munition.png");
+            Image enemy1 = Image.FromFile(@"asserts\\E1.png");
+            Image enemy2 = Image.FromFile(@"asserts\\E2.png");
+            Image enemy3 = Image.FromFile(@"asserts\\E3.png");
+            Image boss1 = Image.FromFile(@"asserts\\Boss1.png");
+            Image boss2 = Image.FromFile(@"asserts\\Boss2.png");
 
             bgMedia = new WindowsMediaPlayer();
             shootMedia = new WindowsMediaPlayer();
@@ -101,23 +103,23 @@ namespace Game_Spaceshooter
                 enemies[i].Location = new Point(rnd.Next(10, this.Width - (enemies[i].Width * 2)), rnd.Next(-500, -50));
             }
 
-            //enemies[0].Image = boss1;
-            //enemies[1].Image = enemy2;
-            //enemies[2].Image = enemy3;
-            //enemies[3].Image = enemy3;
-            //enemies[4].Image = enemy1;
-            //enemies[5].Image = enemy3;
-            //enemies[6].Image = enemy2;
-            //enemies[7].Image = enemy3;
-            //enemies[8].Image = enemy2;
-            //enemies[9].Image = boss2;
+            enemies[0].Image = boss1;
+            enemies[1].Image = enemy2;
+            enemies[2].Image = enemy3;
+            enemies[3].Image = enemy3;
+            enemies[4].Image = enemy1;
+            enemies[5].Image = enemy3;
+            enemies[6].Image = enemy2;
+            enemies[7].Image = enemy3;
+            enemies[8].Image = enemy2;
+            enemies[9].Image = boss2;
 
             //Erstellt die Geschosse und fügt sie dem Form hinzu
             for (int i = 0; i < bullets.Length; i++)
             {
                 bullets[i] = new PictureBox();
                 bullets[i].Size = new Size(8, 8);
-                //bullets[i].Image = bullet;
+                bullets[i].Image = bullet;
                 bullets[i].SizeMode = PictureBoxSizeMode.Zoom;
                 bullets[i].BorderStyle = BorderStyle.None;
                 this.Controls.Add(bullets[i]);
@@ -144,7 +146,7 @@ namespace Game_Spaceshooter
             }
 
             enemyBullets = new PictureBox[10];
-            
+
             //Erstellt die Geschosse der Gegner und fügt sie dem Form hinzu
             for (int i = 0; i < enemyBullets.Length; i++)
             {
@@ -270,11 +272,11 @@ namespace Game_Spaceshooter
             {
                 moveUpTimer.Stop();
             }
-            if(e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape)
             {
                 if (!gameIsOver)
                 {
-                    if(!pause)
+                    if (!pause)
                     {
                         StopTimer();
                         pause = true;
@@ -345,18 +347,18 @@ namespace Game_Spaceshooter
                     enemies[i].Location = new Point(rnd.Next(10, this.Width - (enemies[i].Width * 2)), rnd.Next(-500, -50));
                     score += 10;
                     scoreLabel.Text = "SCORE: " + score.ToString();
-                    if(score % 500 == 0)
+                    if (score % 500 == 0)
                     {
                         level += 1;
                         lvlLabel.Text = (level < 10) ? "LEVEL: 0" + level.ToString() : "LEVEL: " + level.ToString();
 
-                        if(enemySpeed <= 10 && enemyBulletSpeed <=10 && difficulty >= 0)
+                        if (enemySpeed <= 10 && enemyBulletSpeed <= 10 && difficulty >= 0)
                         {
-                            difficulty --;
-                            enemySpeed ++;
-                            enemyBulletSpeed ++;
+                            difficulty--;
+                            enemySpeed++;
+                            enemyBulletSpeed++;
                         }
-                    }   
+                    }
                 }
                 if (Player.Bounds.IntersectsWith(enemies[i].Bounds))
                 {
@@ -364,7 +366,7 @@ namespace Game_Spaceshooter
                     GameOver("GAME OVER");
                 }
             }
-            for(int i = 0; i < enemyBullets.Length; i++)
+            for (int i = 0; i < enemyBullets.Length; i++)
             {
                 if (enemyBullets[i].Bounds.IntersectsWith(Player.Bounds))
                 {
@@ -412,7 +414,7 @@ namespace Game_Spaceshooter
         //Timer, der die Geschosse der Gegner bewegt
         private void moveEnemiesBulletsTimer_Tick(object sender, EventArgs e)
         {
-            for(int i = 0; i < (enemyBullets.Length - difficulty); i++)
+            for (int i = 0; i < (enemyBullets.Length - difficulty); i++)
             {
                 if (enemyBullets[i].Top < this.Height)
                 {

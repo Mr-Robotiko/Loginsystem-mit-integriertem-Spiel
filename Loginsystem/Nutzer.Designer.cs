@@ -350,6 +350,7 @@
             this.spielen_button.Text = "Spielen";
             this.spielen_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.spielen_button.UseVisualStyleBackColor = false;
+            this.spielen_button.Click += new System.EventHandler(this.spielen_button_Click);
             // 
             // spiel_panel1
             // 

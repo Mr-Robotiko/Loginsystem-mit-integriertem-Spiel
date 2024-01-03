@@ -48,5 +48,18 @@ namespace Loginsystem
 
             this.Hide();
         }
+
+        /// <summary>
+        /// Das Spiel wird über diesen Knopf gestartet.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void spielen_button_Click(object sender, EventArgs e)
+        {
+            Game_Spaceshooter game1 = new Game_Spaceshooter();
+            game1.Show();
+
+            this.Hide();
+        }
     }
 }
