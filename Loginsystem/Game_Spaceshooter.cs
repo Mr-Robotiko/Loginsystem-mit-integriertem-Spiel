@@ -15,6 +15,9 @@ namespace Loginsystem
 {
     public partial class Game_Spaceshooter : Form
     {
+        int highscore;
+        string username;
+
         WindowsMediaPlayer bgMedia;
         WindowsMediaPlayer shootMedia;
         WindowsMediaPlayer explosionMedia;
@@ -42,6 +45,12 @@ namespace Loginsystem
         public Game_Spaceshooter()
         {
             InitializeComponent();
+        }
+
+        public string Usernamegame
+        {
+            get { return this.username; }
+            set { this.username = value; }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -444,6 +453,13 @@ namespace Loginsystem
         private void extButton_Click(object sender, EventArgs e)
         {
             Game_Spaceshooter.ActiveForm.Close();
+
+            Nutzer nutzer = new Nutzer();
+            nutzer.UsernameGame1 = username;
+            nutzer.Highscore = highscore;
+            nutzer.ShowDialog();
+
+            this.Hide();
         }
     }
 }

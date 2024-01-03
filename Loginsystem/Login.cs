@@ -114,9 +114,6 @@ namespace Loginsystem
             {
                 MessageBox.Show("Herzlich Willkommen" + " " + benutzername_textBox.Text);
 
-                Nutzer nutzerForm = new Nutzer();
-                nutzerForm.Show();
-
                 this.Hide();
 
                 Nutzer nutzer = new Nutzer();

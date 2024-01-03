@@ -88,8 +88,7 @@
             this.globalerHighscore_listBox.MinimumSize = new System.Drawing.Size(370, 495);
             this.globalerHighscore_listBox.Name = "globalerHighscore_listBox";
             this.globalerHighscore_listBox.Size = new System.Drawing.Size(370, 486);
-            this.globalerHighscore_listBox.TabIndex = 9;
-            // 
+            this.globalerHighscore_listBox.TabIndex = 9;            // 
             // globlerHighscore_panel1
             // 
             this.globlerHighscore_panel1.BackColor = System.Drawing.Color.White;

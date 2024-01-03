@@ -57,9 +57,10 @@
             // 
             this.Player.BackColor = System.Drawing.Color.Transparent;
             this.Player.Image = ((System.Drawing.Image)(resources.GetObject("Player.Image")));
-            this.Player.Location = new System.Drawing.Point(362, 555);
+            this.Player.Location = new System.Drawing.Point(241, 361);
+            this.Player.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Player.Name = "Player";
-            this.Player.Size = new System.Drawing.Size(75, 75);
+            this.Player.Size = new System.Drawing.Size(50, 49);
             this.Player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Player.TabIndex = 0;
             this.Player.TabStop = false;
@@ -107,9 +108,10 @@
             this.label.BackColor = System.Drawing.Color.Transparent;
             this.label.Font = new System.Drawing.Font("Impact", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label.Location = new System.Drawing.Point(194, 54);
+            this.label.Location = new System.Drawing.Point(129, 35);
+            this.label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(429, 176);
+            this.label.Size = new System.Drawing.Size(286, 117);
             this.label.TabIndex = 1;
             this.label.Text = "label1";
             this.label.Visible = false;
@@ -119,9 +121,10 @@
             this.repButton.BackColor = System.Drawing.Color.DarkGreen;
             this.repButton.Font = new System.Drawing.Font("Impact", 40F);
             this.repButton.ForeColor = System.Drawing.Color.White;
-            this.repButton.Location = new System.Drawing.Point(224, 222);
+            this.repButton.Location = new System.Drawing.Point(149, 144);
+            this.repButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.repButton.Name = "repButton";
-            this.repButton.Size = new System.Drawing.Size(356, 108);
+            this.repButton.Size = new System.Drawing.Size(237, 70);
             this.repButton.TabIndex = 2;
             this.repButton.Text = "REPLAY";
             this.repButton.UseVisualStyleBackColor = false;
@@ -133,9 +136,10 @@
             this.extButton.BackColor = System.Drawing.Color.DarkRed;
             this.extButton.Font = new System.Drawing.Font("Impact", 40F);
             this.extButton.ForeColor = System.Drawing.Color.Black;
-            this.extButton.Location = new System.Drawing.Point(224, 349);
+            this.extButton.Location = new System.Drawing.Point(149, 227);
+            this.extButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.extButton.Name = "extButton";
-            this.extButton.Size = new System.Drawing.Size(356, 108);
+            this.extButton.Size = new System.Drawing.Size(237, 70);
             this.extButton.TabIndex = 3;
             this.extButton.Text = "EXIT";
             this.extButton.UseVisualStyleBackColor = false;
@@ -148,9 +152,10 @@
             this.lvlLabel.BackColor = System.Drawing.Color.Transparent;
             this.lvlLabel.Font = new System.Drawing.Font("Impact", 14F);
             this.lvlLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.lvlLabel.Location = new System.Drawing.Point(650, 9);
+            this.lvlLabel.Location = new System.Drawing.Point(433, 6);
+            this.lvlLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lvlLabel.Name = "lvlLabel";
-            this.lvlLabel.Size = new System.Drawing.Size(116, 35);
+            this.lvlLabel.Size = new System.Drawing.Size(76, 23);
             this.lvlLabel.TabIndex = 4;
             this.lvlLabel.Text = "LEVEL: 00";
             // 
@@ -160,18 +165,19 @@
             this.scoreLabel.BackColor = System.Drawing.Color.Transparent;
             this.scoreLabel.Font = new System.Drawing.Font("Impact", 14F);
             this.scoreLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.scoreLabel.Location = new System.Drawing.Point(12, 9);
+            this.scoreLabel.Location = new System.Drawing.Point(8, 6);
+            this.scoreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(113, 35);
+            this.scoreLabel.Size = new System.Drawing.Size(76, 23);
             this.scoreLabel.TabIndex = 5;
             this.scoreLabel.Text = "SCORE: 0";
             // 
             // Game_Spaceshooter
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(776, 635);
+            this.ClientSize = new System.Drawing.Size(521, 424);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.lvlLabel);
             this.Controls.Add(this.extButton);
@@ -179,8 +185,9 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.Player);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(798, 691);
-            this.MinimumSize = new System.Drawing.Size(798, 691);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(537, 463);
+            this.MinimumSize = new System.Drawing.Size(537, 463);
             this.Name = "Game_Spaceshooter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Spaceshooter";
