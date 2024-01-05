@@ -43,7 +43,7 @@ namespace Loginsystem
 
             this.Hide();
         }
-
+        
         public void anmelden_button_Click(object sender, EventArgs e)
         {
             // Nicht löschen --- Connection String zur DB
@@ -113,9 +113,6 @@ namespace Loginsystem
             if (dataTable.Rows.Count == 1)
             {
                 MessageBox.Show("Herzlich Willkommen" + " " + benutzername_textBox.Text);
-
-                Nutzer nutzerForm = new Nutzer();
-                nutzerForm.Show();
 
                 this.Hide();
 

@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nutzer));
-            this.globalerHighscore_listBox = new System.Windows.Forms.ListBox();
             this.globlerHighscore_panel1 = new System.Windows.Forms.Panel();
             this.globlerHighscore_panel2 = new System.Windows.Forms.Panel();
             this.glocken_pictureBox = new System.Windows.Forms.PictureBox();
             this.globlerHighscore_panel3 = new System.Windows.Forms.Panel();
             this.ueberschrift_label = new System.Windows.Forms.Label();
-            this.globalerHighscore_panel4 = new System.Windows.Forms.Panel();
-            this.globalerHighscore_panel5 = new System.Windows.Forms.Panel();
             this.nutzer_panel1 = new System.Windows.Forms.Panel();
             this.nutzer_panel2 = new System.Windows.Forms.Panel();
             this.nutzer_panel3 = new System.Windows.Forms.Panel();
@@ -55,12 +53,21 @@
             this.spiel_panel2 = new System.Windows.Forms.Panel();
             this.spiel_panel3 = new System.Windows.Forms.Panel();
             this.spiel_richTextBox = new System.Windows.Forms.RichTextBox();
+            this.dBDataSet = new Loginsystem.DBDataSet();
+            this.user1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.user1TableAdapter = new Loginsystem.DBDataSetTableAdapters.User1TableAdapter();
+            this.dBDataSet1 = new Loginsystem.DBDataSet1();
+            this.statisticBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.statisticTableAdapter = new Loginsystem.DBDataSet1TableAdapters.StatisticTableAdapter();
+            this.statisticBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.globalerHighscore_panel5 = new System.Windows.Forms.Panel();
+            this.globalerHighscore_listBox = new System.Windows.Forms.ListBox();
+            this.globalerHighscore_panel4 = new System.Windows.Forms.Panel();
+            this.globalerName_listbox = new System.Windows.Forms.ListBox();
             this.globlerHighscore_panel1.SuspendLayout();
             this.globlerHighscore_panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glocken_pictureBox)).BeginInit();
             this.globlerHighscore_panel3.SuspendLayout();
-            this.globalerHighscore_panel4.SuspendLayout();
-            this.globalerHighscore_panel5.SuspendLayout();
             this.nutzer_panel1.SuspendLayout();
             this.nutzer_panel2.SuspendLayout();
             this.nutzer_panel3.SuspendLayout();
@@ -73,32 +80,24 @@
             this.spiel_panel1.SuspendLayout();
             this.spiel_panel2.SuspendLayout();
             this.spiel_panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statisticBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statisticBindingSource1)).BeginInit();
+            this.globalerHighscore_panel5.SuspendLayout();
+            this.globalerHighscore_panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // globalerHighscore_listBox
-            // 
-            this.globalerHighscore_listBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.globalerHighscore_listBox.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.globalerHighscore_listBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.globalerHighscore_listBox.FormattingEnabled = true;
-            this.globalerHighscore_listBox.ItemHeight = 27;
-            this.globalerHighscore_listBox.Location = new System.Drawing.Point(4, 4);
-            this.globalerHighscore_listBox.Margin = new System.Windows.Forms.Padding(0);
-            this.globalerHighscore_listBox.MaximumSize = new System.Drawing.Size(370, 495);
-            this.globalerHighscore_listBox.MinimumSize = new System.Drawing.Size(370, 495);
-            this.globalerHighscore_listBox.Name = "globalerHighscore_listBox";
-            this.globalerHighscore_listBox.Size = new System.Drawing.Size(370, 486);
-            this.globalerHighscore_listBox.TabIndex = 9;
             // 
             // globlerHighscore_panel1
             // 
             this.globlerHighscore_panel1.BackColor = System.Drawing.Color.White;
             this.globlerHighscore_panel1.Controls.Add(this.globlerHighscore_panel2);
-            this.globlerHighscore_panel1.Location = new System.Drawing.Point(864, 132);
-            this.globlerHighscore_panel1.MaximumSize = new System.Drawing.Size(386, 54);
-            this.globlerHighscore_panel1.MinimumSize = new System.Drawing.Size(386, 54);
+            this.globlerHighscore_panel1.Location = new System.Drawing.Point(764, 132);
+            this.globlerHighscore_panel1.MaximumSize = new System.Drawing.Size(486, 54);
+            this.globlerHighscore_panel1.MinimumSize = new System.Drawing.Size(486, 54);
             this.globlerHighscore_panel1.Name = "globlerHighscore_panel1";
-            this.globlerHighscore_panel1.Size = new System.Drawing.Size(386, 54);
+            this.globlerHighscore_panel1.Size = new System.Drawing.Size(486, 54);
             this.globlerHighscore_panel1.TabIndex = 11;
             // 
             // globlerHighscore_panel2
@@ -107,10 +106,10 @@
             this.globlerHighscore_panel2.Controls.Add(this.glocken_pictureBox);
             this.globlerHighscore_panel2.Controls.Add(this.globlerHighscore_panel3);
             this.globlerHighscore_panel2.Location = new System.Drawing.Point(4, 4);
-            this.globlerHighscore_panel2.MaximumSize = new System.Drawing.Size(378, 46);
-            this.globlerHighscore_panel2.MinimumSize = new System.Drawing.Size(378, 46);
+            this.globlerHighscore_panel2.MaximumSize = new System.Drawing.Size(478, 46);
+            this.globlerHighscore_panel2.MinimumSize = new System.Drawing.Size(478, 46);
             this.globlerHighscore_panel2.Name = "globlerHighscore_panel2";
-            this.globlerHighscore_panel2.Size = new System.Drawing.Size(378, 46);
+            this.globlerHighscore_panel2.Size = new System.Drawing.Size(478, 46);
             this.globlerHighscore_panel2.TabIndex = 7;
             // 
             // glocken_pictureBox
@@ -130,10 +129,10 @@
             this.globlerHighscore_panel3.BackColor = System.Drawing.Color.White;
             this.globlerHighscore_panel3.Controls.Add(this.ueberschrift_label);
             this.globlerHighscore_panel3.Location = new System.Drawing.Point(4, 4);
-            this.globlerHighscore_panel3.MaximumSize = new System.Drawing.Size(370, 37);
-            this.globlerHighscore_panel3.MinimumSize = new System.Drawing.Size(370, 37);
+            this.globlerHighscore_panel3.MaximumSize = new System.Drawing.Size(470, 37);
+            this.globlerHighscore_panel3.MinimumSize = new System.Drawing.Size(470, 37);
             this.globlerHighscore_panel3.Name = "globlerHighscore_panel3";
-            this.globlerHighscore_panel3.Size = new System.Drawing.Size(370, 37);
+            this.globlerHighscore_panel3.Size = new System.Drawing.Size(470, 37);
             this.globlerHighscore_panel3.TabIndex = 7;
             // 
             // ueberschrift_label
@@ -143,37 +142,13 @@
             this.ueberschrift_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.ueberschrift_label.Location = new System.Drawing.Point(38, 0);
             this.ueberschrift_label.Margin = new System.Windows.Forms.Padding(0);
-            this.ueberschrift_label.MaximumSize = new System.Drawing.Size(332, 38);
-            this.ueberschrift_label.MinimumSize = new System.Drawing.Size(332, 38);
+            this.ueberschrift_label.MaximumSize = new System.Drawing.Size(432, 38);
+            this.ueberschrift_label.MinimumSize = new System.Drawing.Size(432, 38);
             this.ueberschrift_label.Name = "ueberschrift_label";
-            this.ueberschrift_label.Size = new System.Drawing.Size(332, 38);
+            this.ueberschrift_label.Size = new System.Drawing.Size(432, 38);
             this.ueberschrift_label.TabIndex = 7;
             this.ueberschrift_label.Text = "Globale Highscoreliste";
             this.ueberschrift_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // globalerHighscore_panel4
-            // 
-            this.globalerHighscore_panel4.BackColor = System.Drawing.Color.White;
-            this.globalerHighscore_panel4.Controls.Add(this.globalerHighscore_panel5);
-            this.globalerHighscore_panel4.Location = new System.Drawing.Point(864, 181);
-            this.globalerHighscore_panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.globalerHighscore_panel4.MaximumSize = new System.Drawing.Size(386, 502);
-            this.globalerHighscore_panel4.MinimumSize = new System.Drawing.Size(386, 502);
-            this.globalerHighscore_panel4.Name = "globalerHighscore_panel4";
-            this.globalerHighscore_panel4.Size = new System.Drawing.Size(386, 502);
-            this.globalerHighscore_panel4.TabIndex = 12;
-            // 
-            // globalerHighscore_panel5
-            // 
-            this.globalerHighscore_panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
-            this.globalerHighscore_panel5.Controls.Add(this.globalerHighscore_listBox);
-            this.globalerHighscore_panel5.Location = new System.Drawing.Point(4, 4);
-            this.globalerHighscore_panel5.Margin = new System.Windows.Forms.Padding(4);
-            this.globalerHighscore_panel5.MaximumSize = new System.Drawing.Size(378, 494);
-            this.globalerHighscore_panel5.MinimumSize = new System.Drawing.Size(378, 494);
-            this.globalerHighscore_panel5.Name = "globalerHighscore_panel5";
-            this.globalerHighscore_panel5.Size = new System.Drawing.Size(378, 494);
-            this.globalerHighscore_panel5.TabIndex = 7;
             // 
             // nutzer_panel1
             // 
@@ -323,6 +298,7 @@
             this.persoenlicherHighscore_label.Name = "persoenlicherHighscore_label";
             this.persoenlicherHighscore_label.Size = new System.Drawing.Size(639, 38);
             this.persoenlicherHighscore_label.TabIndex = 7;
+            this.persoenlicherHighscore_label.Text = "Spaceshooter";
             this.persoenlicherHighscore_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // background_pictureBox
@@ -350,6 +326,7 @@
             this.spielen_button.Text = "Spielen";
             this.spielen_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.spielen_button.UseVisualStyleBackColor = false;
+            this.spielen_button.Click += new System.EventHandler(this.spielen_button_Click);
             // 
             // spiel_panel1
             // 
@@ -390,7 +367,90 @@
             this.spiel_richTextBox.Name = "spiel_richTextBox";
             this.spiel_richTextBox.Size = new System.Drawing.Size(661, 400);
             this.spiel_richTextBox.TabIndex = 18;
-            this.spiel_richTextBox.Text = "<SPIELBESCHREIBUNG>";
+            this.spiel_richTextBox.Text = "Fliege mit Captain Danulli durch Raum und Zeit und zerstören Sie die feindlichen " +
+    "Schiffe";
+            // 
+            // dBDataSet
+            // 
+            this.dBDataSet.DataSetName = "DBDataSet";
+            this.dBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // user1BindingSource
+            // 
+            this.user1BindingSource.DataMember = "User1";
+            this.user1BindingSource.DataSource = this.dBDataSet;
+            // 
+            // user1TableAdapter
+            // 
+            this.user1TableAdapter.ClearBeforeFill = true;
+            // 
+            // dBDataSet1
+            // 
+            this.dBDataSet1.DataSetName = "DBDataSet1";
+            this.dBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // statisticBindingSource
+            // 
+            this.statisticBindingSource.DataMember = "Statistic";
+            this.statisticBindingSource.DataSource = this.dBDataSet1;
+            // 
+            // statisticTableAdapter
+            // 
+            this.statisticTableAdapter.ClearBeforeFill = true;
+            // 
+            // statisticBindingSource1
+            // 
+            this.statisticBindingSource1.DataMember = "Statistic";
+            this.statisticBindingSource1.DataSource = this.dBDataSet1;
+            // 
+            // globalerHighscore_panel5
+            // 
+            this.globalerHighscore_panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.globalerHighscore_panel5.Controls.Add(this.globalerHighscore_listBox);
+            this.globalerHighscore_panel5.Location = new System.Drawing.Point(4, 4);
+            this.globalerHighscore_panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.globalerHighscore_panel5.MaximumSize = new System.Drawing.Size(378, 494);
+            this.globalerHighscore_panel5.MinimumSize = new System.Drawing.Size(378, 494);
+            this.globalerHighscore_panel5.Name = "globalerHighscore_panel5";
+            this.globalerHighscore_panel5.Size = new System.Drawing.Size(378, 494);
+            this.globalerHighscore_panel5.TabIndex = 7;
+            // 
+            // globalerHighscore_listBox
+            // 
+            this.globalerHighscore_listBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.globalerHighscore_listBox.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.globalerHighscore_listBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.globalerHighscore_listBox.FormattingEnabled = true;
+            this.globalerHighscore_listBox.ItemHeight = 27;
+            this.globalerHighscore_listBox.Location = new System.Drawing.Point(4, 4);
+            this.globalerHighscore_listBox.Margin = new System.Windows.Forms.Padding(0);
+            this.globalerHighscore_listBox.MultiColumn = true;
+            this.globalerHighscore_listBox.Name = "globalerHighscore_listBox";
+            this.globalerHighscore_listBox.Size = new System.Drawing.Size(370, 486);
+            this.globalerHighscore_listBox.TabIndex = 9;
+            // 
+            // globalerHighscore_panel4
+            // 
+            this.globalerHighscore_panel4.BackColor = System.Drawing.Color.White;
+            this.globalerHighscore_panel4.Controls.Add(this.globalerHighscore_panel5);
+            this.globalerHighscore_panel4.Location = new System.Drawing.Point(864, 185);
+            this.globalerHighscore_panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.globalerHighscore_panel4.Name = "globalerHighscore_panel4";
+            this.globalerHighscore_panel4.Size = new System.Drawing.Size(386, 502);
+            this.globalerHighscore_panel4.TabIndex = 12;
+            // 
+            // globalerName_listbox
+            // 
+            this.globalerName_listbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.globalerName_listbox.Font = new System.Drawing.Font("Tahoma", 16.2F);
+            this.globalerName_listbox.FormattingEnabled = true;
+            this.globalerName_listbox.ItemHeight = 27;
+            this.globalerName_listbox.Location = new System.Drawing.Point(764, 185);
+            this.globalerName_listbox.Margin = new System.Windows.Forms.Padding(0);
+            this.globalerName_listbox.MultiColumn = true;
+            this.globalerName_listbox.Name = "globalerName_listbox";
+            this.globalerName_listbox.Size = new System.Drawing.Size(97, 513);
+            this.globalerName_listbox.TabIndex = 14;
             // 
             // Nutzer
             // 
@@ -398,6 +458,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
+            this.Controls.Add(this.globalerName_listbox);
             this.Controls.Add(this.spiel_panel1);
             this.Controls.Add(this.persoenlicherHighscore_panel1);
             this.Controls.Add(this.nutzer_panel1);
@@ -417,8 +478,6 @@
             this.globlerHighscore_panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.glocken_pictureBox)).EndInit();
             this.globlerHighscore_panel3.ResumeLayout(false);
-            this.globalerHighscore_panel4.ResumeLayout(false);
-            this.globalerHighscore_panel5.ResumeLayout(false);
             this.nutzer_panel1.ResumeLayout(false);
             this.nutzer_panel2.ResumeLayout(false);
             this.nutzer_panel3.ResumeLayout(false);
@@ -431,19 +490,23 @@
             this.spiel_panel1.ResumeLayout(false);
             this.spiel_panel2.ResumeLayout(false);
             this.spiel_panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statisticBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statisticBindingSource1)).EndInit();
+            this.globalerHighscore_panel5.ResumeLayout(false);
+            this.globalerHighscore_panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.ListBox globalerHighscore_listBox;
         private System.Windows.Forms.Panel globlerHighscore_panel1;
         private System.Windows.Forms.Panel globlerHighscore_panel2;
         private System.Windows.Forms.PictureBox glocken_pictureBox;
         private System.Windows.Forms.Panel globlerHighscore_panel3;
         private System.Windows.Forms.Label ueberschrift_label;
-        private System.Windows.Forms.Panel globalerHighscore_panel5;
-        private System.Windows.Forms.Panel globalerHighscore_panel4;
         private System.Windows.Forms.Panel nutzer_panel1;
         private System.Windows.Forms.Panel nutzer_panel2;
         private System.Windows.Forms.Panel nutzer_panel3;
@@ -462,5 +525,19 @@
         private System.Windows.Forms.Panel spiel_panel2;
         private System.Windows.Forms.Panel spiel_panel3;
         private System.Windows.Forms.RichTextBox spiel_richTextBox;
+        private DBDataSet dBDataSet;
+        private System.Windows.Forms.BindingSource user1BindingSource;
+        private DBDataSetTableAdapters.User1TableAdapter user1TableAdapter;
+        private DBDataSet1 dBDataSet1;
+        private System.Windows.Forms.BindingSource statisticBindingSource;
+        private DBDataSet1TableAdapters.StatisticTableAdapter statisticTableAdapter;
+        private System.Windows.Forms.BindingSource statisticBindingSource1;
+        private System.Windows.Forms.Panel globalerHighscore_panel5;
+        private System.Windows.Forms.ListBox globalerHighscore_listBox;
+        private System.Windows.Forms.Panel globalerHighscore_panel4;
+        private System.Windows.Forms.ListBox benutzername_listBox;
+        private System.Windows.Forms.Label benutzername_label;
+        private System.Windows.Forms.Label highscore_label;
+        private System.Windows.Forms.ListBox globalerName_listbox;
     }
 }

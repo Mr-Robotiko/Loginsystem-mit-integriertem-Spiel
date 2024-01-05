@@ -44,5 +44,15 @@ namespace Loginsystem.Properties {
                 return ((string)(this["connectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=93.200.53.173,1433;Initial Catalog=DB;User ID=user;Password=123456")]
+        public string DBConnectionString1 {
+            get {
+                return ((string)(this["DBConnectionString1"]));
+            }
+        }
     }
 }

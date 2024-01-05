@@ -9,7 +9,7 @@ namespace Loginsystem
 {
     public class ConnectionString
     {
-        private string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=80.128.100.54,1433";
+        private string connectionString = @"Password=123456;Persist Security Info=True;User ID=User;Initial Catalog=DB;Data Source=93.200.53.173,1433";
 
         public string Connection_Today()
         {
