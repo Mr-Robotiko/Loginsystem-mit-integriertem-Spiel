@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
@@ -452,6 +453,24 @@ namespace Loginsystem
         //Methode um das Spiel zu beenden
         private void extButton_Click(object sender, EventArgs e)
         {
+
+            // Nicht löschen ... Wichtig -> Verbindung zur DB
+            // Connection String wird instanziiert.
+            ConnectionString connectionClass = new ConnectionString();
+            string connectionToday = connectionClass.Connection_Today();
+            SqlConnection connection = new SqlConnection(connectionToday);
+
+            CheckConnection(connection);
+
+            try
+            {
+                AddScore(connection);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             Game_Spaceshooter.ActiveForm.Close();
 
             Nutzer nutzer = new Nutzer();
@@ -460,6 +479,34 @@ namespace Loginsystem
             nutzer.ShowDialog();
 
             this.Hide();
+        }
+
+        /// <summary>
+        /// Score wird in die DB geschrieben
+        /// </summary>
+        /// <param name="connection"></param>
+        private void AddScore(SqlConnection connection)
+        {
+            SqlCommand command = new SqlCommand(@"INSERT INTO [dbo].[Statistic] ([Game_ID] ,[Total_time] ,[Highscore] ,[FK_User_ID]) VALUES (@GameID ,@Total_Time ,@Score ,(SELECT user_ID FROM user1 WHERE '" + username + "' = username))", connection);
+
+            command.Parameters.AddWithValue("@GameID", 1);
+            command.Parameters.AddWithValue("@Total_Time", 0);
+            command.Parameters.AddWithValue("@Score", score);
+            command.Parameters.AddWithValue("@Username", username);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        /// <summary>
+        /// Die Verbindung wird geprüft
+        /// </summary>
+        /// <param name="connection"></param>
+        private void CheckConnection(SqlConnection connection)
+        {
+            if (connection.State == ConnectionState.Closed)
+            {
+                connection.Open();
+            }
         }
     }
 }

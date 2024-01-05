@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nutzer));
             this.globalerHighscore_listBox = new System.Windows.Forms.ListBox();
             this.globlerHighscore_panel1 = new System.Windows.Forms.Panel();
@@ -55,6 +56,9 @@
             this.spiel_panel2 = new System.Windows.Forms.Panel();
             this.spiel_panel3 = new System.Windows.Forms.Panel();
             this.spiel_richTextBox = new System.Windows.Forms.RichTextBox();
+            this.dBDataSet = new Loginsystem.DBDataSet();
+            this.user1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.user1TableAdapter = new Loginsystem.DBDataSetTableAdapters.User1TableAdapter();
             this.globlerHighscore_panel1.SuspendLayout();
             this.globlerHighscore_panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glocken_pictureBox)).BeginInit();
@@ -73,6 +77,8 @@
             this.spiel_panel1.SuspendLayout();
             this.spiel_panel2.SuspendLayout();
             this.spiel_panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // globalerHighscore_listBox
@@ -86,9 +92,11 @@
             this.globalerHighscore_listBox.Margin = new System.Windows.Forms.Padding(0);
             this.globalerHighscore_listBox.MaximumSize = new System.Drawing.Size(370, 495);
             this.globalerHighscore_listBox.MinimumSize = new System.Drawing.Size(370, 495);
+            this.globalerHighscore_listBox.MultiColumn = true;
             this.globalerHighscore_listBox.Name = "globalerHighscore_listBox";
             this.globalerHighscore_listBox.Size = new System.Drawing.Size(370, 486);
-            this.globalerHighscore_listBox.TabIndex = 9;            // 
+            this.globalerHighscore_listBox.TabIndex = 9;
+            // 
             // globlerHighscore_panel1
             // 
             this.globlerHighscore_panel1.BackColor = System.Drawing.Color.White;
@@ -392,6 +400,20 @@
             this.spiel_richTextBox.TabIndex = 18;
             this.spiel_richTextBox.Text = "<SPIELBESCHREIBUNG>";
             // 
+            // dBDataSet
+            // 
+            this.dBDataSet.DataSetName = "DBDataSet";
+            this.dBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // user1BindingSource
+            // 
+            this.user1BindingSource.DataMember = "User1";
+            this.user1BindingSource.DataSource = this.dBDataSet;
+            // 
+            // user1TableAdapter
+            // 
+            this.user1TableAdapter.ClearBeforeFill = true;
+            // 
             // Nutzer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -413,6 +435,7 @@
             this.Name = "Nutzer";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Nutzer_Load);
             this.globlerHighscore_panel1.ResumeLayout(false);
             this.globlerHighscore_panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.glocken_pictureBox)).EndInit();
@@ -431,6 +454,8 @@
             this.spiel_panel1.ResumeLayout(false);
             this.spiel_panel2.ResumeLayout(false);
             this.spiel_panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -462,5 +487,8 @@
         private System.Windows.Forms.Panel spiel_panel2;
         private System.Windows.Forms.Panel spiel_panel3;
         private System.Windows.Forms.RichTextBox spiel_richTextBox;
+        private DBDataSet dBDataSet;
+        private System.Windows.Forms.BindingSource user1BindingSource;
+        private DBDataSetTableAdapters.User1TableAdapter user1TableAdapter;
     }
 }

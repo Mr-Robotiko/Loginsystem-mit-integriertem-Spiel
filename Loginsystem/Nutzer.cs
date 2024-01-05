@@ -116,7 +116,7 @@ namespace Loginsystem
         /// <param name="connection"></param>
         private void FillGlobalHighscore(SqlConnection connection)
         {
-            SqlCommand command = new SqlCommand("SELECT [highscore] ,[Username] FROM [dbo].[User1] INNER JOIN [dbo].Statistic ON User_ID = FK_User_ID", connection);
+            SqlCommand command = new SqlCommand("SELECT username, SUM([Highscore]) AS Highscore FROM [dbo].[Statistic] INNER JOIN User1 ON User_ID = FK_User_ID GROUP BY Username ORDER BY Highscore DESC", connection);
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
 
@@ -124,12 +124,19 @@ namespace Loginsystem
 
             sqlDataAdapter.Fill(dataTable);
 
-            globalerHighscore_listBox.DisplayMember = "Username"; //+ "Highscore";
-            globalerHighscore_listBox.ValueMember = "[Username]";//+ "[Highscore]";
+            globalerHighscore_listBox.DisplayMember = "Username";
+            globalerHighscore_listBox.ValueMember = "[Username]";
 
             globalerHighscore_listBox.DataSource = dataTable;
 
             connection.Close();
+        }
+
+        private void Nutzer_Load(object sender, EventArgs e)
+        {
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "dBDataSet.User1". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.user1TableAdapter.Fill(this.dBDataSet.User1);
+
         }
     }
 }
