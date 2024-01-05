@@ -52,6 +52,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Game_Spaceshooter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +124,17 @@
     </None>
     <None Include="DBDataSet.xss">
       <DependentUpon>DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBDataSet1.xsc">
+      <DependentUpon>DBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBDataSet1.xss">
+      <DependentUpon>DBDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
