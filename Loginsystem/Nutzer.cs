@@ -124,12 +124,17 @@ namespace Loginsystem
 
             sqlDataAdapter.Fill(dataTable);
 
-            globalerHighscore_listBox.DisplayMember = "Username";
-            globalerHighscore_listBox.ValueMember = "[Username]";
+            globalerHighscore_listBox.DisplayMember = "Highscore";
+            globalerHighscore_listBox.ValueMember = "[Highscore]";
+
+            globalerName_listbox.DisplayMember = "Username";
+            globalerHighscore_listBox.ValueMember = "[Highscore]";
 
             globalerHighscore_listBox.DataSource = dataTable;
+            globalerName_listbox.DataSource = dataTable;
 
             connection.Close();
         }
+
     }
 }
