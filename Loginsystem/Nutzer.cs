@@ -19,9 +19,7 @@ namespace Loginsystem
         public Nutzer()
         {
             InitializeComponent();
-            //nutzer_Load();
-            FügeBeispieldatenHinzu1();
-            FügeBeispieldatenHinzu2();
+            nutzer_Load();
         }
         /// <summary>
         /// Der Username aus dem Loginform wird hier überg eben.
@@ -137,25 +135,7 @@ namespace Loginsystem
         private void Nutzer_Load(object sender, EventArgs e)
         {
             // TODO: Diese Codezeile lädt Daten in die Tabelle "dBDataSet.User1". Sie können sie bei Bedarf verschieben oder entfernen.
-            //this.user1TableAdapter.Fill(this.dBDataSet.User1);
-
-        }
-
-        private void FügeBeispieldatenHinzu1()
-        {
-            for (int i = 1; i <= 30; i++)
-            {
-                int x = 78723;
-                globalerHighscore_listBox.Items.Add(i * x);
-            }
-        }
-
-        private void FügeBeispieldatenHinzu2()
-        {
-            for (int i = 1; i <= 30; i++)
-            {
-                benutzername_listBox.Items.Add("Ozkanaft_83");
-            }
+            this.user1TableAdapter.Fill(this.dBDataSet.User1);
         }
     }
 }
