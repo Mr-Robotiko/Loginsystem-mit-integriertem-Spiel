@@ -32,6 +32,10 @@
             this.inhalt_panel1 = new System.Windows.Forms.Panel();
             this.inhalt_panel2 = new System.Windows.Forms.Panel();
             this.inhalt_panel3 = new System.Windows.Forms.Panel();
+            this.anmelden_button = new System.Windows.Forms.Button();
+            this.neuesPasswoert_panel = new System.Windows.Forms.Panel();
+            this.neuesPasswort_textBox = new System.Windows.Forms.TextBox();
+            this.zurueck_button = new System.Windows.Forms.Button();
             this.nutzer_pictureBox = new System.Windows.Forms.PictureBox();
             this.beenden_button = new System.Windows.Forms.Button();
             this.schneeflocken_pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -45,13 +49,10 @@
             this.ueberschrift_panel1 = new System.Windows.Forms.Panel();
             this.schneeflocken_panel2 = new System.Windows.Forms.Panel();
             this.background_pictureBox = new System.Windows.Forms.PictureBox();
-            this.neuesPasswoert_panel = new System.Windows.Forms.Panel();
-            this.neuesPasswort_textBox = new System.Windows.Forms.TextBox();
-            this.anmelden_button = new System.Windows.Forms.Button();
-            this.zurueck_button = new System.Windows.Forms.Button();
             this.inhalt_panel1.SuspendLayout();
             this.inhalt_panel2.SuspendLayout();
             this.inhalt_panel3.SuspendLayout();
+            this.neuesPasswoert_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nutzer_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox1)).BeginInit();
@@ -61,7 +62,6 @@
             this.ueberschrift_panel3.SuspendLayout();
             this.ueberschrift_panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.background_pictureBox)).BeginInit();
-            this.neuesPasswoert_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // inhalt_panel1
@@ -69,7 +69,7 @@
             this.inhalt_panel1.BackColor = System.Drawing.Color.White;
             this.inhalt_panel1.Controls.Add(this.inhalt_panel2);
             this.inhalt_panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.inhalt_panel1.Location = new System.Drawing.Point(440, 314);
+            this.inhalt_panel1.Location = new System.Drawing.Point(440, 305);
             this.inhalt_panel1.MaximumSize = new System.Drawing.Size(400, 264);
             this.inhalt_panel1.MinimumSize = new System.Drawing.Size(400, 264);
             this.inhalt_panel1.Name = "inhalt_panel1";
@@ -100,6 +100,60 @@
             this.inhalt_panel3.Name = "inhalt_panel3";
             this.inhalt_panel3.Size = new System.Drawing.Size(384, 248);
             this.inhalt_panel3.TabIndex = 0;
+            // 
+            // anmelden_button
+            // 
+            this.anmelden_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.anmelden_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.anmelden_button.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.anmelden_button.ForeColor = System.Drawing.Color.White;
+            this.anmelden_button.Location = new System.Drawing.Point(216, 200);
+            this.anmelden_button.MaximumSize = new System.Drawing.Size(160, 36);
+            this.anmelden_button.MinimumSize = new System.Drawing.Size(160, 36);
+            this.anmelden_button.Name = "anmelden_button";
+            this.anmelden_button.Size = new System.Drawing.Size(160, 36);
+            this.anmelden_button.TabIndex = 25;
+            this.anmelden_button.Text = "Ändern";
+            this.anmelden_button.UseVisualStyleBackColor = false;
+            // 
+            // neuesPasswoert_panel
+            // 
+            this.neuesPasswoert_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.neuesPasswoert_panel.Controls.Add(this.neuesPasswort_textBox);
+            this.neuesPasswoert_panel.Location = new System.Drawing.Point(8, 144);
+            this.neuesPasswoert_panel.MaximumSize = new System.Drawing.Size(368, 38);
+            this.neuesPasswoert_panel.MinimumSize = new System.Drawing.Size(368, 38);
+            this.neuesPasswoert_panel.Name = "neuesPasswoert_panel";
+            this.neuesPasswoert_panel.Size = new System.Drawing.Size(368, 38);
+            this.neuesPasswoert_panel.TabIndex = 2;
+            // 
+            // neuesPasswort_textBox
+            // 
+            this.neuesPasswort_textBox.BackColor = System.Drawing.Color.White;
+            this.neuesPasswort_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.neuesPasswort_textBox.Font = new System.Drawing.Font("Tahoma", 16.2F);
+            this.neuesPasswort_textBox.Location = new System.Drawing.Point(3, 3);
+            this.neuesPasswort_textBox.MaximumSize = new System.Drawing.Size(362, 32);
+            this.neuesPasswort_textBox.MinimumSize = new System.Drawing.Size(362, 32);
+            this.neuesPasswort_textBox.Name = "neuesPasswort_textBox";
+            this.neuesPasswort_textBox.Size = new System.Drawing.Size(362, 32);
+            this.neuesPasswort_textBox.TabIndex = 0;
+            // 
+            // zurueck_button
+            // 
+            this.zurueck_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.zurueck_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.zurueck_button.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.zurueck_button.ForeColor = System.Drawing.Color.White;
+            this.zurueck_button.Location = new System.Drawing.Point(8, 200);
+            this.zurueck_button.MaximumSize = new System.Drawing.Size(160, 36);
+            this.zurueck_button.MinimumSize = new System.Drawing.Size(160, 36);
+            this.zurueck_button.Name = "zurueck_button";
+            this.zurueck_button.Size = new System.Drawing.Size(160, 36);
+            this.zurueck_button.TabIndex = 24;
+            this.zurueck_button.Text = "Zurück";
+            this.zurueck_button.UseVisualStyleBackColor = false;
+            this.zurueck_button.Click += new System.EventHandler(this.zurueck_button_Click);
             // 
             // nutzer_pictureBox
             // 
@@ -228,7 +282,7 @@
             // 
             this.ueberschrift_panel1.BackColor = System.Drawing.Color.White;
             this.ueberschrift_panel1.Controls.Add(this.ueberschrift_panel2);
-            this.ueberschrift_panel1.Location = new System.Drawing.Point(440, 254);
+            this.ueberschrift_panel1.Location = new System.Drawing.Point(440, 245);
             this.ueberschrift_panel1.Name = "ueberschrift_panel1";
             this.ueberschrift_panel1.Size = new System.Drawing.Size(400, 64);
             this.ueberschrift_panel1.TabIndex = 22;
@@ -253,60 +307,6 @@
             this.background_pictureBox.Size = new System.Drawing.Size(1280, 720);
             this.background_pictureBox.TabIndex = 21;
             this.background_pictureBox.TabStop = false;
-            // 
-            // neuesPasswoert_panel
-            // 
-            this.neuesPasswoert_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
-            this.neuesPasswoert_panel.Controls.Add(this.neuesPasswort_textBox);
-            this.neuesPasswoert_panel.Location = new System.Drawing.Point(8, 144);
-            this.neuesPasswoert_panel.MaximumSize = new System.Drawing.Size(368, 38);
-            this.neuesPasswoert_panel.MinimumSize = new System.Drawing.Size(368, 38);
-            this.neuesPasswoert_panel.Name = "neuesPasswoert_panel";
-            this.neuesPasswoert_panel.Size = new System.Drawing.Size(368, 38);
-            this.neuesPasswoert_panel.TabIndex = 2;
-            // 
-            // neuesPasswort_textBox
-            // 
-            this.neuesPasswort_textBox.BackColor = System.Drawing.Color.White;
-            this.neuesPasswort_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.neuesPasswort_textBox.Font = new System.Drawing.Font("Tahoma", 16.2F);
-            this.neuesPasswort_textBox.Location = new System.Drawing.Point(3, 3);
-            this.neuesPasswort_textBox.MaximumSize = new System.Drawing.Size(362, 32);
-            this.neuesPasswort_textBox.MinimumSize = new System.Drawing.Size(362, 32);
-            this.neuesPasswort_textBox.Name = "neuesPasswort_textBox";
-            this.neuesPasswort_textBox.Size = new System.Drawing.Size(362, 32);
-            this.neuesPasswort_textBox.TabIndex = 0;
-            // 
-            // anmelden_button
-            // 
-            this.anmelden_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
-            this.anmelden_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.anmelden_button.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anmelden_button.ForeColor = System.Drawing.Color.White;
-            this.anmelden_button.Location = new System.Drawing.Point(216, 200);
-            this.anmelden_button.MaximumSize = new System.Drawing.Size(160, 36);
-            this.anmelden_button.MinimumSize = new System.Drawing.Size(160, 36);
-            this.anmelden_button.Name = "anmelden_button";
-            this.anmelden_button.Size = new System.Drawing.Size(160, 36);
-            this.anmelden_button.TabIndex = 25;
-            this.anmelden_button.Text = "Ändern";
-            this.anmelden_button.UseVisualStyleBackColor = false;
-            // 
-            // zurueck_button
-            // 
-            this.zurueck_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
-            this.zurueck_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zurueck_button.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.zurueck_button.ForeColor = System.Drawing.Color.White;
-            this.zurueck_button.Location = new System.Drawing.Point(8, 200);
-            this.zurueck_button.MaximumSize = new System.Drawing.Size(160, 36);
-            this.zurueck_button.MinimumSize = new System.Drawing.Size(160, 36);
-            this.zurueck_button.Name = "zurueck_button";
-            this.zurueck_button.Size = new System.Drawing.Size(160, 36);
-            this.zurueck_button.TabIndex = 24;
-            this.zurueck_button.Text = "Zurück";
-            this.zurueck_button.UseVisualStyleBackColor = false;
-            this.zurueck_button.Click += new System.EventHandler(this.zurueck_button_Click);
             // 
             // PasswortVergessen
             // 
@@ -333,6 +333,8 @@
             this.inhalt_panel1.ResumeLayout(false);
             this.inhalt_panel2.ResumeLayout(false);
             this.inhalt_panel3.ResumeLayout(false);
+            this.neuesPasswoert_panel.ResumeLayout(false);
+            this.neuesPasswoert_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nutzer_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox1)).EndInit();
@@ -342,8 +344,6 @@
             this.ueberschrift_panel3.ResumeLayout(false);
             this.ueberschrift_panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.background_pictureBox)).EndInit();
-            this.neuesPasswoert_panel.ResumeLayout(false);
-            this.neuesPasswoert_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }

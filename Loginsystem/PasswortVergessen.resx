@@ -244,7 +244,7 @@
         y44lPCTcnbJsyQ8kypxSvK7YyhXNn3uqFwbT9tys0mV2EWWSaWbQMCiyQo4C/bLaorjEZD9Swx/2/TPi
         MsS1gimOcVax0H0/6g9+d+tmBgfKScEIND573nsPNG1Dacvzvo48r3QM9U9waVf8q4cw8iH6VkXrPoC2
         DTi/qmjGDlxsQudjXnd0X6qXGchk4O1UvikJHTfQslDu7Wefk3uIS1dT17C3D71ZyV6s8e7m6t7+POP3
-        R+QblQJytEUWWT4AAAAJcEhZcwAACw4AAAsOAUC+4UEAAAAHdElNRQfnDBwQEAfQKqA+AADXQUlEQVR4
+        R+QblQJytEUWWT4AAAAJcEhZcwAACw0AAAsNAe0HwCwAAAAHdElNRQfnDBwQEAfQKqA+AADXQUlEQVR4
         Xqy9BdhlxZUu/E1CEiC4W5C4TDyBBIK70400NLS7u7u7u7u7u7u7Gy24W5LJ3Lnrf99VtWrX3ud8DZn7
         98Oiqpav8n2+2rULLv7bnUL4PtN7/6z5i+9FOcCfo3wWwI808FMP+TV1eAcOp/mMfmc7jw2vy/EmdNNp
         uCxdcd6+QYEiPagxzxDKlg+4JG8Q8yTGE11piHSCHutQfFbG8ygtk8YQcJQ3HT4tyCdwPshrKOsYIKfF
@@ -1178,7 +1178,7 @@
         y44lPCTcnbJsyQ8kypxSvK7YyhXNn3uqFwbT9tys0mV2EWWSaWbQMCiyQo4C/bLaorjEZD9Swx/2/TPi
         MsS1gimOcVax0H0/6g9+d+tmBgfKScEIND573nsPNG1Dacvzvo48r3QM9U9waVf8q4cw8iH6VkXrPoC2
         DTi/qmjGDlxsQudjXnd0X6qXGchk4O1UvikJHTfQslDu7Wefk3uIS1dT17C3D71ZyV6s8e7m6t7+POP3
-        R+QblQJytEUWWT4AAAAJcEhZcwAACw4AAAsOAUC+4UEAAAAHdElNRQfnDBwQDxZ3wI5SAADtQ0lEQVR4
+        R+QblQJytEUWWT4AAAAJcEhZcwAACw0AAAsNAe0HwCwAAAAHdElNRQfnDBwQDxZ3wI5SAADtQ0lEQVR4
         Xqy9BdgexfU+/LSlLcUhuJZSAUqBlhZ3t5CEkATi7u7u7u7u7u7u7m4QElxLvee77zNzdmf3fRLo7/+9
         13XemTk254zPPrOzmUuefFgIlzJ86i8av+QppCP4SxBPA/gRRvzUQ34NHd6Bw2k8pd/lnSUPr8vxxnTT
         abg0XXE+f4OMIj1oZp4hSls8wsVxg5AnzjzWlYRAJ+ihDsWnZTyP0lJhCBGO8qbDh5lsAheCrBmlDQPk
@@ -2200,15 +2200,6 @@
   <metadata name="zuckerstangen_pictureBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="glocken_pictureBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ueberschrift_panel3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="zuckerstangen_pictureBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="zuckerstangen_pictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAABgmlDQ1BJQ0MgcHJvZmlsZQAAKM+VkTlI
@@ -2343,9 +2334,6 @@
 </value>
   </data>
   <metadata name="ueberschrift_panel3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ueberschrift_label.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="ueberschrift_label.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -11520,9 +11508,6 @@
         34F/+1//G8ZnsS5jFLPXAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="neuesPasswort_textBox.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
