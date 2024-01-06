@@ -38,6 +38,7 @@
             this.nutzer_panel1 = new System.Windows.Forms.Panel();
             this.nutzer_panel2 = new System.Windows.Forms.Panel();
             this.nutzer_panel3 = new System.Windows.Forms.Panel();
+            this.bearbeiten_button = new System.Windows.Forms.Button();
             this.abmelden_button = new System.Windows.Forms.Button();
             this.zurueck_button = new System.Windows.Forms.Button();
             this.nutzer_pictureBox = new System.Windows.Forms.PictureBox();
@@ -61,9 +62,14 @@
             this.statisticTableAdapter = new Loginsystem.DBDataSet1TableAdapters.StatisticTableAdapter();
             this.statisticBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.globalerHighscore_panel5 = new System.Windows.Forms.Panel();
-            this.globalerHighscore_listBox = new System.Windows.Forms.ListBox();
-            this.globalerHighscore_panel4 = new System.Windows.Forms.Panel();
+            this.abwaerts_button = new System.Windows.Forms.Button();
+            this.aufwaerts_button = new System.Windows.Forms.Button();
+            this.nutzername_label = new System.Windows.Forms.Label();
+            this.globalerHighscore_label1 = new System.Windows.Forms.Label();
             this.globalerName_listbox = new System.Windows.Forms.ListBox();
+            this.globalerHighscore_listBox = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.globalerHighscore_panel4 = new System.Windows.Forms.Panel();
             this.globlerHighscore_panel1.SuspendLayout();
             this.globlerHighscore_panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glocken_pictureBox)).BeginInit();
@@ -175,6 +181,7 @@
             // nutzer_panel3
             // 
             this.nutzer_panel3.BackColor = System.Drawing.Color.White;
+            this.nutzer_panel3.Controls.Add(this.bearbeiten_button);
             this.nutzer_panel3.Controls.Add(this.abmelden_button);
             this.nutzer_panel3.Controls.Add(this.zurueck_button);
             this.nutzer_panel3.Controls.Add(this.nutzer_pictureBox);
@@ -186,16 +193,32 @@
             this.nutzer_panel3.Size = new System.Drawing.Size(1204, 48);
             this.nutzer_panel3.TabIndex = 7;
             // 
+            // bearbeiten_button
+            // 
+            this.bearbeiten_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.bearbeiten_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bearbeiten_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bearbeiten_button.ForeColor = System.Drawing.Color.White;
+            this.bearbeiten_button.Location = new System.Drawing.Point(727, 0);
+            this.bearbeiten_button.Margin = new System.Windows.Forms.Padding(0);
+            this.bearbeiten_button.Name = "bearbeiten_button";
+            this.bearbeiten_button.Size = new System.Drawing.Size(159, 48);
+            this.bearbeiten_button.TabIndex = 17;
+            this.bearbeiten_button.Text = "Bearbeiten";
+            this.bearbeiten_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bearbeiten_button.UseVisualStyleBackColor = false;
+            this.bearbeiten_button.Click += new System.EventHandler(this.bearbeiten_button_Click);
+            // 
             // abmelden_button
             // 
             this.abmelden_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.abmelden_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.abmelden_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.abmelden_button.ForeColor = System.Drawing.Color.White;
-            this.abmelden_button.Location = new System.Drawing.Point(826, 0);
+            this.abmelden_button.Location = new System.Drawing.Point(886, 0);
             this.abmelden_button.Margin = new System.Windows.Forms.Padding(0);
             this.abmelden_button.Name = "abmelden_button";
-            this.abmelden_button.Size = new System.Drawing.Size(190, 48);
+            this.abmelden_button.Size = new System.Drawing.Size(159, 48);
             this.abmelden_button.TabIndex = 16;
             this.abmelden_button.Text = "Abmelden";
             this.abmelden_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -208,10 +231,10 @@
             this.zurueck_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.zurueck_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zurueck_button.ForeColor = System.Drawing.Color.White;
-            this.zurueck_button.Location = new System.Drawing.Point(1014, 0);
+            this.zurueck_button.Location = new System.Drawing.Point(1045, 0);
             this.zurueck_button.Margin = new System.Windows.Forms.Padding(0);
             this.zurueck_button.Name = "zurueck_button";
-            this.zurueck_button.Size = new System.Drawing.Size(190, 48);
+            this.zurueck_button.Size = new System.Drawing.Size(159, 48);
             this.zurueck_button.TabIndex = 15;
             this.zurueck_button.Text = "Beenden";
             this.zurueck_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -291,7 +314,7 @@
             this.persoenlicherHighscore_label.BackColor = System.Drawing.Color.White;
             this.persoenlicherHighscore_label.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.persoenlicherHighscore_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
-            this.persoenlicherHighscore_label.Location = new System.Drawing.Point(38, 1);
+            this.persoenlicherHighscore_label.Location = new System.Drawing.Point(38, 0);
             this.persoenlicherHighscore_label.Margin = new System.Windows.Forms.Padding(0);
             this.persoenlicherHighscore_label.MaximumSize = new System.Drawing.Size(639, 38);
             this.persoenlicherHighscore_label.MinimumSize = new System.Drawing.Size(639, 38);
@@ -367,8 +390,8 @@
             this.spiel_richTextBox.Name = "spiel_richTextBox";
             this.spiel_richTextBox.Size = new System.Drawing.Size(661, 400);
             this.spiel_richTextBox.TabIndex = 18;
-            this.spiel_richTextBox.Text = "Fliege mit Captain Danulli durch Raum und Zeit und zerstören Sie die feindlichen " +
-    "Schiffe";
+            this.spiel_richTextBox.Text = "Fliege mit Captain Danulli durch Raum und Zeit und zerstöre die feindlichen Schif" +
+    "fe.\n\nSteuerung: \"W\", \"A\", \"S\" und \"D\"";
             // 
             // dBDataSet
             // 
@@ -406,14 +429,88 @@
             // globalerHighscore_panel5
             // 
             this.globalerHighscore_panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.globalerHighscore_panel5.Controls.Add(this.abwaerts_button);
+            this.globalerHighscore_panel5.Controls.Add(this.aufwaerts_button);
+            this.globalerHighscore_panel5.Controls.Add(this.nutzername_label);
+            this.globalerHighscore_panel5.Controls.Add(this.globalerHighscore_label1);
+            this.globalerHighscore_panel5.Controls.Add(this.globalerName_listbox);
             this.globalerHighscore_panel5.Controls.Add(this.globalerHighscore_listBox);
+            this.globalerHighscore_panel5.Controls.Add(this.panel1);
             this.globalerHighscore_panel5.Location = new System.Drawing.Point(4, 4);
             this.globalerHighscore_panel5.Margin = new System.Windows.Forms.Padding(4);
-            this.globalerHighscore_panel5.MaximumSize = new System.Drawing.Size(378, 494);
-            this.globalerHighscore_panel5.MinimumSize = new System.Drawing.Size(378, 494);
             this.globalerHighscore_panel5.Name = "globalerHighscore_panel5";
-            this.globalerHighscore_panel5.Size = new System.Drawing.Size(378, 494);
+            this.globalerHighscore_panel5.Size = new System.Drawing.Size(478, 494);
             this.globalerHighscore_panel5.TabIndex = 7;
+            // 
+            // abwaerts_button
+            // 
+            this.abwaerts_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.abwaerts_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.abwaerts_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abwaerts_button.ForeColor = System.Drawing.Color.White;
+            this.abwaerts_button.Location = new System.Drawing.Point(239, 442);
+            this.abwaerts_button.Margin = new System.Windows.Forms.Padding(0);
+            this.abwaerts_button.Name = "abwaerts_button";
+            this.abwaerts_button.Size = new System.Drawing.Size(235, 48);
+            this.abwaerts_button.TabIndex = 19;
+            this.abwaerts_button.Text = "Abwärts sortieren";
+            this.abwaerts_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.abwaerts_button.UseVisualStyleBackColor = false;
+            this.abwaerts_button.Click += new System.EventHandler(this.abwaerts_button_Click);
+            // 
+            // aufwaerts_button
+            // 
+            this.aufwaerts_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.aufwaerts_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aufwaerts_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aufwaerts_button.ForeColor = System.Drawing.Color.White;
+            this.aufwaerts_button.Location = new System.Drawing.Point(4, 442);
+            this.aufwaerts_button.Margin = new System.Windows.Forms.Padding(0);
+            this.aufwaerts_button.Name = "aufwaerts_button";
+            this.aufwaerts_button.Size = new System.Drawing.Size(235, 48);
+            this.aufwaerts_button.TabIndex = 18;
+            this.aufwaerts_button.Text = "Aufwärts sortieren";
+            this.aufwaerts_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.aufwaerts_button.UseVisualStyleBackColor = false;
+            this.aufwaerts_button.Click += new System.EventHandler(this.aufwaerts_button_Click);
+            // 
+            // nutzername_label
+            // 
+            this.nutzername_label.BackColor = System.Drawing.Color.White;
+            this.nutzername_label.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nutzername_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.nutzername_label.Location = new System.Drawing.Point(239, 4);
+            this.nutzername_label.Margin = new System.Windows.Forms.Padding(0);
+            this.nutzername_label.Name = "nutzername_label";
+            this.nutzername_label.Size = new System.Drawing.Size(222, 33);
+            this.nutzername_label.TabIndex = 15;
+            this.nutzername_label.Text = "Spieler:";
+            this.nutzername_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // globalerHighscore_label1
+            // 
+            this.globalerHighscore_label1.BackColor = System.Drawing.Color.White;
+            this.globalerHighscore_label1.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.globalerHighscore_label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.globalerHighscore_label1.Location = new System.Drawing.Point(4, 4);
+            this.globalerHighscore_label1.Margin = new System.Windows.Forms.Padding(0);
+            this.globalerHighscore_label1.Name = "globalerHighscore_label1";
+            this.globalerHighscore_label1.Size = new System.Drawing.Size(222, 33);
+            this.globalerHighscore_label1.TabIndex = 8;
+            this.globalerHighscore_label1.Text = "Highscore:";
+            this.globalerHighscore_label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // globalerName_listbox
+            // 
+            this.globalerName_listbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.globalerName_listbox.Font = new System.Drawing.Font("Tahoma", 16.2F);
+            this.globalerName_listbox.FormattingEnabled = true;
+            this.globalerName_listbox.ItemHeight = 27;
+            this.globalerName_listbox.Location = new System.Drawing.Point(239, 37);
+            this.globalerName_listbox.Margin = new System.Windows.Forms.Padding(0);
+            this.globalerName_listbox.Name = "globalerName_listbox";
+            this.globalerName_listbox.Size = new System.Drawing.Size(235, 405);
+            this.globalerName_listbox.TabIndex = 14;
             // 
             // globalerHighscore_listBox
             // 
@@ -422,35 +519,31 @@
             this.globalerHighscore_listBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.globalerHighscore_listBox.FormattingEnabled = true;
             this.globalerHighscore_listBox.ItemHeight = 27;
-            this.globalerHighscore_listBox.Location = new System.Drawing.Point(4, 4);
+            this.globalerHighscore_listBox.Location = new System.Drawing.Point(4, 37);
             this.globalerHighscore_listBox.Margin = new System.Windows.Forms.Padding(0);
-            this.globalerHighscore_listBox.MultiColumn = true;
             this.globalerHighscore_listBox.Name = "globalerHighscore_listBox";
-            this.globalerHighscore_listBox.Size = new System.Drawing.Size(370, 486);
+            this.globalerHighscore_listBox.Size = new System.Drawing.Size(235, 405);
             this.globalerHighscore_listBox.TabIndex = 9;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.MaximumSize = new System.Drawing.Size(470, 33);
+            this.panel1.MinimumSize = new System.Drawing.Size(470, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(470, 33);
+            this.panel1.TabIndex = 14;
             // 
             // globalerHighscore_panel4
             // 
             this.globalerHighscore_panel4.BackColor = System.Drawing.Color.White;
             this.globalerHighscore_panel4.Controls.Add(this.globalerHighscore_panel5);
-            this.globalerHighscore_panel4.Location = new System.Drawing.Point(864, 185);
+            this.globalerHighscore_panel4.Location = new System.Drawing.Point(764, 181);
             this.globalerHighscore_panel4.Margin = new System.Windows.Forms.Padding(0);
             this.globalerHighscore_panel4.Name = "globalerHighscore_panel4";
-            this.globalerHighscore_panel4.Size = new System.Drawing.Size(386, 502);
+            this.globalerHighscore_panel4.Size = new System.Drawing.Size(486, 502);
             this.globalerHighscore_panel4.TabIndex = 12;
-            // 
-            // globalerName_listbox
-            // 
-            this.globalerName_listbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.globalerName_listbox.Font = new System.Drawing.Font("Tahoma", 16.2F);
-            this.globalerName_listbox.FormattingEnabled = true;
-            this.globalerName_listbox.ItemHeight = 27;
-            this.globalerName_listbox.Location = new System.Drawing.Point(764, 185);
-            this.globalerName_listbox.Margin = new System.Windows.Forms.Padding(0);
-            this.globalerName_listbox.MultiColumn = true;
-            this.globalerName_listbox.Name = "globalerName_listbox";
-            this.globalerName_listbox.Size = new System.Drawing.Size(97, 513);
-            this.globalerName_listbox.TabIndex = 14;
             // 
             // Nutzer
             // 
@@ -458,11 +551,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
-            this.Controls.Add(this.globalerName_listbox);
             this.Controls.Add(this.spiel_panel1);
+            this.Controls.Add(this.globalerHighscore_panel4);
             this.Controls.Add(this.persoenlicherHighscore_panel1);
             this.Controls.Add(this.nutzer_panel1);
-            this.Controls.Add(this.globalerHighscore_panel4);
             this.Controls.Add(this.globlerHighscore_panel1);
             this.Controls.Add(this.background_pictureBox);
             this.DoubleBuffered = true;
@@ -539,5 +631,11 @@
         private System.Windows.Forms.Label benutzername_label;
         private System.Windows.Forms.Label highscore_label;
         private System.Windows.Forms.ListBox globalerName_listbox;
+        private System.Windows.Forms.Label globalerHighscore_label1;
+        private System.Windows.Forms.Label nutzername_label;
+        private System.Windows.Forms.Button bearbeiten_button;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button abwaerts_button;
+        private System.Windows.Forms.Button aufwaerts_button;
     }
 }
