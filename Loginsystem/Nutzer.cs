@@ -148,12 +148,22 @@ namespace Loginsystem
             connection.Close();
         }
 
+        /// <summary>
+        /// Die Accounts werden überarbeitet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bearbeiten_button_Click(object sender, EventArgs e)
         {
             NutzerBearbeiten nutzerBearbeitenForm = new NutzerBearbeiten();
             nutzerBearbeitenForm.ShowDialog();
         }
 
+        /// <summary>
+        /// Die Liste wird abwärts geordnet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void abwaerts_button_Click(object sender, EventArgs e)
         {
             // Nicht löschen --- Connection String zur DB
@@ -167,6 +177,11 @@ namespace Loginsystem
             FillGlobalHighscore(connection);
         }
 
+        /// <summary>
+        /// Die Liste wird aufwärts geordnet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aufwaerts_button_Click(object sender, EventArgs e)
         {
 

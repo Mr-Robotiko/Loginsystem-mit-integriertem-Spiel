@@ -421,7 +421,6 @@
             this.benutzername_textBox.Name = "benutzername_textBox";
             this.benutzername_textBox.Size = new System.Drawing.Size(362, 32);
             this.benutzername_textBox.TabIndex = 1;
-            this.benutzername_textBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.benutzername_textBox_MouseClick);
             // 
             // banutzername_panel
             // 

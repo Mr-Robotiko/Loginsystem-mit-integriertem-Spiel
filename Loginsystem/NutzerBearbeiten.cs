@@ -207,10 +207,5 @@ namespace Loginsystem
             }
 
         }
-
-        private void benutzername_textBox_MouseClick(object sender, MouseEventArgs e)
-        {
-            MessageBox.Show("Der Benutzername kann nicht geändert werden!");
-        }
     }
 }
