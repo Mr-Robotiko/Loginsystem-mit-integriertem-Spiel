@@ -204,8 +204,12 @@ namespace Loginsystem
             else
             {
                 MessageBox.Show("Bitte richtigen Benutzername und Passwort benutzen");
-            }
+            } 
+        }
 
+        private void NutzerBearbeiten_Shown(object sender, EventArgs e)
+        {
+            MessageBox.Show("Der Benutzername kann nicht geändert werden. Bitte geben Sie Ihren exestierenden Benutzernamen ein, um eine Löschung oder Bearbeitung Ihres Profils durchzuführen.");
         }
     }
 }

@@ -40,6 +40,8 @@
             this.loeschen_button = new System.Windows.Forms.Button();
             this.passwort_panel = new System.Windows.Forms.Panel();
             this.passwort_textBox = new System.Windows.Forms.TextBox();
+            this.banutzername_panel = new System.Windows.Forms.Panel();
+            this.benutzername_textBox = new System.Windows.Forms.TextBox();
             this.gebDatum_panel = new System.Windows.Forms.Panel();
             this.gebDatum_textBox = new System.Windows.Forms.TextBox();
             this.bearbeiten_button = new System.Windows.Forms.Button();
@@ -56,14 +58,13 @@
             this.glocken_pictureBox = new System.Windows.Forms.PictureBox();
             this.ueberschrift_panel3 = new System.Windows.Forms.Panel();
             this.ueberschrift_label = new System.Windows.Forms.Label();
-            this.benutzername_textBox = new System.Windows.Forms.TextBox();
-            this.banutzername_panel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox1)).BeginInit();
             this.inhalt_panel1.SuspendLayout();
             this.inhalt_panel2.SuspendLayout();
             this.inhalt_panel3.SuspendLayout();
             this.passwort_panel.SuspendLayout();
+            this.banutzername_panel.SuspendLayout();
             this.gebDatum_panel.SuspendLayout();
             this.name_panel.SuspendLayout();
             this.vorname_panel.SuspendLayout();
@@ -74,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.zuckerstangen_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.glocken_pictureBox)).BeginInit();
             this.ueberschrift_panel3.SuspendLayout();
-            this.banutzername_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // beenden_button
@@ -214,6 +214,29 @@
             this.passwort_textBox.Name = "passwort_textBox";
             this.passwort_textBox.Size = new System.Drawing.Size(362, 32);
             this.passwort_textBox.TabIndex = 1;
+            // 
+            // banutzername_panel
+            // 
+            this.banutzername_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.banutzername_panel.Controls.Add(this.benutzername_textBox);
+            this.banutzername_panel.Location = new System.Drawing.Point(8, 312);
+            this.banutzername_panel.MaximumSize = new System.Drawing.Size(368, 38);
+            this.banutzername_panel.MinimumSize = new System.Drawing.Size(368, 38);
+            this.banutzername_panel.Name = "banutzername_panel";
+            this.banutzername_panel.Size = new System.Drawing.Size(368, 38);
+            this.banutzername_panel.TabIndex = 11;
+            // 
+            // benutzername_textBox
+            // 
+            this.benutzername_textBox.BackColor = System.Drawing.Color.White;
+            this.benutzername_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.benutzername_textBox.Font = new System.Drawing.Font("Tahoma", 16.2F);
+            this.benutzername_textBox.Location = new System.Drawing.Point(3, 3);
+            this.benutzername_textBox.MaximumSize = new System.Drawing.Size(362, 32);
+            this.benutzername_textBox.MinimumSize = new System.Drawing.Size(362, 32);
+            this.benutzername_textBox.Name = "benutzername_textBox";
+            this.benutzername_textBox.Size = new System.Drawing.Size(362, 32);
+            this.benutzername_textBox.TabIndex = 1;
             // 
             // gebDatum_panel
             // 
@@ -410,29 +433,6 @@
             this.ueberschrift_label.Text = "Bearbeitung";
             this.ueberschrift_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // benutzername_textBox
-            // 
-            this.benutzername_textBox.BackColor = System.Drawing.Color.White;
-            this.benutzername_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.benutzername_textBox.Font = new System.Drawing.Font("Tahoma", 16.2F);
-            this.benutzername_textBox.Location = new System.Drawing.Point(3, 3);
-            this.benutzername_textBox.MaximumSize = new System.Drawing.Size(362, 32);
-            this.benutzername_textBox.MinimumSize = new System.Drawing.Size(362, 32);
-            this.benutzername_textBox.Name = "benutzername_textBox";
-            this.benutzername_textBox.Size = new System.Drawing.Size(362, 32);
-            this.benutzername_textBox.TabIndex = 1;
-            // 
-            // banutzername_panel
-            // 
-            this.banutzername_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
-            this.banutzername_panel.Controls.Add(this.benutzername_textBox);
-            this.banutzername_panel.Location = new System.Drawing.Point(8, 312);
-            this.banutzername_panel.MaximumSize = new System.Drawing.Size(368, 38);
-            this.banutzername_panel.MinimumSize = new System.Drawing.Size(368, 38);
-            this.banutzername_panel.Name = "banutzername_panel";
-            this.banutzername_panel.Size = new System.Drawing.Size(368, 38);
-            this.banutzername_panel.TabIndex = 11;
-            // 
             // NutzerBearbeiten
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -455,6 +455,7 @@
             this.Name = "NutzerBearbeiten";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Shown += new System.EventHandler(this.NutzerBearbeiten_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox1)).EndInit();
             this.inhalt_panel1.ResumeLayout(false);
@@ -462,6 +463,8 @@
             this.inhalt_panel3.ResumeLayout(false);
             this.passwort_panel.ResumeLayout(false);
             this.passwort_panel.PerformLayout();
+            this.banutzername_panel.ResumeLayout(false);
+            this.banutzername_panel.PerformLayout();
             this.gebDatum_panel.ResumeLayout(false);
             this.gebDatum_panel.PerformLayout();
             this.name_panel.ResumeLayout(false);
@@ -475,8 +478,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.zuckerstangen_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.glocken_pictureBox)).EndInit();
             this.ueberschrift_panel3.ResumeLayout(false);
-            this.banutzername_panel.ResumeLayout(false);
-            this.banutzername_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
