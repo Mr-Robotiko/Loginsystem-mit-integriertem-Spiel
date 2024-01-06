@@ -37,6 +37,7 @@
             this.inhalt_panel1 = new System.Windows.Forms.Panel();
             this.inhalt_panel2 = new System.Windows.Forms.Panel();
             this.inhalt_panel3 = new System.Windows.Forms.Panel();
+            this.loeschen_button = new System.Windows.Forms.Button();
             this.passwort_panel = new System.Windows.Forms.Panel();
             this.passwort_textBox = new System.Windows.Forms.TextBox();
             this.banutzername_panel = new System.Windows.Forms.Panel();
@@ -57,7 +58,6 @@
             this.glocken_pictureBox = new System.Windows.Forms.PictureBox();
             this.ueberschrift_panel3 = new System.Windows.Forms.Panel();
             this.ueberschrift_label = new System.Windows.Forms.Label();
-            this.loeschen_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox1)).BeginInit();
             this.inhalt_panel1.SuspendLayout();
@@ -178,6 +178,20 @@
             this.inhalt_panel3.Size = new System.Drawing.Size(384, 510);
             this.inhalt_panel3.TabIndex = 0;
             // 
+            // loeschen_button
+            // 
+            this.loeschen_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.loeschen_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loeschen_button.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loeschen_button.ForeColor = System.Drawing.Color.White;
+            this.loeschen_button.Location = new System.Drawing.Point(8, 468);
+            this.loeschen_button.Name = "loeschen_button";
+            this.loeschen_button.Size = new System.Drawing.Size(368, 36);
+            this.loeschen_button.TabIndex = 13;
+            this.loeschen_button.Text = "Account Löschen";
+            this.loeschen_button.UseVisualStyleBackColor = false;
+            this.loeschen_button.Click += new System.EventHandler(this.loeschen_button_Click);
+            // 
             // passwort_panel
             // 
             this.passwort_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
@@ -261,6 +275,7 @@
             this.bearbeiten_button.TabIndex = 9;
             this.bearbeiten_button.Text = "Bearbeiten";
             this.bearbeiten_button.UseVisualStyleBackColor = false;
+            this.bearbeiten_button.Click += new System.EventHandler(this.bearbeiten_button_Click);
             // 
             // zurueck_button
             // 
@@ -417,19 +432,6 @@
             this.ueberschrift_label.TabIndex = 7;
             this.ueberschrift_label.Text = "Bearbeitung";
             this.ueberschrift_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // loeschen_button
-            // 
-            this.loeschen_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
-            this.loeschen_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loeschen_button.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loeschen_button.ForeColor = System.Drawing.Color.White;
-            this.loeschen_button.Location = new System.Drawing.Point(8, 468);
-            this.loeschen_button.Name = "loeschen_button";
-            this.loeschen_button.Size = new System.Drawing.Size(368, 36);
-            this.loeschen_button.TabIndex = 13;
-            this.loeschen_button.Text = "Account Löschen";
-            this.loeschen_button.UseVisualStyleBackColor = false;
             // 
             // NutzerBearbeiten
             // 

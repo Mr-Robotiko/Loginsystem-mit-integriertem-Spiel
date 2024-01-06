@@ -33,5 +33,10 @@ namespace Loginsystem
             // Placeholder Zuordnung
             neuesPasswort_textBox.AddPlaceholder("Neues Passwort");
         }
+
+        private void anmelden_button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -456,6 +456,7 @@
             this.abwaerts_button.Text = "Abwärts sortieren";
             this.abwaerts_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.abwaerts_button.UseVisualStyleBackColor = false;
+            this.abwaerts_button.Click += new System.EventHandler(this.abwaerts_button_Click);
             // 
             // aufwaerts_button
             // 
@@ -471,6 +472,7 @@
             this.aufwaerts_button.Text = "Aufwärts sortieren";
             this.aufwaerts_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.aufwaerts_button.UseVisualStyleBackColor = false;
+            this.aufwaerts_button.Click += new System.EventHandler(this.aufwaerts_button_Click);
             // 
             // nutzername_label
             // 
@@ -503,11 +505,11 @@
             this.globalerName_listbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.globalerName_listbox.Font = new System.Drawing.Font("Tahoma", 16.2F);
             this.globalerName_listbox.FormattingEnabled = true;
-            this.globalerName_listbox.ItemHeight = 33;
+            this.globalerName_listbox.ItemHeight = 27;
             this.globalerName_listbox.Location = new System.Drawing.Point(239, 37);
             this.globalerName_listbox.Margin = new System.Windows.Forms.Padding(0);
             this.globalerName_listbox.Name = "globalerName_listbox";
-            this.globalerName_listbox.Size = new System.Drawing.Size(235, 429);
+            this.globalerName_listbox.Size = new System.Drawing.Size(235, 405);
             this.globalerName_listbox.TabIndex = 14;
             // 
             // globalerHighscore_listBox
@@ -516,11 +518,11 @@
             this.globalerHighscore_listBox.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.globalerHighscore_listBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.globalerHighscore_listBox.FormattingEnabled = true;
-            this.globalerHighscore_listBox.ItemHeight = 33;
+            this.globalerHighscore_listBox.ItemHeight = 27;
             this.globalerHighscore_listBox.Location = new System.Drawing.Point(4, 37);
             this.globalerHighscore_listBox.Margin = new System.Windows.Forms.Padding(0);
             this.globalerHighscore_listBox.Name = "globalerHighscore_listBox";
-            this.globalerHighscore_listBox.Size = new System.Drawing.Size(235, 429);
+            this.globalerHighscore_listBox.Size = new System.Drawing.Size(235, 405);
             this.globalerHighscore_listBox.TabIndex = 9;
             // 
             // panel1

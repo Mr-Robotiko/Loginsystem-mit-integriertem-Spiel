@@ -15,6 +15,9 @@ namespace Loginsystem
     public partial class Nutzer : Form
     {
         int score;
+        bool aufwaerts = true;
+
+        string query;
 
         public Nutzer()
         {
@@ -116,7 +119,16 @@ namespace Loginsystem
         /// <param name="connection"></param>
         private void FillGlobalHighscore(SqlConnection connection)
         {
-            SqlCommand command = new SqlCommand("SELECT TOP 15 username, SUM([Highscore]) AS Highscore FROM [dbo].[Statistic] INNER JOIN User1 ON User_ID = FK_User_ID GROUP BY Username ORDER BY Highscore DESC", connection);
+            if (!aufwaerts)
+            {
+                 query = "SELECT TOP 15 username, MAX([Highscore]) AS Highscore FROM [dbo].[Statistic] INNER JOIN User1 ON User_ID = FK_User_ID GROUP BY Username ORDER BY Highscore ASC";
+            }
+            else
+            {
+                query = "SELECT TOP 15 username, MAX([Highscore]) AS Highscore FROM [dbo].[Statistic] INNER JOIN User1 ON User_ID = FK_User_ID GROUP BY Username ORDER BY Highscore DESC";
+            }
+
+            SqlCommand command = new SqlCommand(query, connection);
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
 
@@ -140,6 +152,33 @@ namespace Loginsystem
         {
             NutzerBearbeiten nutzerBearbeitenForm = new NutzerBearbeiten();
             nutzerBearbeitenForm.ShowDialog();
+        }
+
+        private void abwaerts_button_Click(object sender, EventArgs e)
+        {
+            // Nicht löschen --- Connection String zur DB
+            ConnectionString connectionClass = new ConnectionString();
+            string connectionToday = connectionClass.Connection_Today();
+            SqlConnection connection = new SqlConnection(connectionToday);
+
+            CheckConnection(connection);
+
+            aufwaerts = false;
+            FillGlobalHighscore(connection);
+        }
+
+        private void aufwaerts_button_Click(object sender, EventArgs e)
+        {
+
+            // Nicht löschen --- Connection String zur DB
+            ConnectionString connectionClass = new ConnectionString();
+            string connectionToday = connectionClass.Connection_Today();
+            SqlConnection connection = new SqlConnection(connectionToday);
+
+            CheckConnection(connection);
+
+            aufwaerts = true;
+            FillGlobalHighscore(connection);
         }
     }
 }
