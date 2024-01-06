@@ -31,6 +31,7 @@ namespace Loginsystem
         public void AddPlaceholder()
         {
             // Placeholder Zuordnung
+            benutzername_textBox.AddPlaceholder("Benutzername");
             neuesPasswort_textBox.AddPlaceholder("Neues Passwort");
         }
 
