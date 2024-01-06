@@ -52,8 +52,8 @@ namespace Loginsystem
             vorname_textBox.Text = "";
             name_textBox.Text = "";
             gebDatum_textBox.Text = "";
-            passwort_textBox.Text = "";
             benutzername_textBox.Text = "";
+            passwort_textBox.Text = "";
         }
 
         private void bearbeiten_button_Click(object sender, EventArgs e)
@@ -206,6 +206,11 @@ namespace Loginsystem
                 MessageBox.Show("Bitte richtigen Benutzername und Passwort benutzen");
             }
 
+        }
+
+        private void benutzername_textBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Der Benutzername kann nicht geändert werden!");
         }
     }
 }

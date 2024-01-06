@@ -49,6 +49,8 @@
             this.ueberschrift_panel1 = new System.Windows.Forms.Panel();
             this.schneeflocken_panel2 = new System.Windows.Forms.Panel();
             this.background_pictureBox = new System.Windows.Forms.PictureBox();
+            this.benutzername_panel = new System.Windows.Forms.Panel();
+            this.benutzername_textBox = new System.Windows.Forms.TextBox();
             this.inhalt_panel1.SuspendLayout();
             this.inhalt_panel2.SuspendLayout();
             this.inhalt_panel3.SuspendLayout();
@@ -62,6 +64,7 @@
             this.ueberschrift_panel3.SuspendLayout();
             this.ueberschrift_panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.background_pictureBox)).BeginInit();
+            this.benutzername_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // inhalt_panel1
@@ -69,11 +72,11 @@
             this.inhalt_panel1.BackColor = System.Drawing.Color.White;
             this.inhalt_panel1.Controls.Add(this.inhalt_panel2);
             this.inhalt_panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.inhalt_panel1.Location = new System.Drawing.Point(440, 305);
-            this.inhalt_panel1.MaximumSize = new System.Drawing.Size(400, 264);
-            this.inhalt_panel1.MinimumSize = new System.Drawing.Size(400, 264);
+            this.inhalt_panel1.Location = new System.Drawing.Point(440, 250);
+            this.inhalt_panel1.MaximumSize = new System.Drawing.Size(400, 319);
+            this.inhalt_panel1.MinimumSize = new System.Drawing.Size(400, 319);
             this.inhalt_panel1.Name = "inhalt_panel1";
-            this.inhalt_panel1.Size = new System.Drawing.Size(400, 264);
+            this.inhalt_panel1.Size = new System.Drawing.Size(400, 319);
             this.inhalt_panel1.TabIndex = 23;
             // 
             // inhalt_panel2
@@ -81,24 +84,25 @@
             this.inhalt_panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.inhalt_panel2.Controls.Add(this.inhalt_panel3);
             this.inhalt_panel2.Location = new System.Drawing.Point(4, 4);
-            this.inhalt_panel2.MaximumSize = new System.Drawing.Size(392, 256);
-            this.inhalt_panel2.MinimumSize = new System.Drawing.Size(392, 256);
+            this.inhalt_panel2.MaximumSize = new System.Drawing.Size(392, 311);
+            this.inhalt_panel2.MinimumSize = new System.Drawing.Size(392, 311);
             this.inhalt_panel2.Name = "inhalt_panel2";
-            this.inhalt_panel2.Size = new System.Drawing.Size(392, 256);
+            this.inhalt_panel2.Size = new System.Drawing.Size(392, 311);
             this.inhalt_panel2.TabIndex = 0;
             // 
             // inhalt_panel3
             // 
             this.inhalt_panel3.BackColor = System.Drawing.Color.White;
-            this.inhalt_panel3.Controls.Add(this.anmelden_button);
             this.inhalt_panel3.Controls.Add(this.neuesPasswoert_panel);
+            this.inhalt_panel3.Controls.Add(this.benutzername_panel);
+            this.inhalt_panel3.Controls.Add(this.anmelden_button);
             this.inhalt_panel3.Controls.Add(this.zurueck_button);
             this.inhalt_panel3.Controls.Add(this.nutzer_pictureBox);
             this.inhalt_panel3.Location = new System.Drawing.Point(4, 4);
-            this.inhalt_panel3.MaximumSize = new System.Drawing.Size(384, 248);
-            this.inhalt_panel3.MinimumSize = new System.Drawing.Size(384, 248);
+            this.inhalt_panel3.MaximumSize = new System.Drawing.Size(384, 303);
+            this.inhalt_panel3.MinimumSize = new System.Drawing.Size(384, 303);
             this.inhalt_panel3.Name = "inhalt_panel3";
-            this.inhalt_panel3.Size = new System.Drawing.Size(384, 248);
+            this.inhalt_panel3.Size = new System.Drawing.Size(384, 303);
             this.inhalt_panel3.TabIndex = 0;
             // 
             // anmelden_button
@@ -107,7 +111,7 @@
             this.anmelden_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.anmelden_button.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.anmelden_button.ForeColor = System.Drawing.Color.White;
-            this.anmelden_button.Location = new System.Drawing.Point(216, 200);
+            this.anmelden_button.Location = new System.Drawing.Point(216, 255);
             this.anmelden_button.MaximumSize = new System.Drawing.Size(160, 36);
             this.anmelden_button.MinimumSize = new System.Drawing.Size(160, 36);
             this.anmelden_button.Name = "anmelden_button";
@@ -121,7 +125,7 @@
             // 
             this.neuesPasswoert_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.neuesPasswoert_panel.Controls.Add(this.neuesPasswort_textBox);
-            this.neuesPasswoert_panel.Location = new System.Drawing.Point(8, 144);
+            this.neuesPasswoert_panel.Location = new System.Drawing.Point(8, 200);
             this.neuesPasswoert_panel.MaximumSize = new System.Drawing.Size(368, 38);
             this.neuesPasswoert_panel.MinimumSize = new System.Drawing.Size(368, 38);
             this.neuesPasswoert_panel.Name = "neuesPasswoert_panel";
@@ -146,7 +150,7 @@
             this.zurueck_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.zurueck_button.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zurueck_button.ForeColor = System.Drawing.Color.White;
-            this.zurueck_button.Location = new System.Drawing.Point(8, 200);
+            this.zurueck_button.Location = new System.Drawing.Point(8, 255);
             this.zurueck_button.MaximumSize = new System.Drawing.Size(160, 36);
             this.zurueck_button.MinimumSize = new System.Drawing.Size(160, 36);
             this.zurueck_button.Name = "zurueck_button";
@@ -283,7 +287,7 @@
             // 
             this.ueberschrift_panel1.BackColor = System.Drawing.Color.White;
             this.ueberschrift_panel1.Controls.Add(this.ueberschrift_panel2);
-            this.ueberschrift_panel1.Location = new System.Drawing.Point(440, 245);
+            this.ueberschrift_panel1.Location = new System.Drawing.Point(440, 190);
             this.ueberschrift_panel1.Name = "ueberschrift_panel1";
             this.ueberschrift_panel1.Size = new System.Drawing.Size(400, 64);
             this.ueberschrift_panel1.TabIndex = 22;
@@ -308,6 +312,29 @@
             this.background_pictureBox.Size = new System.Drawing.Size(1280, 720);
             this.background_pictureBox.TabIndex = 21;
             this.background_pictureBox.TabStop = false;
+            // 
+            // benutzername_panel
+            // 
+            this.benutzername_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.benutzername_panel.Controls.Add(this.benutzername_textBox);
+            this.benutzername_panel.Location = new System.Drawing.Point(8, 144);
+            this.benutzername_panel.MaximumSize = new System.Drawing.Size(368, 38);
+            this.benutzername_panel.MinimumSize = new System.Drawing.Size(368, 38);
+            this.benutzername_panel.Name = "benutzername_panel";
+            this.benutzername_panel.Size = new System.Drawing.Size(368, 38);
+            this.benutzername_panel.TabIndex = 3;
+            // 
+            // benutzername_textBox
+            // 
+            this.benutzername_textBox.BackColor = System.Drawing.Color.White;
+            this.benutzername_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.benutzername_textBox.Font = new System.Drawing.Font("Tahoma", 16.2F);
+            this.benutzername_textBox.Location = new System.Drawing.Point(3, 3);
+            this.benutzername_textBox.MaximumSize = new System.Drawing.Size(362, 32);
+            this.benutzername_textBox.MinimumSize = new System.Drawing.Size(362, 32);
+            this.benutzername_textBox.Name = "benutzername_textBox";
+            this.benutzername_textBox.Size = new System.Drawing.Size(362, 32);
+            this.benutzername_textBox.TabIndex = 0;
             // 
             // PasswortVergessen
             // 
@@ -345,6 +372,8 @@
             this.ueberschrift_panel3.ResumeLayout(false);
             this.ueberschrift_panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.background_pictureBox)).EndInit();
+            this.benutzername_panel.ResumeLayout(false);
+            this.benutzername_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -371,5 +400,7 @@
         private System.Windows.Forms.TextBox neuesPasswort_textBox;
         private System.Windows.Forms.Button anmelden_button;
         private System.Windows.Forms.Button zurueck_button;
+        private System.Windows.Forms.Panel benutzername_panel;
+        private System.Windows.Forms.TextBox benutzername_textBox;
     }
 }
