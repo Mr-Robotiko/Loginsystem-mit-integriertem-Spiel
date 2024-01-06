@@ -57,6 +57,7 @@
             this.glocken_pictureBox = new System.Windows.Forms.PictureBox();
             this.ueberschrift_panel3 = new System.Windows.Forms.Panel();
             this.ueberschrift_label = new System.Windows.Forms.Label();
+            this.loeschen_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox1)).BeginInit();
             this.inhalt_panel1.SuspendLayout();
@@ -140,11 +141,11 @@
             this.inhalt_panel1.BackColor = System.Drawing.Color.White;
             this.inhalt_panel1.Controls.Add(this.inhalt_panel2);
             this.inhalt_panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.inhalt_panel1.Location = new System.Drawing.Point(440, 150);
-            this.inhalt_panel1.MaximumSize = new System.Drawing.Size(400, 488);
-            this.inhalt_panel1.MinimumSize = new System.Drawing.Size(400, 488);
+            this.inhalt_panel1.Location = new System.Drawing.Point(440, 117);
+            this.inhalt_panel1.MaximumSize = new System.Drawing.Size(400, 526);
+            this.inhalt_panel1.MinimumSize = new System.Drawing.Size(400, 526);
             this.inhalt_panel1.Name = "inhalt_panel1";
-            this.inhalt_panel1.Size = new System.Drawing.Size(400, 488);
+            this.inhalt_panel1.Size = new System.Drawing.Size(400, 526);
             this.inhalt_panel1.TabIndex = 23;
             // 
             // inhalt_panel2
@@ -152,15 +153,16 @@
             this.inhalt_panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.inhalt_panel2.Controls.Add(this.inhalt_panel3);
             this.inhalt_panel2.Location = new System.Drawing.Point(4, 4);
-            this.inhalt_panel2.MaximumSize = new System.Drawing.Size(392, 480);
-            this.inhalt_panel2.MinimumSize = new System.Drawing.Size(392, 480);
+            this.inhalt_panel2.MaximumSize = new System.Drawing.Size(392, 518);
+            this.inhalt_panel2.MinimumSize = new System.Drawing.Size(392, 518);
             this.inhalt_panel2.Name = "inhalt_panel2";
-            this.inhalt_panel2.Size = new System.Drawing.Size(392, 480);
+            this.inhalt_panel2.Size = new System.Drawing.Size(392, 518);
             this.inhalt_panel2.TabIndex = 0;
             // 
             // inhalt_panel3
             // 
             this.inhalt_panel3.BackColor = System.Drawing.Color.White;
+            this.inhalt_panel3.Controls.Add(this.loeschen_button);
             this.inhalt_panel3.Controls.Add(this.passwort_panel);
             this.inhalt_panel3.Controls.Add(this.banutzername_panel);
             this.inhalt_panel3.Controls.Add(this.gebDatum_panel);
@@ -170,10 +172,10 @@
             this.inhalt_panel3.Controls.Add(this.vorname_panel);
             this.inhalt_panel3.Controls.Add(this.nutzer_pictureBox);
             this.inhalt_panel3.Location = new System.Drawing.Point(4, 4);
-            this.inhalt_panel3.MaximumSize = new System.Drawing.Size(384, 472);
-            this.inhalt_panel3.MinimumSize = new System.Drawing.Size(384, 472);
+            this.inhalt_panel3.MaximumSize = new System.Drawing.Size(384, 510);
+            this.inhalt_panel3.MinimumSize = new System.Drawing.Size(384, 510);
             this.inhalt_panel3.Name = "inhalt_panel3";
-            this.inhalt_panel3.Size = new System.Drawing.Size(384, 472);
+            this.inhalt_panel3.Size = new System.Drawing.Size(384, 510);
             this.inhalt_panel3.TabIndex = 0;
             // 
             // passwort_panel
@@ -348,7 +350,7 @@
             // 
             this.ueberschrift_panel1.BackColor = System.Drawing.Color.White;
             this.ueberschrift_panel1.Controls.Add(this.ueberschrift_panel2);
-            this.ueberschrift_panel1.Location = new System.Drawing.Point(440, 90);
+            this.ueberschrift_panel1.Location = new System.Drawing.Point(440, 57);
             this.ueberschrift_panel1.Name = "ueberschrift_panel1";
             this.ueberschrift_panel1.Size = new System.Drawing.Size(400, 64);
             this.ueberschrift_panel1.TabIndex = 25;
@@ -415,6 +417,19 @@
             this.ueberschrift_label.TabIndex = 7;
             this.ueberschrift_label.Text = "Bearbeitung";
             this.ueberschrift_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // loeschen_button
+            // 
+            this.loeschen_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.loeschen_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loeschen_button.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loeschen_button.ForeColor = System.Drawing.Color.White;
+            this.loeschen_button.Location = new System.Drawing.Point(8, 468);
+            this.loeschen_button.Name = "loeschen_button";
+            this.loeschen_button.Size = new System.Drawing.Size(368, 36);
+            this.loeschen_button.TabIndex = 13;
+            this.loeschen_button.Text = "Account Löschen";
+            this.loeschen_button.UseVisualStyleBackColor = false;
             // 
             // NutzerBearbeiten
             // 
@@ -494,5 +509,6 @@
         private System.Windows.Forms.PictureBox glocken_pictureBox;
         private System.Windows.Forms.Panel ueberschrift_panel3;
         private System.Windows.Forms.Label ueberschrift_label;
+        private System.Windows.Forms.Button loeschen_button;
     }
 }

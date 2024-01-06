@@ -125,5 +125,11 @@ namespace Loginsystem
                 MessageBox.Show("Falsches Passwort oder Username");
             }
         }
+
+        private void passwortVergessen_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PasswortVergessen passwortVergessenForm = new PasswortVergessen();
+            passwortVergessenForm.ShowDialog();
+        }
     }
 }

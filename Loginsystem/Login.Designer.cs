@@ -51,6 +51,7 @@
             this.benutzername_panel = new System.Windows.Forms.Panel();
             this.benutzername_textBox = new System.Windows.Forms.TextBox();
             this.nutzer_pictureBox = new System.Windows.Forms.PictureBox();
+            this.passwortVergessen_linkLabel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schneeflocken_pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.background_pictureBox)).BeginInit();
@@ -141,7 +142,7 @@
             // 
             this.ueberschrift_panel1.BackColor = System.Drawing.Color.White;
             this.ueberschrift_panel1.Controls.Add(this.ueberschrift_panel2);
-            this.ueberschrift_panel1.Location = new System.Drawing.Point(440, 190);
+            this.ueberschrift_panel1.Location = new System.Drawing.Point(440, 172);
             this.ueberschrift_panel1.Name = "ueberschrift_panel1";
             this.ueberschrift_panel1.Size = new System.Drawing.Size(400, 64);
             this.ueberschrift_panel1.TabIndex = 6;
@@ -214,11 +215,11 @@
             this.inhalt_panel1.BackColor = System.Drawing.Color.White;
             this.inhalt_panel1.Controls.Add(this.inhalt_panel2);
             this.inhalt_panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.inhalt_panel1.Location = new System.Drawing.Point(440, 250);
-            this.inhalt_panel1.MaximumSize = new System.Drawing.Size(400, 320);
-            this.inhalt_panel1.MinimumSize = new System.Drawing.Size(400, 320);
+            this.inhalt_panel1.Location = new System.Drawing.Point(440, 232);
+            this.inhalt_panel1.MaximumSize = new System.Drawing.Size(400, 338);
+            this.inhalt_panel1.MinimumSize = new System.Drawing.Size(400, 338);
             this.inhalt_panel1.Name = "inhalt_panel1";
-            this.inhalt_panel1.Size = new System.Drawing.Size(400, 320);
+            this.inhalt_panel1.Size = new System.Drawing.Size(400, 338);
             this.inhalt_panel1.TabIndex = 7;
             // 
             // inhalt_panel2
@@ -226,25 +227,26 @@
             this.inhalt_panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.inhalt_panel2.Controls.Add(this.inhalt_panel3);
             this.inhalt_panel2.Location = new System.Drawing.Point(4, 4);
-            this.inhalt_panel2.MaximumSize = new System.Drawing.Size(392, 312);
-            this.inhalt_panel2.MinimumSize = new System.Drawing.Size(392, 312);
+            this.inhalt_panel2.MaximumSize = new System.Drawing.Size(392, 330);
+            this.inhalt_panel2.MinimumSize = new System.Drawing.Size(392, 330);
             this.inhalt_panel2.Name = "inhalt_panel2";
-            this.inhalt_panel2.Size = new System.Drawing.Size(392, 312);
+            this.inhalt_panel2.Size = new System.Drawing.Size(392, 330);
             this.inhalt_panel2.TabIndex = 0;
             // 
             // inhalt_panel3
             // 
             this.inhalt_panel3.BackColor = System.Drawing.Color.White;
+            this.inhalt_panel3.Controls.Add(this.passwortVergessen_linkLabel);
             this.inhalt_panel3.Controls.Add(this.anmelden_button);
             this.inhalt_panel3.Controls.Add(this.zurueck_button);
             this.inhalt_panel3.Controls.Add(this.passwort_panel);
             this.inhalt_panel3.Controls.Add(this.benutzername_panel);
             this.inhalt_panel3.Controls.Add(this.nutzer_pictureBox);
             this.inhalt_panel3.Location = new System.Drawing.Point(4, 4);
-            this.inhalt_panel3.MaximumSize = new System.Drawing.Size(384, 304);
-            this.inhalt_panel3.MinimumSize = new System.Drawing.Size(384, 304);
+            this.inhalt_panel3.MaximumSize = new System.Drawing.Size(384, 322);
+            this.inhalt_panel3.MinimumSize = new System.Drawing.Size(384, 322);
             this.inhalt_panel3.Name = "inhalt_panel3";
-            this.inhalt_panel3.Size = new System.Drawing.Size(384, 304);
+            this.inhalt_panel3.Size = new System.Drawing.Size(384, 322);
             this.inhalt_panel3.TabIndex = 0;
             // 
             // anmelden_button
@@ -253,7 +255,7 @@
             this.anmelden_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.anmelden_button.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.anmelden_button.ForeColor = System.Drawing.Color.White;
-            this.anmelden_button.Location = new System.Drawing.Point(216, 256);
+            this.anmelden_button.Location = new System.Drawing.Point(216, 274);
             this.anmelden_button.MaximumSize = new System.Drawing.Size(160, 36);
             this.anmelden_button.MinimumSize = new System.Drawing.Size(160, 36);
             this.anmelden_button.Name = "anmelden_button";
@@ -269,7 +271,7 @@
             this.zurueck_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.zurueck_button.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zurueck_button.ForeColor = System.Drawing.Color.White;
-            this.zurueck_button.Location = new System.Drawing.Point(8, 256);
+            this.zurueck_button.Location = new System.Drawing.Point(8, 274);
             this.zurueck_button.MaximumSize = new System.Drawing.Size(160, 36);
             this.zurueck_button.MinimumSize = new System.Drawing.Size(160, 36);
             this.zurueck_button.Name = "zurueck_button";
@@ -336,6 +338,21 @@
             this.nutzer_pictureBox.TabIndex = 0;
             this.nutzer_pictureBox.TabStop = false;
             // 
+            // passwortVergessen_linkLabel
+            // 
+            this.passwortVergessen_linkLabel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.passwortVergessen_linkLabel.AutoSize = true;
+            this.passwortVergessen_linkLabel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwortVergessen_linkLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.passwortVergessen_linkLabel.Location = new System.Drawing.Point(8, 241);
+            this.passwortVergessen_linkLabel.Name = "passwortVergessen_linkLabel";
+            this.passwortVergessen_linkLabel.Size = new System.Drawing.Size(145, 18);
+            this.passwortVergessen_linkLabel.TabIndex = 10;
+            this.passwortVergessen_linkLabel.TabStop = true;
+            this.passwortVergessen_linkLabel.Text = "Passwort vergessen?";
+            this.passwortVergessen_linkLabel.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.passwortVergessen_linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.passwortVergessen_linkLabel_LinkClicked);
+            // 
             // Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -370,6 +387,7 @@
             this.inhalt_panel1.ResumeLayout(false);
             this.inhalt_panel2.ResumeLayout(false);
             this.inhalt_panel3.ResumeLayout(false);
+            this.inhalt_panel3.PerformLayout();
             this.passwort_panel.ResumeLayout(false);
             this.passwort_panel.PerformLayout();
             this.benutzername_panel.ResumeLayout(false);
@@ -403,5 +421,6 @@
         private System.Windows.Forms.Button anmelden_button;
         private System.Windows.Forms.TextBox benutzername_textBox;
         private System.Windows.Forms.TextBox passwort_textBox;
+        private System.Windows.Forms.LinkLabel passwortVergessen_linkLabel;
     }
 }
