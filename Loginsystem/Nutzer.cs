@@ -116,7 +116,7 @@ namespace Loginsystem
         /// <param name="connection"></param>
         private void FillGlobalHighscore(SqlConnection connection)
         {
-            SqlCommand command = new SqlCommand("SELECT username, SUM([Highscore]) AS Highscore FROM [dbo].[Statistic] INNER JOIN User1 ON User_ID = FK_User_ID GROUP BY Username ORDER BY Highscore DESC", connection);
+            SqlCommand command = new SqlCommand("SELECT TOP 15 username, SUM([Highscore]) AS Highscore FROM [dbo].[Statistic] INNER JOIN User1 ON User_ID = FK_User_ID GROUP BY Username ORDER BY Highscore DESC", connection);
 
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
 
