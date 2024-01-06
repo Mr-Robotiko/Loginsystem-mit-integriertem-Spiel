@@ -64,6 +64,10 @@
             this.globalerHighscore_listBox = new System.Windows.Forms.ListBox();
             this.globalerHighscore_panel4 = new System.Windows.Forms.Panel();
             this.globalerName_listbox = new System.Windows.Forms.ListBox();
+            this.globalerHighscore_label1 = new System.Windows.Forms.Label();
+            this.nutzername_label = new System.Windows.Forms.Label();
+            this.loeschen_button = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.globlerHighscore_panel1.SuspendLayout();
             this.globlerHighscore_panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.glocken_pictureBox)).BeginInit();
@@ -175,6 +179,7 @@
             // nutzer_panel3
             // 
             this.nutzer_panel3.BackColor = System.Drawing.Color.White;
+            this.nutzer_panel3.Controls.Add(this.loeschen_button);
             this.nutzer_panel3.Controls.Add(this.abmelden_button);
             this.nutzer_panel3.Controls.Add(this.zurueck_button);
             this.nutzer_panel3.Controls.Add(this.nutzer_pictureBox);
@@ -192,10 +197,10 @@
             this.abmelden_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.abmelden_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.abmelden_button.ForeColor = System.Drawing.Color.White;
-            this.abmelden_button.Location = new System.Drawing.Point(826, 0);
+            this.abmelden_button.Location = new System.Drawing.Point(886, 0);
             this.abmelden_button.Margin = new System.Windows.Forms.Padding(0);
             this.abmelden_button.Name = "abmelden_button";
-            this.abmelden_button.Size = new System.Drawing.Size(190, 48);
+            this.abmelden_button.Size = new System.Drawing.Size(159, 48);
             this.abmelden_button.TabIndex = 16;
             this.abmelden_button.Text = "Abmelden";
             this.abmelden_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -208,10 +213,10 @@
             this.zurueck_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.zurueck_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.zurueck_button.ForeColor = System.Drawing.Color.White;
-            this.zurueck_button.Location = new System.Drawing.Point(1014, 0);
+            this.zurueck_button.Location = new System.Drawing.Point(1045, 0);
             this.zurueck_button.Margin = new System.Windows.Forms.Padding(0);
             this.zurueck_button.Name = "zurueck_button";
-            this.zurueck_button.Size = new System.Drawing.Size(190, 48);
+            this.zurueck_button.Size = new System.Drawing.Size(159, 48);
             this.zurueck_button.TabIndex = 15;
             this.zurueck_button.Text = "Beenden";
             this.zurueck_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -406,13 +411,15 @@
             // globalerHighscore_panel5
             // 
             this.globalerHighscore_panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.globalerHighscore_panel5.Controls.Add(this.nutzername_label);
+            this.globalerHighscore_panel5.Controls.Add(this.globalerHighscore_label1);
+            this.globalerHighscore_panel5.Controls.Add(this.globalerName_listbox);
             this.globalerHighscore_panel5.Controls.Add(this.globalerHighscore_listBox);
+            this.globalerHighscore_panel5.Controls.Add(this.panel1);
             this.globalerHighscore_panel5.Location = new System.Drawing.Point(4, 4);
             this.globalerHighscore_panel5.Margin = new System.Windows.Forms.Padding(4);
-            this.globalerHighscore_panel5.MaximumSize = new System.Drawing.Size(378, 494);
-            this.globalerHighscore_panel5.MinimumSize = new System.Drawing.Size(378, 494);
             this.globalerHighscore_panel5.Name = "globalerHighscore_panel5";
-            this.globalerHighscore_panel5.Size = new System.Drawing.Size(378, 494);
+            this.globalerHighscore_panel5.Size = new System.Drawing.Size(478, 494);
             this.globalerHighscore_panel5.TabIndex = 7;
             // 
             // globalerHighscore_listBox
@@ -421,22 +428,21 @@
             this.globalerHighscore_listBox.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.globalerHighscore_listBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.globalerHighscore_listBox.FormattingEnabled = true;
-            this.globalerHighscore_listBox.ItemHeight = 27;
-            this.globalerHighscore_listBox.Location = new System.Drawing.Point(4, 4);
+            this.globalerHighscore_listBox.ItemHeight = 33;
+            this.globalerHighscore_listBox.Location = new System.Drawing.Point(4, 37);
             this.globalerHighscore_listBox.Margin = new System.Windows.Forms.Padding(0);
-            this.globalerHighscore_listBox.MultiColumn = true;
             this.globalerHighscore_listBox.Name = "globalerHighscore_listBox";
-            this.globalerHighscore_listBox.Size = new System.Drawing.Size(370, 486);
+            this.globalerHighscore_listBox.Size = new System.Drawing.Size(235, 462);
             this.globalerHighscore_listBox.TabIndex = 9;
             // 
             // globalerHighscore_panel4
             // 
             this.globalerHighscore_panel4.BackColor = System.Drawing.Color.White;
             this.globalerHighscore_panel4.Controls.Add(this.globalerHighscore_panel5);
-            this.globalerHighscore_panel4.Location = new System.Drawing.Point(864, 185);
+            this.globalerHighscore_panel4.Location = new System.Drawing.Point(764, 181);
             this.globalerHighscore_panel4.Margin = new System.Windows.Forms.Padding(0);
             this.globalerHighscore_panel4.Name = "globalerHighscore_panel4";
-            this.globalerHighscore_panel4.Size = new System.Drawing.Size(386, 502);
+            this.globalerHighscore_panel4.Size = new System.Drawing.Size(486, 502);
             this.globalerHighscore_panel4.TabIndex = 12;
             // 
             // globalerName_listbox
@@ -444,13 +450,63 @@
             this.globalerName_listbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.globalerName_listbox.Font = new System.Drawing.Font("Tahoma", 16.2F);
             this.globalerName_listbox.FormattingEnabled = true;
-            this.globalerName_listbox.ItemHeight = 27;
-            this.globalerName_listbox.Location = new System.Drawing.Point(764, 185);
+            this.globalerName_listbox.ItemHeight = 33;
+            this.globalerName_listbox.Location = new System.Drawing.Point(239, 37);
             this.globalerName_listbox.Margin = new System.Windows.Forms.Padding(0);
-            this.globalerName_listbox.MultiColumn = true;
             this.globalerName_listbox.Name = "globalerName_listbox";
-            this.globalerName_listbox.Size = new System.Drawing.Size(97, 513);
+            this.globalerName_listbox.Size = new System.Drawing.Size(235, 462);
             this.globalerName_listbox.TabIndex = 14;
+            // 
+            // globalerHighscore_label1
+            // 
+            this.globalerHighscore_label1.BackColor = System.Drawing.Color.White;
+            this.globalerHighscore_label1.Font = new System.Drawing.Font("Tahoma", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.globalerHighscore_label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.globalerHighscore_label1.Location = new System.Drawing.Point(4, 4);
+            this.globalerHighscore_label1.Margin = new System.Windows.Forms.Padding(0);
+            this.globalerHighscore_label1.Name = "globalerHighscore_label1";
+            this.globalerHighscore_label1.Size = new System.Drawing.Size(222, 33);
+            this.globalerHighscore_label1.TabIndex = 8;
+            this.globalerHighscore_label1.Text = "Highscore:";
+            this.globalerHighscore_label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // nutzername_label
+            // 
+            this.nutzername_label.BackColor = System.Drawing.Color.White;
+            this.nutzername_label.Font = new System.Drawing.Font("Tahoma", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nutzername_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.nutzername_label.Location = new System.Drawing.Point(239, 4);
+            this.nutzername_label.Margin = new System.Windows.Forms.Padding(0);
+            this.nutzername_label.Name = "nutzername_label";
+            this.nutzername_label.Size = new System.Drawing.Size(222, 33);
+            this.nutzername_label.TabIndex = 15;
+            this.nutzername_label.Text = "Spieler:";
+            this.nutzername_label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // loeschen_button
+            // 
+            this.loeschen_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.loeschen_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loeschen_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loeschen_button.ForeColor = System.Drawing.Color.White;
+            this.loeschen_button.Location = new System.Drawing.Point(727, 0);
+            this.loeschen_button.Margin = new System.Windows.Forms.Padding(0);
+            this.loeschen_button.Name = "loeschen_button";
+            this.loeschen_button.Size = new System.Drawing.Size(159, 48);
+            this.loeschen_button.TabIndex = 17;
+            this.loeschen_button.Text = "Löschen";
+            this.loeschen_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.loeschen_button.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.MaximumSize = new System.Drawing.Size(470, 33);
+            this.panel1.MinimumSize = new System.Drawing.Size(470, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(470, 33);
+            this.panel1.TabIndex = 14;
             // 
             // Nutzer
             // 
@@ -458,11 +514,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1280, 720);
             this.ControlBox = false;
-            this.Controls.Add(this.globalerName_listbox);
             this.Controls.Add(this.spiel_panel1);
+            this.Controls.Add(this.globalerHighscore_panel4);
             this.Controls.Add(this.persoenlicherHighscore_panel1);
             this.Controls.Add(this.nutzer_panel1);
-            this.Controls.Add(this.globalerHighscore_panel4);
             this.Controls.Add(this.globlerHighscore_panel1);
             this.Controls.Add(this.background_pictureBox);
             this.DoubleBuffered = true;
@@ -539,5 +594,9 @@
         private System.Windows.Forms.Label benutzername_label;
         private System.Windows.Forms.Label highscore_label;
         private System.Windows.Forms.ListBox globalerName_listbox;
+        private System.Windows.Forms.Label globalerHighscore_label1;
+        private System.Windows.Forms.Label nutzername_label;
+        private System.Windows.Forms.Button loeschen_button;
+        private System.Windows.Forms.Panel panel1;
     }
 }

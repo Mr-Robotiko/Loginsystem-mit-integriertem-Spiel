@@ -34,7 +34,7 @@ namespace Loginsystem
         public string Username
         {
             get { return this.nutzer_label.Text; }
-            set { this.nutzer_label.Text = value; }
+            set { this.nutzer_label.Text = "Hallo, " + value + "!"; }
         }
 
         public string UsernameGame1

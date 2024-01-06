@@ -147,7 +147,7 @@ namespace Loginsystem
             command.ExecuteNonQuery();
             connection.Close();
 
-            MessageBox.Show("Erfolgreich regrisitriert");
+            MessageBox.Show("Erfolgreich registriert");
         }
 
         /// <summary>
