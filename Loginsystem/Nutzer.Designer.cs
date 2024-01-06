@@ -38,7 +38,7 @@
             this.nutzer_panel1 = new System.Windows.Forms.Panel();
             this.nutzer_panel2 = new System.Windows.Forms.Panel();
             this.nutzer_panel3 = new System.Windows.Forms.Panel();
-            this.loeschen_button = new System.Windows.Forms.Button();
+            this.bearbeiten_button = new System.Windows.Forms.Button();
             this.abmelden_button = new System.Windows.Forms.Button();
             this.zurueck_button = new System.Windows.Forms.Button();
             this.nutzer_pictureBox = new System.Windows.Forms.PictureBox();
@@ -181,7 +181,7 @@
             // nutzer_panel3
             // 
             this.nutzer_panel3.BackColor = System.Drawing.Color.White;
-            this.nutzer_panel3.Controls.Add(this.loeschen_button);
+            this.nutzer_panel3.Controls.Add(this.bearbeiten_button);
             this.nutzer_panel3.Controls.Add(this.abmelden_button);
             this.nutzer_panel3.Controls.Add(this.zurueck_button);
             this.nutzer_panel3.Controls.Add(this.nutzer_pictureBox);
@@ -193,20 +193,21 @@
             this.nutzer_panel3.Size = new System.Drawing.Size(1204, 48);
             this.nutzer_panel3.TabIndex = 7;
             // 
-            // loeschen_button
+            // bearbeiten_button
             // 
-            this.loeschen_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
-            this.loeschen_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loeschen_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loeschen_button.ForeColor = System.Drawing.Color.White;
-            this.loeschen_button.Location = new System.Drawing.Point(727, 0);
-            this.loeschen_button.Margin = new System.Windows.Forms.Padding(0);
-            this.loeschen_button.Name = "loeschen_button";
-            this.loeschen_button.Size = new System.Drawing.Size(159, 48);
-            this.loeschen_button.TabIndex = 17;
-            this.loeschen_button.Text = "Bearbeiten";
-            this.loeschen_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.loeschen_button.UseVisualStyleBackColor = false;
+            this.bearbeiten_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(82)))), ((int)(((byte)(75)))));
+            this.bearbeiten_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bearbeiten_button.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bearbeiten_button.ForeColor = System.Drawing.Color.White;
+            this.bearbeiten_button.Location = new System.Drawing.Point(727, 0);
+            this.bearbeiten_button.Margin = new System.Windows.Forms.Padding(0);
+            this.bearbeiten_button.Name = "bearbeiten_button";
+            this.bearbeiten_button.Size = new System.Drawing.Size(159, 48);
+            this.bearbeiten_button.TabIndex = 17;
+            this.bearbeiten_button.Text = "Bearbeiten";
+            this.bearbeiten_button.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.bearbeiten_button.UseVisualStyleBackColor = false;
+            this.bearbeiten_button.Click += new System.EventHandler(this.bearbeiten_button_Click);
             // 
             // abmelden_button
             // 
@@ -630,7 +631,7 @@
         private System.Windows.Forms.ListBox globalerName_listbox;
         private System.Windows.Forms.Label globalerHighscore_label1;
         private System.Windows.Forms.Label nutzername_label;
-        private System.Windows.Forms.Button loeschen_button;
+        private System.Windows.Forms.Button bearbeiten_button;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button abwaerts_button;
         private System.Windows.Forms.Button aufwaerts_button;
