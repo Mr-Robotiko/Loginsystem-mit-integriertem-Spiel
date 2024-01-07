@@ -566,6 +566,7 @@
             this.Name = "Nutzer";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = " ";
             this.globlerHighscore_panel1.ResumeLayout(false);
             this.globlerHighscore_panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.glocken_pictureBox)).EndInit();

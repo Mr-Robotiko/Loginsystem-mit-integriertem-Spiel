@@ -44,6 +44,11 @@ namespace Loginsystem
             this.Hide();
         }
         
+        /// <summary>
+        /// Lässt den User einloggen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void anmelden_button_Click(object sender, EventArgs e)
         {
             // Nicht löschen --- Connection String zur DB
@@ -79,7 +84,7 @@ namespace Loginsystem
         }
 
         /// <summary>
-        /// Die Felder der Tectboxen werden nach Eingabe gesäubert
+        /// Die Felder der Textboxen werden nach Eingabe gesäubert
         /// </summary>
         private void ClearFields()
         {
@@ -100,7 +105,7 @@ namespace Loginsystem
         }
 
         /// <summary>
-        /// Der Login wird überprüft
+        /// Der Login wird überprüft,  ob ein User bereits vorhanden ist.
         /// </summary>
         /// <param name="connection"></param>
         private void CheckLogin(SqlConnection connection)
@@ -126,6 +131,11 @@ namespace Loginsystem
             }
         }
 
+        /// <summary>
+        /// Ein Lable, dass zum Form Passwort vergessen führt.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void passwortVergessen_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             PasswortVergessen passwortVergessenForm = new PasswortVergessen();

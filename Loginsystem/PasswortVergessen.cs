@@ -21,16 +21,29 @@ namespace Loginsystem
             AddPlaceholder();
         }
 
+        /// <summary>
+        /// Führt zurück ins Loginform
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void zurueck_button_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Beendet das Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void beenden_button_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Platzhalter werden hinzugefügt
+        /// </summary>
         public void AddPlaceholder()
         {
             // Placeholder Zuordnung
@@ -38,6 +51,11 @@ namespace Loginsystem
             neuesPasswort_textBox.AddPlaceholder("Neues Passwort");
         }
 
+        /// <summary>
+        /// Lässt das Passwort des Nutzers ändern
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void anmelden_button_Click(object sender, EventArgs e)
         {
             // Nicht löschen ... Wichtig -> Verbindung zur DB

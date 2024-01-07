@@ -24,22 +24,29 @@ namespace Loginsystem
             InitializeComponent();
             nutzer_Load();
         }
+
         /// <summary>
-        /// Der Username aus dem Loginform wird hier überg eben.
+        /// Der Highscore vom Game wird hier übergeben.
         /// </summary>
-        /// 
         public int Highscore
         {
             get { return this.score; }
             set { this.score = value; }
         }
 
+        /// <summary>
+        /// Der Username aus dem Loginform wird hier überg eben.
+        /// </summary>
+        /// 
         public string Username
         {
             get { return this.nutzer_label.Text; }
             set { this.nutzer_label.Text = value; }
         }
 
+        /// <summary>
+        /// Der Username kommt vom Game wieder in den Nutzer
+        /// </summary>
         public string UsernameGame1
         {
             get { return this.nutzer_label.Text; }
@@ -99,6 +106,8 @@ namespace Loginsystem
             Game_Spaceshooter game1 = new Game_Spaceshooter();
             game1.Usernamegame = nutzer_label.Text;
             game1.ShowDialog();
+
+            this.Hide();
         }
 
         /// <summary>

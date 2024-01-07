@@ -21,11 +21,21 @@ namespace Loginsystem
             AddPlaceholder();
         }
 
+        /// <summary>
+        /// Lässt das Form beenden
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void beenden_button_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Geht zurück zum Nutzerform
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void zurueck_button_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -56,6 +66,11 @@ namespace Loginsystem
             passwort_textBox.Text = "";
         }
 
+        /// <summary>
+        /// Ändert die Daten des Benutzers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bearbeiten_button_Click(object sender, EventArgs e)
         {
 
@@ -150,6 +165,11 @@ namespace Loginsystem
             MessageBox.Show("Erfolgreich geändert.");
         }
 
+        /// <summary>
+        /// Löscht einen Nutzer aus der DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void loeschen_button_Click(object sender, EventArgs e)
         {
             // Nicht löschen ... Wichtig -> Verbindung zur DB
@@ -188,6 +208,10 @@ namespace Loginsystem
             this.Hide();
         }
 
+        /// <summary>
+        /// Die Funktion sorgt für das Löschen eines Users.
+        /// </summary>
+        /// <param name="connection"></param>
         private void DeleteUser(SqlConnection connection)
         {
             SqlCommand command = new SqlCommand("DELETE FROM [dbo].[User1] WHERE username = @username AND Password = @Password", connection);
@@ -202,6 +226,11 @@ namespace Loginsystem
 
         }
 
+        /// <summary>
+        /// Ein kleines Popup für das Informieren bezüglich der Bearbeitung.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NutzerBearbeiten_Shown(object sender, EventArgs e)
         {
             MessageBox.Show("Der Benutzername kann nicht geändert werden. Bitte geben Sie Ihren exestierenden Benutzernamen ein, um eine Löschung oder Bearbeitung Ihres Profils durchzuführen.");

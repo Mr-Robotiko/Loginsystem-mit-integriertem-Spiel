@@ -17,11 +17,21 @@ namespace Loginsystem
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Beendet das Menüform
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void beenden_button_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Führt weiter zum Loginform
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void anmelden_button_Click(object sender, EventArgs e)
         {
             Login loginForm = new Login();
@@ -30,6 +40,11 @@ namespace Loginsystem
             this.Hide();
         }
 
+        /// <summary>
+        /// Führt weiter zum Registrierenform
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void registrieren_button_Click(object sender, EventArgs e)
         {
             Registrieren registrierenForm = new Registrieren();
