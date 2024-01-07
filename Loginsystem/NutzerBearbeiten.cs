@@ -69,7 +69,8 @@ namespace Loginsystem
             {
                 CheckConnection(connection);
 
-                if (vorname_textBox.Text != "" && name_textBox.Text != "" && gebDatum_textBox.Text != "" && passwort_textBox.Text != ""
+                if (vorname_textBox.Text != "Vorname" && name_textBox.Text != "Name" && gebDatum_textBox.Text != "Geburtsdatum" && passwort_textBox.Text != "Password"
+                    && benutzername_textBox.Text != "Benutzername" && vorname_textBox.Text != "" && name_textBox.Text != "" && gebDatum_textBox.Text != "" && passwort_textBox.Text != ""
                     && benutzername_textBox.Text != "")
                 {
                     checkUser(connection);
@@ -161,21 +162,23 @@ namespace Loginsystem
             {
                 CheckConnection(connection);
 
-                if (vorname_textBox.Text != "" && name_textBox.Text != "" && gebDatum_textBox.Text != "" && passwort_textBox.Text != ""
-                    && benutzername_textBox.Text != "")
+                if (passwort_textBox.Text != "Passwort" && passwort_textBox.Text != "" && benutzername_textBox.Text != "Benutzername" && benutzername_textBox.Text != "")
                 {
                     checkUser(connection);
                     if (isregistered)
                     {
                         DeleteUser(connection);
-                        ClearFields();
-                        AddPlaceholder();
+
+                        Login login = new Login();
+                        login.ShowDialog();
+
+                        this.Hide();
                     }
                 }
 
                 else
                 {
-                    MessageBox.Show("Notwendige Felder wurden ausgelassen. Bitte ausfüllen.");
+                    MessageBox.Show("Bitte Nutzername und Passwort ausfüllen");
                 }
 
             }
@@ -183,6 +186,7 @@ namespace Loginsystem
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void DeleteUser(SqlConnection connection)
@@ -195,16 +199,8 @@ namespace Loginsystem
             command.ExecuteNonQuery();
             connection.Close();
 
-            checkUser(connection);
+            MessageBox.Show("Erfolgreich gelöscht.");
 
-            if (!isregistered)
-            {
-                MessageBox.Show("Erfolgreich gelöscht.");
-            }
-            else
-            {
-                MessageBox.Show("Bitte richtigen Benutzername und Passwort benutzen");
-            } 
         }
 
         private void NutzerBearbeiten_Shown(object sender, EventArgs e)
