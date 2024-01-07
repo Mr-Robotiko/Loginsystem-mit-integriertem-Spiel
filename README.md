@@ -3,9 +3,8 @@ Das Loginsystem ist an einer Datenbank von Microsoft SQL Server angebunden und m
 
 # Datenbankinfo: 
 ## XML - Dokumentationen unter dem Order "XML"
-## Wenn die lokale Datenbank nicht funktioniert, dann sind die Skripte unter "DB-Skripte zu finden"
-## Der Connection String sollte sich mit der DB verbinden
-## Die Datenquellen wurden bereits implementiert und es kann darauf zugegriffen werden
+## Die DB-Skripte sind unter dem Ordner "DB-Skripte" zu finden.
 
 # Wichtig - Frau Lewin: 
 ## Der Server muss online sein. Stellen Sie bitte eine Anfrage an den Serveradmin (Raphael) um den Server online zu schalten.
+## Nach der Rückmeldung vom Serveradmin, wurde die Verbindung aufgebaut und die IP-Adresse aktualisiert.

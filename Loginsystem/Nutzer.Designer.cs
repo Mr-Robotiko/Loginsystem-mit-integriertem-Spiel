@@ -388,10 +388,10 @@
             this.spiel_richTextBox.Font = new System.Drawing.Font("Tahoma", 16.2F);
             this.spiel_richTextBox.Location = new System.Drawing.Point(8, 8);
             this.spiel_richTextBox.Name = "spiel_richTextBox";
+            this.spiel_richTextBox.ReadOnly = true;
             this.spiel_richTextBox.Size = new System.Drawing.Size(661, 400);
             this.spiel_richTextBox.TabIndex = 18;
-            this.spiel_richTextBox.Text = "Fliege mit Captain Danulli durch Raum und Zeit und zerstöre die feindlichen Schif" +
-    "fe.\n\nSteuerung: \"W\", \"A\", \"S\" und \"D\"";
+            this.spiel_richTextBox.Text = resources.GetString("spiel_richTextBox.Text");
             // 
             // dBDataSet
             // 

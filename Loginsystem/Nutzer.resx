@@ -9408,6 +9408,11 @@
         34F/+1//G8ZnsS5jFLPXAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="spiel_richTextBox.Text" xml:space="preserve">
+    <value>Als letzter überlebender der zerstörten Raumstation USSOHM ist Captain Danulli der furchtloseste Capatain der Galaxy. Voller Rachesucht und Wut übt Danulli vergebung. Mit seinem gefürchteten Begeliter, den er auf dem Planeten Fahrradtopia aufnimmt, fliegt er gemeinsam mit Pohlinator durch Raum und Zeit. Plötzlich gelangen sie in einen Hinterhalt. Die Angreiffer sind Captain Danulli nur allzu bekannt. Er übt Rache. Danulli fliegt und weicht souverän aus, während Pohlinator am Geschütz den Rücken freihält. Fliege mit Captain Danulli durch Raum und Zeit und zerstöre die feindlichen Schiffe.
+
+Steuerung: "W", "A", "S" und "D"</value>
+  </data>
   <metadata name="dBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
