@@ -156,7 +156,7 @@ namespace Loginsystem
         private void bearbeiten_button_Click(object sender, EventArgs e)
         {
             NutzerBearbeiten nutzerBearbeitenForm = new NutzerBearbeiten();
-            nutzerBearbeitenForm.ShowDialog();
+            nutzerBearbeitenForm.Show();
         }
 
         /// <summary>

@@ -168,11 +168,6 @@ namespace Loginsystem
                     if (isregistered)
                     {
                         DeleteUser(connection);
-
-                        Login login = new Login();
-                        login.ShowDialog();
-
-                        this.Hide();
                     }
                 }
 
@@ -187,6 +182,10 @@ namespace Loginsystem
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            Login login = new Login();
+            login.Show();
+
+            this.Hide();
         }
 
         private void DeleteUser(SqlConnection connection)
